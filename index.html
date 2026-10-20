@@ -4,303 +4,316 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Firewisp Studio</title>
-<meta name="description" content="Firewisp Studio — small games and tools made by one person in Poland. No ads, no tracking. Play Sushi Rush free in your browser.">
-<meta property="og:title" content="Firewisp Studio">
-<meta property="og:description" content="Small games and tools, made by one person. No ads, no tracking. Play Sushi Rush free in your browser.">
-<meta property="og:image" content="assets/sushi-logo.webp">
-<meta name="theme-color" content="#0f1117">
+<meta name="description" content="Firewisp Studio — small games and useful apps, independently crafted in Poland. Play Sushi Rush free in your browser; Kropla on the App Store.">
+<meta name="description" lang="pl" content="Firewisp Studio — małe gry i przydatne aplikacje, tworzone niezależnie w Polsce. Zagraj w Sushi Rush w przeglądarce; Kropla w App Store.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Firewisp Studio">
+<meta property="og:title" content="Firewisp Studio — Small games. Big personality.">
+<meta property="og:description" content="Thoughtful little worlds, playful ideas and useful apps. Play Sushi Rush free in your browser.">
+<meta property="og:url" content="https://tomaszmatusiak-stack.github.io/firewisp-studio/">
+<meta property="og:image" content="https://tomaszmatusiak-stack.github.io/firewisp-studio/assets/og.jpg">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US"><meta property="og:locale:alternate" content="pl_PL">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Firewisp Studio — Small games. Big personality.">
+<meta name="twitter:description" content="Thoughtful little worlds, playful ideas and useful apps. Play Sushi Rush free in your browser.">
+<meta name="twitter:image" content="https://tomaszmatusiak-stack.github.io/firewisp-studio/assets/og.jpg">
+<meta name="theme-color" content="#0b0c10">
 <link rel="icon" href="assets/icon-firewisp.webp" type="image/webp">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
-<style>
-  /* Firewisp: ciemny warsztat z żarem. Jeden motyw, celowo — żar nie działa na białym tle. */
-  :root {
-    --ink: #0f1117;
-    --ink-2: #171a23;
-    --ink-3: #20242f;
-    --line: #2b3040;
-    --mist: #ebe7df;
-    --mist-2: #a8a39a;
-    --ember: #ff8a3d;
-    --ember-deep: #d9611f;
-    --ember-glow: rgba(255, 138, 61, .35);
-    --ok: #7ed49b;
-    --err: #ff7b7b;
-    --font-display: "Bricolage Grotesque", "Instrument Sans", system-ui, sans-serif;
-    --font-body: "Instrument Sans", system-ui, -apple-system, sans-serif;
-    --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
-  }
-  * { box-sizing: border-box; }
-  html { color-scheme: dark; }
-  body {
-    margin: 0;
-    background: var(--ink);
-    color: var(--mist);
-    font-family: var(--font-body);
-    font-size: 17px;
-    line-height: 1.55;
-    -webkit-font-smoothing: antialiased;
-  }
-  a { color: var(--ember); text-decoration-thickness: 1px; text-underline-offset: 3px; }
-  a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid var(--ember); outline-offset: 3px; }
-  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 16px; }
-  .eyebrow { font-family: var(--font-mono); font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--ember); }
-  h1, h2, h3 { font-family: var(--font-display); font-weight: 800; letter-spacing: -.02em; text-wrap: balance; margin: 0; }
-  h1 { font-size: clamp(40px, 8vw, 84px); line-height: .98; }
-  h2 { font-size: clamp(26px, 4vw, 38px); line-height: 1.1; }
-  h3 { font-size: 20px; }
-  p { margin: 0; max-width: 62ch; }
-  .muted { color: var(--mist-2); }
-
-  /* nagłówek */
-  header { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 18px 0; }
-  .brand { display: flex; align-items: center; gap: 10px; font-family: var(--font-display); font-weight: 800; font-size: 18px; color: var(--mist); text-decoration: none; }
-  .brand img { width: 32px; height: 32px; border-radius: 9px; }
-  nav { display: flex; gap: 14px; align-items: center; font-size: 15px; }
-  nav a { color: var(--mist-2); text-decoration: none; }
-  nav a:hover { color: var(--mist); }
-  .lang { display: flex; border: 1px solid var(--line); border-radius: 999px; overflow: hidden; }
-  .lang button { background: none; border: 0; color: var(--mist-2); font: inherit; font-size: 13px; padding: 5px 11px; cursor: pointer; }
-  .lang button[aria-pressed="true"] { background: var(--ink-3); color: var(--mist); }
-
-  /* bohater: ognik na canvasie + tytuł */
-  .hero { position: relative; padding: 48px 0 56px; display: grid; gap: 22px; }
-  .hero canvas { position: absolute; right: 0; top: 0; width: min(380px, 60vw); height: 100%; pointer-events: none; opacity: .9; }
-  .hero > * { position: relative; }
-  .hero p { font-size: clamp(17px, 2.1vw, 21px); }
-  .cta { display: flex; flex-wrap: wrap; gap: 12px; }
-  .btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 20px; border-radius: 12px; font-weight: 600; text-decoration: none; border: 1px solid var(--line); color: var(--mist); background: var(--ink-2); cursor: pointer; font: inherit; font-weight: 600; }
-  .btn.primary { background: var(--ember); border-color: var(--ember); color: #1a0d03; box-shadow: 0 0 0 0 var(--ember-glow); transition: box-shadow .2s, transform .2s; }
-  .btn.primary:hover { box-shadow: 0 0 28px 2px var(--ember-glow); transform: translateY(-1px); }
-
-  /* karta „graj teraz” */
-  .play { margin: 8px 0 64px; border: 1px solid var(--line); border-radius: 22px; background: var(--ink-2); overflow: hidden; display: grid; grid-template-columns: 1.1fr 1fr; }
-  .play .art { position: relative; min-height: 300px; background: #241306 url("assets/sushi-bg.webp") center/cover; }
-  .play .art img { position: absolute; left: 50%; top: 50%; width: 78%; transform: translate(-50%, -50%); filter: drop-shadow(0 12px 24px rgba(0,0,0,.5)); }
-  .play .body { padding: 28px; display: grid; gap: 14px; align-content: center; }
-  .pill { display: inline-flex; align-items: center; gap: 6px; font-family: var(--font-mono); font-size: 12px; letter-spacing: .06em; text-transform: uppercase; padding: 4px 10px; border-radius: 999px; border: 1px solid var(--line); color: var(--mist-2); }
-  .pill.live { color: var(--ok); border-color: rgba(126,212,155,.4); }
-  .pill.live::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--ok); }
-  .play ul { margin: 0; padding-left: 18px; color: var(--mist-2); }
-
-  /* siatka apek */
-  section { margin-bottom: 64px; }
-  .section-head { display: grid; gap: 8px; margin-bottom: 22px; }
-  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 14px; }
-  .app { border: 1px solid var(--line); border-radius: 18px; background: var(--ink-2); padding: 18px; display: grid; gap: 12px; align-content: start; }
-  .app .top { display: flex; align-items: center; gap: 12px; }
-  .app img { width: 56px; height: 56px; border-radius: 14px; flex: none; }
-  .app .links { display: flex; flex-wrap: wrap; gap: 10px; font-size: 14px; }
-  .app .links a { color: var(--mist); }
-  .app .links a.soon { color: var(--mist-2); text-decoration: none; cursor: default; }
-
-  /* beta */
-  .beta { border: 1px solid var(--line); border-radius: 22px; padding: 28px; background: linear-gradient(180deg, var(--ink-2), var(--ink)); display: grid; gap: 16px; }
-  form { display: flex; flex-wrap: wrap; gap: 10px; }
-  input[type=email] { flex: 1 1 260px; padding: 12px 14px; border-radius: 12px; border: 1px solid var(--line); background: var(--ink); color: var(--mist); font: inherit; }
-  .hp { position: absolute; left: -9999px; }
-  .note { font-size: 14px; color: var(--mist-2); }
-  .note.ok { color: var(--ok); }
-  .note.err { color: var(--err); }
-
-  /* zasady */
-  .rules { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; }
-  .rule { border-top: 2px solid var(--ember); padding-top: 12px; display: grid; gap: 6px; }
-
-  footer { border-top: 1px solid var(--line); padding: 26px 0 40px; display: flex; flex-wrap: wrap; gap: 12px 24px; justify-content: space-between; font-size: 14px; color: var(--mist-2); }
-  footer a { color: var(--mist-2); }
-
-  [data-l]:not([data-l-active]) { display: none; }
-  @media (max-width: 720px) {
-    .play { grid-template-columns: 1fr; }
-    .play .art { min-height: 220px; }
-    .hero canvas { opacity: .55; }
-    nav .hide-sm { display: none; }
-  }
-  @media (prefers-reduced-motion: reduce) { .hero canvas { display: none; } .btn.primary { transition: none; } }
-</style>
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="preload" href="assets/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/site.css">
 </head>
 <body>
-<div class="wrap">
-  <header>
-    <a class="brand" href="./"><img src="assets/icon-firewisp.webp" alt="" width="32" height="32">Firewisp Studio</a>
-    <nav>
-      <a class="hide-sm" href="#play" data-l="en">Play</a><a class="hide-sm" href="#play" data-l="pl">Graj</a>
-      <a class="hide-sm" href="#apps" data-l="en">Apps</a><a class="hide-sm" href="#apps" data-l="pl">Aplikacje</a>
+<a class="skip" href="#main" data-l="en">Skip to content</a><a class="skip" href="#main" data-l="pl">Przejdź do treści</a>
+
+<header class="site-header" id="top">
+  <div class="container header-row">
+    <a class="brand" href="./" aria-label="Firewisp Studio"><img src="assets/icon-firewisp.webp" alt="" width="28" height="28"><span><b>Firewisp</b> <i>Studio</i></span></a>
+    <nav class="nav" id="nav" aria-label="Main">
+      <a href="#games"><span data-l="en">Games</span><span data-l="pl">Gry</span></a>
+      <a href="#apps"><span data-l="en">Apps</span><span data-l="pl">Aplikacje</span></a>
+      <a href="#about"><span data-l="en">About</span><span data-l="pl">O studiu</span></a>
       <a href="#beta">Beta</a>
-      <div class="lang" role="group" aria-label="Language">
-        <button type="button" data-set-lang="en" aria-pressed="true">EN</button>
-        <button type="button" data-set-lang="pl" aria-pressed="false">PL</button>
-      </div>
     </nav>
-  </header>
+    <div class="header-actions">
+      <div class="lang" role="group" aria-label="Language / Język">
+        <button type="button" data-set-lang="en" aria-pressed="true" lang="en">EN</button>
+        <button type="button" data-set-lang="pl" aria-pressed="false" lang="pl">PL</button>
+      </div>
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav">
+        <span class="sr-only" data-l="en">Menu</span><span class="sr-only" data-l="pl">Menu</span>
+        <svg class="bars" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M3 6h14M3 10h14M3 14h14"/></svg>
+        <svg class="x" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M5 5l10 10M15 5L5 15"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
 
-  <section class="hero">
-    <canvas id="wisp" aria-hidden="true"></canvas>
-    <span class="eyebrow" data-l="en">Indie studio · Poland</span>
-    <span class="eyebrow" data-l="pl">Studio indie · Polska</span>
-    <h1 data-l="en">Small games and tools, made with care by one person.</h1>
-    <h1 data-l="pl">Małe gry i narzędzia, robione z uwagą przez jedną osobę.</h1>
-    <p data-l="en">No ads. No tracking. No energy timers. Just things that are pleasant to use and play — on iPhone, Android and in your browser.</p>
-    <p data-l="pl">Bez reklam. Bez śledzenia. Bez liczników energii. Rzeczy, których miło się używa i w które miło się gra — na iPhonie, Androidzie i w przeglądarce.</p>
-    <div class="cta">
-      <a class="btn primary" href="play/sushi-rush/"><span data-l="en">Play Sushi Rush free</span><span data-l="pl">Zagraj w Sushi Rush za darmo</span> →</a>
-      <a class="btn" href="#beta"><span data-l="en">Join the beta list</span><span data-l="pl">Dołącz do listy beta</span></a>
+<main id="main">
+  <!-- bohater: nagłówek po lewej, prawdziwy produkt w kompozycji po prawej -->
+  <section class="hero container">
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <span class="meta" data-l="en">Independent studio · Poland</span>
+        <span class="meta" data-l="pl">Niezależne studio · Polska</span>
+        <h1 data-l="en">Small games. <em>Big</em> personality.</h1>
+        <h1 data-l="pl">Małe gry. <em>Duża</em> osobowość.</h1>
+        <p class="lead" data-l="en">Thoughtful little worlds, playful ideas and useful apps. Independently crafted with care — by one person, start to finish.</p>
+        <p class="lead" data-l="pl">Małe, przemyślane światy, pomysły z iskrą i przydatne aplikacje. Tworzone niezależnie, z uwagą — przez jedną osobę, od początku do końca.</p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="play/sushi-rush/"><span data-l="en">Play Sushi Rush</span><span data-l="pl">Zagraj w Sushi Rush</span> <span class="arrow" aria-hidden="true">→</span></a>
+          <a class="btn" href="#games"><span data-l="en">See all products</span><span data-l="pl">Zobacz wszystkie produkty</span></a>
+        </div>
+        <div class="hero-facts" aria-label="Facts">
+          <span class="fact"><span data-l="en">No ads</span><span data-l="pl">Bez reklam</span></span>
+          <span class="fact"><span data-l="en">No tracking</span><span data-l="pl">Bez śledzenia</span></span>
+          <span class="fact"><span data-l="en">iPhone · Android · Browser</span><span data-l="pl">iPhone · Android · Przeglądarka</span></span>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <span class="tag live badge"><span data-l="en">Playable now</span><span data-l="pl">Grywalne teraz</span></span>
+        <div class="phone"><img src="assets/shot-sushi-play.webp" alt="" width="720" height="1564" fetchpriority="high"></div>
+        <img class="logo" src="assets/sushi-logo.webp" alt="" width="1200" height="800">
+        <div class="mark"></div>
+      </div>
     </div>
   </section>
 
-  <section id="play" class="play">
-    <div class="art"><img src="assets/sushi-logo.webp" alt="Sushi Rush: Merge Kitchen"></div>
-    <div class="body">
-      <span class="pill live"><span data-l="en">Playable now · browser</span><span data-l="pl">Grywalne teraz · przeglądarka</span></span>
-      <h2>Sushi Rush: Merge Kitchen</h2>
-      <p data-l="en">Merge dishes, serve impatient customers, chain combos and grow a chain of sushi bars from Tokyo to Osaka. 76 levels across three worlds, each with its own kitchen.</p>
-      <p data-l="pl">Łącz dania, obsługuj niecierpliwych klientów, wbijaj combo i rozbuduj sieć barów sushi od Tokio po Osakę. 76 poziomów w trzech światach, każdy z własną kuchnią.</p>
-      <ul data-l="en">
-        <li>Free, full game. Progress saves in this browser.</li>
-        <li>Coming to the App Store and Google Play — join the beta below to get in first.</li>
-        <li>Made with Flutter; the art and the sushi are hand-picked, the code is ours.</li>
-      </ul>
-      <ul data-l="pl">
-        <li>Darmowa, pełna gra. Postęp zapisuje się w tej przeglądarce.</li>
-        <li>Wkrótce w App Store i Google Play — zapisz się na betę poniżej, żeby wejść pierwszy.</li>
-        <li>Zrobiona we Flutterze; grafika i sushi wybrane ręcznie, kod nasz.</li>
-      </ul>
-      <div class="cta"><a class="btn primary" href="play/sushi-rush/"><span data-l="en">Play in browser</span><span data-l="pl">Graj w przeglądarce</span> →</a></div>
+  <!-- dostępne teraz -->
+  <section class="section container" id="games">
+    <div class="section-head reveal">
+      <div>
+        <span class="meta" data-l="en">Available now</span><span class="meta" data-l="pl">Dostępne teraz</span>
+        <h2 data-l="en">Play today, download today</h2><h2 data-l="pl">Zagraj dziś, pobierz dziś</h2>
+      </div>
+      <p data-l="en">Two finished things: a merge game you can play right here, and a water tracker on the App Store.</p>
+      <p data-l="pl">Dwie skończone rzeczy: gra merge, w którą zagrasz tutaj, i licznik wody w App Store.</p>
     </div>
-  </section>
+    <div class="bento">
+      <article class="card card-sushi reveal" style="--c: var(--c-sushi)">
+        <div class="art">
+          <img class="logo" src="assets/sushi-logo.webp" alt="" width="1200" height="800" loading="lazy">
+          <div class="phone"><img src="assets/shot-sushi-menu.webp" alt="Sushi Rush main menu with the chef, daily special and the Play button" width="720" height="1564" loading="lazy"></div>
+        </div>
+        <div class="body">
+          <div class="tags"><span class="tag live"><span data-l="en">Browser</span><span data-l="pl">Przeglądarka</span></span><span class="tag"><span data-l="en">Game · Merge</span><span data-l="pl">Gra · Merge</span></span></div>
+          <h3>Sushi Rush: Merge Kitchen</h3>
+          <p class="positioning" data-l="en">Merge dishes, serve impatient customers, grow a chain of sushi bars.</p>
+          <p class="positioning" data-l="pl">Łącz dania, obsługuj niecierpliwych klientów, rozbuduj sieć barów sushi.</p>
+          <p class="desc" data-l="en">A free-board merge game with a separate dish zone, combo chains, boosters and a restaurant map from Tokyo to Osaka. 76 levels across three worlds. No ads, no energy timers; your progress saves in this browser.</p>
+          <p class="desc" data-l="pl">Gra merge z wolną planszą, osobną strefą dań, łańcuchami combo, boosterami i mapą restauracji od Tokio po Osakę. 76 poziomów w trzech światach. Bez reklam i liczników energii; postęp zapisuje się w tej przeglądarce.</p>
+          <div class="facts"><span data-l="en">Platform: browser · stores soon</span><span data-l="pl">Platforma: przeglądarka · sklepy wkrótce</span></div>
+          <div class="cta"><a class="btn btn-primary" href="play/sushi-rush/"><span data-l="en">Play now</span><span data-l="pl">Graj teraz</span> <span class="arrow" aria-hidden="true">→</span></a><a class="link" href="#beta"><span data-l="en">Get the mobile beta</span><span data-l="pl">Beta na telefon</span></a></div>
+        </div>
+      </article>
 
-  <section id="apps">
-    <div class="section-head">
-      <span class="eyebrow" data-l="en">Apps &amp; games</span><span class="eyebrow" data-l="pl">Aplikacje i gry</span>
-      <h2 data-l="en">What we make</h2><h2 data-l="pl">Co robimy</h2>
-    </div>
-    <div class="grid">
-      <article class="app">
-        <div class="top"><img src="assets/icon-kropla.webp" alt=""><div><h3>Kropla</h3><span class="pill live"><span data-l="en">App Store</span><span data-l="pl">App Store</span></span></div></div>
-        <p class="muted" data-l="en">Water tracker that stays out of your way: one tap per glass, a daily goal from your weight and height, a widget, reminders. Everything stays on your phone.</p>
-        <p class="muted" data-l="pl">Licznik wody, który nie przeszkadza: jeden dotyk na szklankę, cel dzienny z wagi i wzrostu, widżet, przypomnienia. Wszystko zostaje na telefonie.</p>
-        <div class="links"><a href="https://apps.apple.com/app/id6805807230">iPhone →</a><a class="soon" data-l="en">Android: in testing</a><a class="soon" data-l="pl">Android: w testach</a></div>
-      </article>
-      <article class="app">
-        <div class="top"><img src="assets/icon-sushi-rush.webp" alt=""><div><h3>Sushi Rush</h3><span class="pill live"><span data-l="en">Browser</span><span data-l="pl">Przeglądarka</span></span></div></div>
-        <p class="muted" data-l="en">Merge kitchen game with free-board merging, a separate dish zone and a restaurant map. No ads, no energy.</p>
-        <p class="muted" data-l="pl">Gra merge z wolną planszą, osobną strefą dań i mapą restauracji. Bez reklam, bez energii.</p>
-        <div class="links"><a href="play/sushi-rush/"><span data-l="en">Play →</span><span data-l="pl">Graj →</span></a><a class="soon" data-l="en">Stores: soon</a><a class="soon" data-l="pl">Sklepy: wkrótce</a></div>
-      </article>
-      <article class="app">
-        <div class="top"><img src="assets/icon-pendulum.webp" alt=""><div><h3>Pendulum</h3><span class="pill"><span data-l="en">Coming soon</span><span data-l="pl">Wkrótce</span></span></div></div>
-        <p class="muted" data-l="en">One-touch rope-swing game. Hold to grab, release to fly; your timing is graded. 100 levels across ten painted worlds.</p>
-        <p class="muted" data-l="pl">Gra o huśtaniu na linie na jeden dotyk. Trzymaj, żeby złapać, puść, żeby lecieć; timing jest oceniany. 100 poziomów w dziesięciu malowanych światach.</p>
-        <div class="links"><a class="soon" data-l="en">iPhone: in review</a><a class="soon" data-l="pl">iPhone: w recenzji</a></div>
-      </article>
-      <article class="app">
-        <div class="top"><img src="assets/icon-whirlpick.webp" alt=""><div><h3>Whirlpick</h3><span class="pill"><span data-l="en">Coming soon</span><span data-l="pl">Wkrótce</span></span></div></div>
-        <p class="muted" data-l="en">Decision wheel with elimination mode and bulk add. Who does the dishes, what's for dinner, who goes first.</p>
-        <p class="muted" data-l="pl">Koło decyzji z trybem eliminacji i dodawaniem listą. Kto zmywa, co na obiad, kto zaczyna.</p>
-        <div class="links"><a class="soon" data-l="en">iPhone: in review</a><a class="soon" data-l="pl">iPhone: w recenzji</a></div>
-      </article>
-      <article class="app">
-        <div class="top"><img src="assets/icon-firewisp.webp" alt=""><div><h3>Iskra</h3><span class="pill"><span data-l="en">In development</span><span data-l="pl">W przygotowaniu</span></span></div></div>
-        <p class="muted" data-l="en">A goal coach with a spark of a mascot. Say what you want to achieve; Iskra turns it into milestones and keeps you company.</p>
-        <p class="muted" data-l="pl">Trener celów z iskrą zamiast maskotki. Mówisz, co chcesz osiągnąć; Iskra zamienia to w kamienie milowe i dotrzymuje towarzystwa.</p>
-        <div class="links"><a class="soon" data-l="en">2027</a><a class="soon" data-l="pl">2027</a></div>
+      <article class="card card-kropla reveal" data-delay="1" id="apps" style="--c: var(--c-kropla)">
+        <div class="screens" aria-hidden="true">
+          <img src="assets/shot-kropla-today.webp" alt="" width="720" height="1564" loading="lazy">
+          <img src="assets/shot-kropla-dark.webp" alt="" width="720" height="1564" loading="lazy">
+        </div>
+        <div class="body">
+          <div class="tags"><span class="tag live">App Store</span><span class="tag"><span data-l="en">App · Health</span><span data-l="pl">Apka · Zdrowie</span></span></div>
+          <h3>Kropla</h3>
+          <p class="positioning" data-l="en">A water tracker that stays out of your way.</p>
+          <p class="positioning" data-l="pl">Licznik wody, który nie przeszkadza.</p>
+          <p class="desc" data-l="en">One tap per glass, a daily goal from your weight and height, a home-screen widget and gentle reminders. Everything stays on your phone.</p>
+          <p class="desc" data-l="pl">Jeden dotyk na szklankę, cel dzienny z wagi i wzrostu, widżet na ekranie i delikatne przypomnienia. Wszystko zostaje na telefonie.</p>
+          <div class="facts"><span data-l="en">iPhone · Android in testing</span><span data-l="pl">iPhone · Android w testach</span></div>
+          <div class="cta"><a class="btn" href="https://apps.apple.com/app/id6805807230"><span data-l="en">Download on the App Store</span><span data-l="pl">Pobierz w App Store</span> <span class="arrow" aria-hidden="true">→</span></a></div>
+        </div>
       </article>
     </div>
   </section>
 
-  <section id="beta" class="beta">
-    <span class="eyebrow">Beta</span>
-    <h2 data-l="en">Test new builds before anyone else</h2>
-    <h2 data-l="pl">Testuj nowe wersje przed wszystkimi</h2>
-    <p class="muted" data-l="en">Leave your e-mail and we'll send TestFlight / Google Play test links when a new game is ready. A few mails a year, no newsletter, unsubscribe by replying.</p>
-    <p class="muted" data-l="pl">Zostaw adres, a wyślemy linki TestFlight / Google Play, gdy nowa gra będzie gotowa do testów. Kilka maili rocznie, bez newslettera, wypisanie przez odpowiedź.</p>
-    <form id="beta-form" novalidate>
-      <label class="hp" for="website">Website</label><input class="hp" id="website" name="website" tabindex="-1" autocomplete="off">
-      <input type="email" name="email" required autocomplete="email" placeholder="you@example.com" aria-label="E-mail">
-      <button class="btn primary" type="submit"><span data-l="en">Join</span><span data-l="pl">Dołącz</span></button>
-    </form>
-    <p class="note" id="beta-note" aria-live="polite"><span data-l="en">By joining you agree to the <a href="privacy.html">privacy notice</a>.</span><span data-l="pl">Dołączając, akceptujesz <a href="privacy.html">informację o prywatności</a>.</span></p>
+  <!-- w przygotowaniu: trzy różne potraktowania, bez udawania gotowej gry -->
+  <section class="section container" id="upcoming">
+    <div class="section-head reveal">
+      <div>
+        <span class="meta" data-l="en">In development</span><span class="meta" data-l="pl">W przygotowaniu</span>
+        <h2 data-l="en">Next out of the kitchen</h2><h2 data-l="pl">Następne w kolejce</h2>
+      </div>
+      <p data-l="en">Two games in App Store review, one app taking its time. The beta list gets them first.</p>
+      <p data-l="pl">Dwie gry w recenzji App Store, jedna apka, która się nie spieszy. Lista beta dostaje je pierwsza.</p>
+    </div>
+    <div class="teasers">
+      <article class="teaser teaser-pendulum reveal">
+        <div class="visual" aria-hidden="true"><img src="assets/shot-pendulum.webp" alt="" width="720" height="1564" loading="lazy"></div>
+        <div class="body">
+          <div class="tags"><span class="tag soon"><span data-l="en">iPhone · in review</span><span data-l="pl">iPhone · w recenzji</span></span></div>
+          <h3>Pendulum: Rope Swing</h3>
+          <p class="desc" data-l="en">Hold to grab, release to fly. One-touch momentum across a hundred levels in ten painted worlds, and a daily run everyone plays at once.</p>
+          <p class="desc" data-l="pl">Trzymaj, żeby złapać, puść, żeby lecieć. Rozpęd na jeden dotyk przez sto poziomów w dziesięciu malowanych światach i dzienny bieg wspólny dla wszystkich.</p>
+          <div class="cta"><a class="link" href="#beta"><span data-l="en">Coming soon · join the beta</span><span data-l="pl">Wkrótce · dołącz do bety</span></a></div>
+        </div>
+      </article>
+      <article class="teaser teaser-whirlpick reveal" data-delay="1">
+        <div class="visual" aria-hidden="true"><img src="assets/shot-whirlpick.webp" alt="" width="720" height="1564" loading="lazy"></div>
+        <div class="body">
+          <div class="tags"><span class="tag soon"><span data-l="en">iPhone · in review</span><span data-l="pl">iPhone · w recenzji</span></span></div>
+          <h3>Whirlpick</h3>
+          <p class="desc" data-l="en">A decision wheel for the arguments nobody wants: who does the dishes, what's for dinner, who goes first. Elimination mode, bulk add, no account.</p>
+          <p class="desc" data-l="pl">Koło decyzji do sporów, których nikt nie chce: kto zmywa, co na obiad, kto zaczyna. Tryb eliminacji, dodawanie listą, bez konta.</p>
+          <div class="cta"><a class="link" href="#beta"><span data-l="en">Coming soon · join the beta</span><span data-l="pl">Wkrótce · dołącz do bety</span></a></div>
+        </div>
+      </article>
+      <article class="teaser teaser-iskra reveal" data-delay="2">
+        <div class="visual" aria-hidden="true"><div class="ring"></div><div class="spark"><img src="assets/icon-firewisp-512.webp" alt="" width="512" height="512" loading="lazy"></div><span class="year">2027</span></div>
+        <div class="body">
+          <div class="tags"><span class="tag dev"><span data-l="en">In development</span><span data-l="pl">W przygotowaniu</span></span></div>
+          <h3>Iskra</h3>
+          <p class="desc" data-l="en">A goal coach with a spark for a mascot. Say what you want to achieve; Iskra turns it into milestones and keeps you company along the way.</p>
+          <p class="desc" data-l="pl">Trener celów z iskrą zamiast maskotki. Mówisz, co chcesz osiągnąć; Iskra zamienia to w kamienie milowe i dotrzymuje towarzystwa po drodze.</p>
+          <div class="cta"><span class="muted" data-l="en">Learn more when it's ready.</span><span class="muted" data-l="pl">Więcej, gdy będzie gotowa.</span></div>
+        </div>
+      </article>
+    </div>
   </section>
 
-  <section>
-    <div class="section-head">
-      <span class="eyebrow" data-l="en">How we work</span><span class="eyebrow" data-l="pl">Jak pracujemy</span>
-      <h2 data-l="en">Three rules, no exceptions</h2><h2 data-l="pl">Trzy zasady, bez wyjątków</h2>
-    </div>
-    <div class="rules">
-      <div class="rule"><h3 data-l="en">No ads</h3><h3 data-l="pl">Bez reklam</h3><p class="muted" data-l="en">Every app and game is fully playable without paying. Purchases are optional, one-off and say exactly what you get — never a video to sit through.</p><p class="muted" data-l="pl">Każda apka i gra jest w pełni grywalna bez płacenia. Zakupy są opcjonalne, jednorazowe i mówią dokładnie, co dostajesz — nigdy filmik do przesiedzenia.</p></div>
-      <div class="rule"><h3 data-l="en">No tracking</h3><h3 data-l="pl">Bez śledzenia</h3><p class="muted" data-l="en">Our apps don't phone home. What you type stays on your device.</p><p class="muted" data-l="pl">Nasze apki nie dzwonią do domu. To, co wpisujesz, zostaje na urządzeniu.</p></div>
-      <div class="rule"><h3 data-l="en">No dark patterns</h3><h3 data-l="pl">Bez sztuczek</h3><p class="muted" data-l="en">No energy timers, no fake countdowns, no "last chance" offers.</p><p class="muted" data-l="pl">Bez liczników energii, fałszywych odliczań i ofert „ostatnia szansa”.</p></div>
+  <!-- o studiu -->
+  <section class="section container" id="about">
+    <div class="about reveal">
+      <div>
+        <span class="meta" data-l="en">About</span><span class="meta" data-l="pl">O studiu</span>
+        <h2 data-l="en">Independent by design.</h2>
+        <h2 data-l="pl">Niezależne z założenia.</h2>
+      </div>
+      <div>
+        <div class="prose">
+          <p data-l="en">Firewisp is one person in Poland making the games and apps I wanted to have on my own phone. Being small is the point: every screen, sound and price is a decision I made myself, and I can change my mind quickly when players tell me something is off.</p>
+          <p data-l="pl">Firewisp to jedna osoba w Polsce, która robi gry i aplikacje, jakie sama chciała mieć na telefonie. Małość jest celem: każdy ekran, dźwięk i cena to moja własna decyzja, a kiedy gracze mówią, że coś nie gra, mogę to zmienić szybko.</p>
+          <p data-l="en">I'd rather ship a few things that feel finished than many that feel like a funnel. If something here saves you a minute or makes you smile on the tram, it did its job.</p>
+          <p data-l="pl">Wolę wydać kilka rzeczy, które są skończone, niż wiele takich, które są lejkiem. Jeśli coś stąd oszczędzi Ci minutę albo rozbawi w tramwaju, zrobiło swoje.</p>
+        </div>
+        <ul class="values">
+          <li><span class="n">01</span><div><strong data-l="en">No ads, ever</strong><strong data-l="pl">Bez reklam, nigdy</strong><span data-l="en">Everything is fully playable without paying. Purchases are optional, one-off and say exactly what you get.</span><span data-l="pl">Wszystko jest w pełni grywalne bez płacenia. Zakupy są opcjonalne, jednorazowe i mówią dokładnie, co dostajesz.</span></div></li>
+          <li><span class="n">02</span><div><strong data-l="en">Respect for your data</strong><strong data-l="pl">Szacunek dla Twoich danych</strong><span data-l="en">No advertising SDKs, no selling data. Each app says in its own policy exactly what it keeps and where.</span><span data-l="pl">Bez SDK reklamowych, bez handlu danymi. Każda apka w swojej polityce mówi dokładnie, co przechowuje i gdzie.</span></div></li>
+          <li><span class="n">03</span><div><strong data-l="en">No dark patterns</strong><strong data-l="pl">Bez sztuczek</strong><span data-l="en">No energy timers, fake countdowns or "last chance" offers. A game should be fun on its own.</span><span data-l="pl">Bez liczników energii, fałszywych odliczań i ofert „ostatnia szansa”. Gra ma bawić sama z siebie.</span></div></li>
+        </ul>
+      </div>
     </div>
   </section>
 
-  <footer>
-    <span>© 2026 Firewisp Studio · Tomasz Matusiak</span>
-    <span><a href="privacy.html" data-l="en">Privacy</a><a href="privacy.html" data-l="pl">Prywatność</a> · <a href="mailto:tomasz.matusiak@post.pl">tomasz.matusiak@post.pl</a></span>
-  </footer>
-</div>
+  <!-- beta -->
+  <section class="section container" id="beta">
+    <div class="beta reveal">
+      <div>
+        <span class="meta">Beta</span>
+        <h2 data-l="en">Test new builds first</h2><h2 data-l="pl">Testuj nowe wersje pierwszy</h2>
+        <p class="muted" data-l="en">Leave your e-mail and you'll get TestFlight or Google Play test links when a game is ready. A few mails a year, no newsletter; unsubscribe by replying.</p>
+        <p class="muted" data-l="pl">Zostaw adres, a dostaniesz linki TestFlight lub Google Play, gdy gra będzie gotowa do testów. Kilka maili rocznie, bez newslettera; wypisanie przez odpowiedź.</p>
+      </div>
+      <div>
+        <form id="beta-form" novalidate>
+          <label class="hp" for="website">Website</label><input class="hp" id="website" name="website" tabindex="-1" autocomplete="off">
+          <label class="sr-only" for="beta-email">E-mail</label>
+          <input type="email" id="beta-email" name="email" required autocomplete="email" placeholder="you@example.com">
+          <button class="btn btn-primary" type="submit"><span data-l="en">Join the list</span><span data-l="pl">Dołącz do listy</span></button>
+        </form>
+        <p class="note" id="beta-note" aria-live="polite"><span data-l="en">By joining you agree to the <a href="privacy.html">privacy notice</a>.</span><span data-l="pl">Dołączając, akceptujesz <a href="privacy.html">informację o prywatności</a>.</span></p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="#top"><img src="assets/icon-firewisp.webp" alt="" width="28" height="28"><span><b>Firewisp</b> <i>Studio</i></span></a>
+        <p data-l="en">Small games and useful apps, independently crafted in Poland.</p>
+        <p data-l="pl">Małe gry i przydatne aplikacje, tworzone niezależnie w Polsce.</p>
+      </div>
+      <div>
+        <h4 data-l="en">Products</h4><h4 data-l="pl">Produkty</h4>
+        <ul>
+          <li><a href="play/sushi-rush/">Sushi Rush</a></li>
+          <li><a href="https://apps.apple.com/app/id6805807230">Kropla — App Store</a></li>
+          <li><a href="#upcoming">Pendulum</a></li>
+          <li><a href="#upcoming">Whirlpick</a></li>
+          <li><a href="#upcoming">Iskra</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Studio</h4>
+        <ul>
+          <li><a href="#about"><span data-l="en">About</span><span data-l="pl">O studiu</span></a></li>
+          <li><a href="#beta">Beta</a></li>
+          <li><a href="privacy.html"><span data-l="en">Privacy</span><span data-l="pl">Prywatność</span></a></li>
+          <li><a href="https://github.com/tomaszmatusiak-stack/firewisp-studio">GitHub</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 data-l="en">Contact</h4><h4 data-l="pl">Kontakt</h4>
+        <ul>
+          <li><a href="mailto:tomasz.matusiak@post.pl">tomasz.matusiak@post.pl</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Firewisp Studio · Tomasz Matusiak</span>
+      <span data-l="en">Made in Poland. No cookies, no trackers.</span><span data-l="pl">Zrobione w Polsce. Bez ciasteczek, bez trackerów.</span>
+    </div>
+  </div>
+</footer>
 
 <script>
-  // Język: EN domyślnie, PL z przełącznika albo z przeglądarki; zapamiętany lokalnie.
+  // ── język: EN domyślnie, PL z przełącznika lub przeglądarki; wybór zapamiętany lokalnie ──
+  const TITLES = { en: 'Firewisp Studio', pl: 'Firewisp Studio' };
   const setLang = (l) => {
     document.documentElement.lang = l;
     document.querySelectorAll('[data-l]').forEach(el => el.toggleAttribute('data-l-active', el.dataset.l === l));
     document.querySelectorAll('[data-set-lang]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.setLang === l)));
+    document.title = TITLES[l];
     try { localStorage.setItem('fw-lang', l); } catch (e) {}
   };
   let lang = 'en';
-  try { lang = localStorage.getItem('fw-lang') || (navigator.language.startsWith('pl') ? 'pl' : 'en'); } catch (e) {}
+  try { lang = localStorage.getItem('fw-lang') || (navigator.language.toLowerCase().startsWith('pl') ? 'pl' : 'en'); } catch (e) {}
   setLang(lang);
   document.querySelectorAll('[data-set-lang]').forEach(b => b.addEventListener('click', () => setLang(b.dataset.setLang)));
 
-  // Lista beta: wiersz w tabeli beta_signups (Supabase, tylko INSERT dla klucza publicznego).
+  // ── nawigacja mobilna ──
+  const menuBtn = document.querySelector('.menu-btn'), nav = document.getElementById('nav');
+  const closeNav = () => { nav.classList.remove('open'); menuBtn.setAttribute('aria-expanded', 'false'); };
+  menuBtn.addEventListener('click', () => { const open = nav.classList.toggle('open'); menuBtn.setAttribute('aria-expanded', String(open)); });
+  nav.querySelectorAll('a').forEach(a => a.addEventListener('click', closeNav));
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && nav.classList.contains('open')) { closeNav(); menuBtn.focus(); } });
+  const header = document.querySelector('.site-header');
+  const onScroll = () => header.classList.toggle('scrolled', scrollY > 8);
+  addEventListener('scroll', onScroll, { passive: true }); onScroll();
+
+  // ── pojawianie sekcji: raz, przy wejściu w kadr; bez ruchu, gdy użytkownik go nie chce ──
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const revealEls = document.querySelectorAll('.reveal');
+  if (reduce || !('IntersectionObserver' in window)) revealEls.forEach(el => el.classList.add('in'));
+  else {
+    const io = new IntersectionObserver((entries) => entries.forEach(en => { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } }), { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+    revealEls.forEach(el => io.observe(el));
+  }
+
+  // ── lista beta: wiersz w tabeli beta_signups (Supabase, klucz publiczny ma tylko INSERT) ──
   const SB_URL = 'https://haixyslyqiwjqdjhffsu.supabase.co';
   const SB_KEY = 'sb_publishable_D4B8k0LfShWTMxfgq1AMHg_Zu3CjXid';
-  const form = document.getElementById('beta-form');
-  const note = document.getElementById('beta-note');
-  const say = (en, pl, cls) => { note.className = 'note ' + (cls || ''); note.innerHTML = `<span data-l="en" ${lang==='en'?'data-l-active':''}>${en}</span><span data-l="pl" ${lang==='pl'?'data-l-active':''}>${pl}</span>`; note.querySelectorAll('[data-l]').forEach(el => el.toggleAttribute('data-l-active', el.dataset.l === document.documentElement.lang)); };
+  const form = document.getElementById('beta-form'), note = document.getElementById('beta-note');
+  const say = (en, pl, cls) => {
+    note.className = 'note ' + (cls || '');
+    note.innerHTML = `<span data-l="en">${en}</span><span data-l="pl">${pl}</span>`;
+    note.querySelectorAll('[data-l]').forEach(el => el.toggleAttribute('data-l-active', el.dataset.l === document.documentElement.lang));
+  };
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
-    if (form.website.value) return;                       // bot wypełnił pole-pułapkę
+    if (form.website.value) return;                              // pole-pułapka dla botów
     const email = form.email.value.trim();
-    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) { say('That e-mail doesn\'t look right.', 'Ten adres nie wygląda poprawnie.', 'err'); return; }
-    form.querySelector('button').disabled = true;
+    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) { say('That e-mail doesn\'t look right.', 'Ten adres nie wygląda poprawnie.', 'err'); form.email.focus(); return; }
+    const btn = form.querySelector('button'); btn.disabled = true;
     try {
       const r = await fetch(SB_URL + '/rest/v1/beta_signups', { method: 'POST', headers: { apikey: SB_KEY, Authorization: 'Bearer ' + SB_KEY, 'Content-Type': 'application/json', Prefer: 'return=minimal' }, body: JSON.stringify({ email, source: 'site', lang: document.documentElement.lang }) });
       if (r.status === 201 || r.status === 409) { say('You\'re on the list. We\'ll write when there is something to test.', 'Jesteś na liście. Napiszemy, gdy będzie co testować.', 'ok'); form.reset(); }
       else say('Something went wrong (' + r.status + '). Write to tomasz.matusiak@post.pl instead.', 'Coś poszło nie tak (' + r.status + '). Napisz na tomasz.matusiak@post.pl.', 'err');
     } catch (err) { say('No connection. Try again in a moment.', 'Brak połączenia. Spróbuj za chwilę.', 'err'); }
-    form.querySelector('button').disabled = false;
+    btn.disabled = false;
   });
-
-  // Ognik: kilkadziesiąt cząstek żaru unoszących się w prawym górnym rogu bohatera.
-  const cv = document.getElementById('wisp');
-  if (cv && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    const ctx = cv.getContext('2d');
-    let W, H, parts = [];
-    const resize = () => { const r = cv.getBoundingClientRect(); W = cv.width = r.width * devicePixelRatio; H = cv.height = r.height * devicePixelRatio; };
-    const spawn = () => ({ x: W * (0.55 + Math.random() * 0.3), y: H * (0.6 + Math.random() * 0.4), r: (1 + Math.random() * 2.5) * devicePixelRatio, vy: (0.25 + Math.random() * 0.6) * devicePixelRatio, vx: (Math.random() - 0.5) * 0.35 * devicePixelRatio, life: 0, max: 160 + Math.random() * 160, hue: 18 + Math.random() * 22 });
-    resize(); addEventListener('resize', resize);
-    for (let i = 0; i < 70; i++) { const p = spawn(); p.life = Math.random() * p.max; parts.push(p); }
-    const tick = () => {
-      ctx.clearRect(0, 0, W, H);
-      // łuna
-      const g = ctx.createRadialGradient(W * 0.7, H * 0.55, 0, W * 0.7, H * 0.55, W * 0.5);
-      g.addColorStop(0, 'rgba(255,138,61,0.18)'); g.addColorStop(1, 'rgba(255,138,61,0)');
-      ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
-      for (const p of parts) {
-        p.life++; p.y -= p.vy; p.x += p.vx + Math.sin(p.life / 23) * 0.3 * devicePixelRatio;
-        const a = Math.sin(Math.PI * Math.min(1, p.life / p.max));
-        ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        ctx.fillStyle = `hsla(${p.hue}, 100%, ${60 + a * 20}%, ${a * 0.85})`; ctx.fill();
-        if (p.life >= p.max || p.y < -10) Object.assign(p, spawn(), { life: 0 });
-      }
-      requestAnimationFrame(tick);
-    };
-    tick();
-  }
 </script>
 </body>
 </html>
