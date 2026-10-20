@@ -94,7 +94,7 @@
       <article class="card card-sushi reveal" style="--c: var(--c-sushi)">
         <div class="art">
           <img class="logo" src="assets/sushi-logo.webp" alt="" width="1200" height="800" loading="lazy">
-          <div class="phone"><img src="assets/shot-sushi-menu.webp" alt="Sushi Rush main menu with the chef, daily special and the Play button" width="720" height="1564" loading="lazy"></div>
+          <div class="phone"><video class="loop" muted autoplay loop playsinline preload="none" poster="assets/shot-sushi-play.webp" width="720" height="900" aria-label="Sushi Rush gameplay: merging dishes on the board"><source src="assets/sushi-loop.webm" type="video/webm"><source src="assets/sushi-loop.mp4" type="video/mp4"></video></div>
         </div>
         <div class="body">
           <div class="tags"><span class="tag live"><span data-l="en">Browser</span><span data-l="pl">Przeglądarka</span></span><span class="tag"><span data-l="en">Game · Merge</span><span data-l="pl">Gra · Merge</span></span></div>
@@ -314,6 +314,12 @@
   else {
     const io = new IntersectionObserver((entries) => entries.forEach(en => { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } }), { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
     revealEls.forEach(el => io.observe(el));
+  }
+
+  // ── pętle wideo w kartach: gramy tylko, gdy karta jest w kadrze (oszczędza baterię i transfer) ──
+  if (!reduce && 'IntersectionObserver' in window) {
+    const vio = new IntersectionObserver((entries) => entries.forEach(en => { const v = en.target; if (en.isIntersecting) { v.play().catch(() => {}); } else { v.pause(); } }), { threshold: 0.25 });
+    document.querySelectorAll('video.loop').forEach(v => { v.removeAttribute('autoplay'); vio.observe(v); });
   }
 
   // ── lista beta: wiersz w tabeli beta_signups (Supabase, klucz publiczny ma tylko INSERT) ──
