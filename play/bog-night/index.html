@@ -5,10 +5,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
     <meta name="theme-color" content="#0E1626" />
     <title>Bog Night</title>
-    <style>html,body{touch-action:none;-webkit-user-select:none;user-select:none;background:#0e1626;height:100%;margin:0;overflow:hidden}#app{width:100%;height:100%}</style>
+    <meta name="description" content="Bog Night — hold the hut until sunrise against creatures from Polish folklore. Play free in the browser.">
+    <style>html,body{touch-action:none;-webkit-user-select:none;user-select:none;background:#0e1626;height:100%;margin:0;overflow:hidden}#app{width:100%;height:100%}#splash{z-index:10;color:#ebe7df;text-align:center;box-sizing:border-box;background:#0e1626;place-items:center;padding:24px;font-family:system-ui,-apple-system,Segoe UI,sans-serif;transition:opacity .35s;display:grid;position:fixed;inset:0}#splash.hide{opacity:0;pointer-events:none}#splash .box{justify-items:center;gap:14px;max-width:440px;display:grid}#splash h1{letter-spacing:-.02em;margin:0;font-size:34px;font-weight:800}#splash p{color:#c9c4ba;margin:0;font-size:16px;line-height:1.45}#splash .hint{color:#8d8980;font-size:13px}#splash .bar{background:#ffffff1f;border-radius:999px;width:min(320px,80vw);height:6px;overflow:hidden}#splash .bar i{background:#6fc3b5;border-radius:999px;width:2%;height:100%;transition:width .2s;display:block}#splash .st{color:#8d8980;letter-spacing:.06em;text-transform:uppercase;font-size:12px}#splash .by{color:#6f6c66;margin-top:10px;font-size:12px}#splash .by a{color:#a8a39a;text-decoration:none}[data-l]:not([data-l-active]){display:none}</style>
     <script type="module" crossorigin src="./bundle/index-DGGD0TIv.js"></script>
   </head>
   <body>
+    <div id="splash" role="status" aria-live="polite">
+      <div class="box">
+        <h1>Bog Night</h1>
+        <p data-l="en">Creatures walk the boardwalks toward your hut every night. Tap a weapon, then tap the lane. Hold out until sunrise.</p>
+        <p data-l="pl">Co noc stwory idą po kładkach w stronę chaty. Stuknij broń, potem kładkę. Dotrwaj do świtu.</p>
+        <p class="hint" data-l="en">Best played with the phone turned sideways.</p>
+        <p class="hint" data-l="pl">Najlepiej gra się z telefonem obróconym bokiem.</p>
+        <div class="bar"><i id="bar"></i></div>
+        <div class="st" id="st">…</div>
+        <div class="by"><a href="../../">Firewisp Studio</a></div>
+      </div>
+    </div>
     <div id="app"></div>
+    <script>
+      (function () {
+        var pl = (navigator.language || '').toLowerCase().indexOf('pl') === 0;
+        try { var s = localStorage.getItem('fw-lang'); if (s) pl = (s === 'pl'); } catch (e) {}
+        document.querySelectorAll('[data-l]').forEach(function (el) { el.toggleAttribute('data-l-active', el.dataset.l === (pl ? 'pl' : 'en')); });
+        var bar = document.getElementById('bar'), st = document.getElementById('st');
+        var set = function (f, en, p) { bar.style.width = Math.round(f * 100) + '%'; st.textContent = pl ? p : en; };
+        set(0.03, 'Downloading', 'Pobieranie');
+        // postęp: pobieramy bundle do cache (ten sam adres, który zaraz załaduje <script type="module">)
+        var mod = document.querySelector('script[type="module"]');
+        if (mod && window.fetch && window.ReadableStream) {
+          fetch(mod.src, { cache: 'force-cache' }).then(function (r) {
+            var total = +r.headers.get('content-length') || 0; if (!r.body || !total) return;
+            var reader = r.body.getReader(), got = 0;
+            return reader.read().then(function step(x) { if (x.done) return; got += x.value.length; set(0.03 + 0.85 * got / total, 'Downloading', 'Pobieranie'); return reader.read().then(step); });
+          }).catch(function () {}).then(function () { set(0.9, 'Starting', 'Uruchamianie'); });
+        }
+        // koniec: pierwszy canvas gry w #app
+        var app = document.getElementById('app');
+        var done = function () { set(1, 'Ready', 'Gotowe'); var sp = document.getElementById('splash'); setTimeout(function () { sp.classList.add('hide'); setTimeout(function () { sp.remove(); }, 400); }, 300); };
+        var mo = new MutationObserver(function () { if (app.querySelector('canvas')) { mo.disconnect(); done(); } });
+        mo.observe(app, { childList: true, subtree: true });
+        setTimeout(function () { if (document.getElementById('splash')) done(); }, 25000);
+      })();
+    </script>
   </body>
 </html>

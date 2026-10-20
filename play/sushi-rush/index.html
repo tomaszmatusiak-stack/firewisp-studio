@@ -1,46 +1,61 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <!--
-    If you are serving your web app in a path other than the root, change the
-    href value below to reflect the base path you are serving from.
-
-    The path provided below has to start and end with a slash "/" in order for
-    it to work correctly.
-
-    For more details:
-    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
-
-    This is a placeholder for base href that will be replaced by the value of
-    the `--base-href` argument provided to `flutter build`.
-  -->
   <base href="/firewisp-studio/play/sushi-rush/">
-
   <meta charset="UTF-8">
-  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
   <meta name="description" content="Sushi Rush: Merge Kitchen — merge dishes, serve customers, grow your sushi chain. Play free in the browser.">
-
-  <!-- iOS meta tags & icons -->
+  <meta name="theme-color" content="#1a0e05">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-title" content="sushi_rush">
+  <meta name="apple-mobile-web-app-title" content="Sushi Rush: Merge Kitchen">
   <link rel="apple-touch-icon" href="icons/Icon-192.png">
-
-  <!-- Favicon -->
   <link rel="icon" type="image/png" href="favicon.png"/>
-
   <title>Sushi Rush: Merge Kitchen</title>
   <link rel="manifest" href="manifest.json">
+  <style>
+    html, body { margin: 0; height: 100%; background: #1a0e05; }
+    #splash { position: fixed; inset: 0; display: grid; place-items: center; background: #1a0e05; color: #ebe7df; font-family: system-ui, -apple-system, "Segoe UI", sans-serif; z-index: 10; transition: opacity .35s ease; padding: 24px; box-sizing: border-box; text-align: center; }
+    #splash.hide { opacity: 0; pointer-events: none; }
+    #splash .box { display: grid; gap: 14px; justify-items: center; max-width: 420px; width: 100%; }
+    #splash .logo { width: min(260px, 70vw); height: auto; filter: drop-shadow(0 12px 24px rgba(0,0,0,.5)); }
+    #splash .logo-text { font-size: 32px; font-weight: 800; letter-spacing: -0.02em; }
+    #splash .tag { font-size: 16px; line-height: 1.45; color: #c9c4ba; margin: 0; }
+    #splash .hint { font-size: 13px; color: #8d8980; margin: 0; }
+    #splash .bar { width: min(320px, 80vw); height: 6px; border-radius: 999px; background: rgba(255,255,255,.12); overflow: hidden; }
+    #splash .bar i { display: block; height: 100%; width: 0%; background: #ff6b4a; border-radius: 999px; transition: width .2s ease; }
+    #splash .st { font-size: 12px; color: #8d8980; letter-spacing: .06em; text-transform: uppercase; }
+    #splash .by { font-size: 12px; color: #6f6c66; margin-top: 10px; }
+    #splash .by a { color: #a8a39a; text-decoration: none; }
+    [data-l]:not([data-l-active]) { display: none; }
+  </style>
 </head>
 <body>
-  <!--
-    You can customize the "flutter_bootstrap.js" script.
-    This is useful to provide a custom configuration to the Flutter loader
-    or to give the user feedback during the initialization process.
-
-    For more details:
-    * https://docs.flutter.dev/platform-integration/web/initialization
-  -->
+  <div id="splash" role="status" aria-live="polite">
+    <div class="box">
+      <img class="logo" src="assets/assets/ui/logo.webp" alt="">
+      <p class="tag" data-l="en">Drag two matching dishes together to make a better one. Serve customers before they lose patience.</p>
+      <p class="tag" data-l="pl">Przeciągnij dwa takie same dania na siebie, żeby zrobić lepsze. Podawaj, zanim klientom skończy się cierpliwość.</p>
+      
+      <div class="bar"><i id="bar"></i></div>
+      <div class="st" id="st">…</div>
+      <div class="by"><a href="../../">Firewisp Studio</a></div>
+    </div>
+  </div>
+  <script>
+    (function () {
+      var pl = (navigator.language || '').toLowerCase().indexOf('pl') === 0;
+      try { var s = localStorage.getItem('fw-lang'); if (s) pl = (s === 'pl'); } catch (e) {}
+      document.querySelectorAll('[data-l]').forEach(function (el) { el.toggleAttribute('data-l-active', el.dataset.l === (pl ? 'pl' : 'en')); });
+      window.__fwSplash = {
+        pl: pl,
+        bar: document.getElementById('bar'), st: document.getElementById('st'),
+        set: function (frac, en, plt) { this.bar.style.width = Math.round(frac * 100) + '%'; this.st.textContent = this.pl ? plt : en; },
+        hide: function () { var s = document.getElementById('splash'); s.classList.add('hide'); setTimeout(function () { s.remove(); }, 400); }
+      };
+      window.__fwSplash.set(0.02, 'Downloading', 'Pobieranie');
+    })();
+  </script>
   <script src="flutter_bootstrap.js" async></script>
 </body>
 </html>

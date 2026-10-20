@@ -35,8 +35,30 @@ if (!window._flutter) {
 }
 _flutter.buildConfig = {"engineRevision":"69c8c61792f04cc809dfef0c910414fb9afc06cd","builds":[{"compileTarget":"dart2js","renderer":"canvaskit","mainJsPath":"main.dart.js"},{}]};
 
-_flutter.loader.load({
-  serviceWorkerSettings: {
-    serviceWorkerVersion: "502178992" /* Flutter's service worker is deprecated and will be removed in a future Flutter release. */
+
+// Rozgrzewamy cache realnym pobieraniem (pasek postępu), potem standardowy loader Fluttera
+// bierze te same pliki z cache. CanvasKit z własnego hostingu — bez CDN Google.
+(async function () {
+  const S = window.__fwSplash;
+  async function fetchProgress(url, from, to) {
+    try {
+      const r = await fetch(url, { cache: 'force-cache' });
+      const total = +r.headers.get('content-length') || 0;
+      if (!r.body || !total) { await r.arrayBuffer(); S.set(to, 'Downloading', 'Pobieranie'); return; }
+      const reader = r.body.getReader(); let got = 0;
+      while (true) { const { done, value } = await reader.read(); if (done) break; got += value.length; S.set(from + (to - from) * (got / total), 'Downloading', 'Pobieranie'); }
+    } catch (e) { S.set(to, 'Downloading', 'Pobieranie'); }
   }
-});
+  await fetchProgress('main.dart.js', 0.02, 0.45);
+  await fetchProgress('canvaskit/canvaskit.wasm', 0.45, 0.9);
+  S.set(0.92, 'Starting', 'Uruchamianie');
+  _flutter.loader.load({
+    config: { canvasKitBaseUrl: 'canvaskit/' },
+    onEntrypointLoaded: async function (engineInitializer) {
+      const appRunner = await engineInitializer.initializeEngine();
+      S.set(1, 'Ready', 'Gotowe');
+      await appRunner.runApp();
+      setTimeout(function () { S.hide(); }, 250);
+    }
+  });
+})();
