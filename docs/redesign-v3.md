@@ -36,3 +36,10 @@ Hero: `assets/hero-bg.webp` (1920×1280, 117 kB) + wariant 1280 px — to scena 
 
 ## Sprawdzone
 Konsola bez błędów; 1440 / 1280 / 1024 / 375 px; brak przewijania poziomego na 375 px; strona prywatności działa z nowym CSS; filtr ukrywa karty; karuzela zmienia pozycje; PL/EN.
+
+## v3.1 — poprawki UI (2026-10-21)
+- Wspólna struktura kart (`.pcard`, `.ncard`): ciało = kolumna flex, `min-width: 0`, status w osobnym wierszu `.status` nad tytułem, CTA dociągnięte do dołu (`margin-top: auto`), równe wysokości w rzędzie z gridu.
+- Plakietki `.tag`: stała wysokość 28 px, `white-space: nowrap`, `flex: none`, semantyka: `live` (zielony, dostępne), `review` (bursztyn, „Recenzja App Store”), `dev` (stonowany niebieski, w budowie), `soon` (neutralny).
+- Pendulum: pełny tytuł, status „App Store review” + „iPhone” w osobnym wierszu. Whirlpick: opis zgodny z aplikacją (koło losowania), statusy „Przeglądarka” + „Recenzja App Store”, miniatura = całe koło z wskaźnikiem (kadr kwadratowy 800×800, kadruje się w pionie i poziomie).
+- Mobile: wysokość karuzeli dopasowana do karty (bez pustki), mniejszy podpis karty, kropki karuzeli z polem dotyku 28 px, logo Sushi nie dotyka ramki telefonu, widoczny focus na chipach/segmentach/strzałkach.
+- Sprawdzone w przeglądarce: 1600, 1440, 1280, 1024, 768, 390, 360 px — brak przewijania poziomego, karty w rzędzie równe (547 px / 451 px na desktopie), plakietki 28 px (boczne karty karuzeli są skalowane ×0,86, stąd 24–26 px), filtry i karuzela działają, konsola czysta. Formularz beta bez zmian w logice.
