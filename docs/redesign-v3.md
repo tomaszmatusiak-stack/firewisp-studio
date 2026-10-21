@@ -19,7 +19,7 @@ Wykonanie promptu „Firewisp Studio — Complete Website Redesign” z mockupem
 | „Bog Night — a short, atmospheric adventure” | to lane defense, 36 nocy | opis zgodny z grą |
 | „Whirlpick — in review” bez przeglądarki | wersja web istnieje | przycisk „Wypróbuj w przeglądarce” + tag „iPhone · w recenzji” |
 | „Iskra — focus app, 30 %” | w budowie, bez daty | „W budowie”, maskotka = ikona apki |
-| Fraunces | brak pliku w repo, pobranie wymaga zgody | systemowy serif (Iowan Old Style / Palatino / Georgia / Noto Serif); podmiana na Fraunces = dwa pliki woff2 w `assets/fonts/` i jedna linia `--font-display` |
+| Fraunces | — | pobrana za zgodą Tomasza (21.10), self-hosted: `assets/fonts/fraunces-latin(.ext).woff2`, variable opsz/wght, 125 kB |
 
 ## Tło atmosferyczne
 Hero: `assets/hero-bg.webp` (1920×1280, 117 kB) + wariant 1280 px — to scena menu Bog Night (noc nad bagnem, chata, latarnie, księżyc), własny asset studia, przyciemniony gradientami CSS. Dziewięć „ogników” to elementy `<i>` animowane CSS-em tylko w hero; `prefers-reduced-motion` je wyłącza. Reszta strony: gradienty granat → butelkowa zieleń, bez dużych ilustracji.
