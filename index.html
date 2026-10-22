@@ -1,21 +1,29 @@
 <!doctype html>
 <html lang="en">
 <head>
+<script>
+  (function(){ try{ if (location.search.indexOf('lang=')>=0 || sessionStorage.getItem('fw-lang-chosen')) return; var s=localStorage.getItem('fw-lang'); var pl = s ? s==='pl' : (navigator.language||'').toLowerCase().indexOf('pl')===0; if (pl) location.replace('pl/' + location.hash); }catch(e){} })();
+</script>
+<script>try{localStorage.setItem('fw-lang','en');}catch(e){}</script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Firewisp Studio</title>
 <meta name="description" content="Firewisp Studio — small games and useful apps, independently crafted in Poland. Play Sushi Rush and Bog Night free in your browser; Kropla on the App Store.">
+<link rel="canonical" href="https://tomaszmatusiak-stack.github.io/firewisp-studio/">
+<link rel="alternate" hreflang="en" href="https://tomaszmatusiak-stack.github.io/firewisp-studio/">
+<link rel="alternate" hreflang="pl" href="https://tomaszmatusiak-stack.github.io/firewisp-studio/pl/">
+<link rel="alternate" hreflang="x-default" href="https://tomaszmatusiak-stack.github.io/firewisp-studio/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Firewisp Studio">
 <meta property="og:title" content="Firewisp Studio — Small games. Big personality.">
-<meta property="og:description" content="Little games with their own character and apps that just do their job. Play Sushi Rush and Bog Night free in your browser.">
+<meta property="og:description" content="Firewisp Studio — small games and useful apps, independently crafted in Poland. Play Sushi Rush and Bog Night free in your browser; Kropla on the App Store.">
 <meta property="og:url" content="https://tomaszmatusiak-stack.github.io/firewisp-studio/">
 <meta property="og:image" content="https://tomaszmatusiak-stack.github.io/firewisp-studio/assets/og.jpg">
 <meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
 <meta property="og:locale" content="en_US"><meta property="og:locale:alternate" content="pl_PL">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Firewisp Studio — Small games. Big personality.">
-<meta name="twitter:description" content="Little games with their own character and apps that just do their job. Play Sushi Rush and Bog Night free in your browser.">
+<meta name="twitter:description" content="Firewisp Studio — small games and useful apps, independently crafted in Poland. Play Sushi Rush and Bog Night free in your browser; Kropla on the App Store.">
 <meta name="twitter:image" content="https://tomaszmatusiak-stack.github.io/firewisp-studio/assets/og.jpg">
 <meta name="theme-color" content="#07131B">
 <link rel="icon" href="assets/icon-firewisp.webp" type="image/webp">
@@ -44,21 +52,19 @@
   <symbol id="i-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14.5 0 18M12 3c-3 3.5-3 14.5 0 18"/></symbol>
 </svg>
 
-<a class="skip" href="#main" data-l="en">Skip to content</a><a class="skip" href="#main" data-l="pl">Przejdź do treści</a>
+<a class="skip" href="#main">Skip to content</a>
 
 <header class="site-header" id="top">
   <div class="container header-row">
     <a class="brand" href="./" aria-label="Firewisp Studio"><img src="assets/icon-firewisp.webp" alt="" width="30" height="30"><span>Firewisp <i>Studio</i></span></a>
     <nav class="nav" id="nav" aria-label="Main">
-      <a href="#games" data-spy="games"><span data-l="en">Games</span><span data-l="pl">Gry</span></a>
-      <a href="#games" data-spy="apps" data-filter-jump="app"><span data-l="en">Apps</span><span data-l="pl">Aplikacje</span></a>
-      <a href="#about" data-spy="about"><span data-l="en">About</span><span data-l="pl">O studiu</span></a>
+      <a href="#games" data-spy="games"><span>Games</span></a>
+      <a href="#games" data-spy="apps" data-filter-jump="app"><span>Apps</span></a>
+      <a href="#about" data-spy="about"><span>About</span></a>
       <a href="#beta" data-spy="beta">Beta</a>
     </nav>
     <div class="header-actions">
-      <div class="lang" role="group" aria-label="Language / Język">
-        <button type="button" data-set-lang="en" aria-pressed="true" lang="en">EN</button><span class="sep" aria-hidden="true">/</span><button type="button" data-set-lang="pl" aria-pressed="false" lang="pl">PL</button>
-      </div>
+      <div class="lang" role="group" aria-label="Language / Język"><a href="#" lang="en" aria-current="page" data-set-lang="en">EN</a><span class="sep" aria-hidden="true">/</span><a href="pl/" lang="pl" aria-current="false" data-set-lang="pl">PL</a></div>
       <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav">
         <span class="sr-only">Menu</span>
         <svg class="bars" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M3 6h14M3 10h14M3 14h14"/></svg>
@@ -79,25 +85,25 @@
     </div>
     <div class="container hero-grid">
       <div class="hero-copy">
-        <span class="meta" data-l="en">Indie games &amp; apps from Poland</span>
-        <span class="meta" data-l="pl">Niezależne gry i aplikacje z Polski</span>
-        <h1 data-l="en">Small games.<br><em>Big personality.</em></h1>
-        <h1 data-l="pl">Małe gry.<br><em>Dużo charakteru.</em></h1>
-        <p class="lead" data-l="en">Indie games and useful apps made with care in Poland. Play, relax, be curious.</p>
-        <p class="lead" data-l="pl">Niezależne gry i przydatne aplikacje, robione z uwagą w Polsce. Graj, odpocznij, bądź ciekawy.</p>
+        <span class="meta">Indie games &amp; apps from Poland</span>
+        
+        <h1>Small games.<br><em>Big personality.</em></h1>
+        
+        <p class="lead">Indie games and useful apps made with care in Poland. Play, relax, be curious.</p>
+        
         <div class="seg" role="group" aria-label="Jump to">
-          <button type="button" data-seg="featured" aria-pressed="true"><svg class="ico"><use href="#i-flame"/></svg><span data-l="en">Featured</span><span data-l="pl">Wyróżnione</span></button>
-          <button type="button" data-seg="games" aria-pressed="false"><svg class="ico"><use href="#i-play"/></svg><span data-l="en">Playable now</span><span data-l="pl">Do grania</span></button>
-          <button type="button" data-seg="upcoming" aria-pressed="false"><svg class="ico"><use href="#i-sparkle"/></svg><span data-l="en">Coming next</span><span data-l="pl">W drodze</span></button>
+          <button type="button" data-seg="featured" aria-pressed="true"><svg class="ico"><use href="#i-flame"/></svg><span>Featured</span></button>
+          <button type="button" data-seg="games" aria-pressed="false"><svg class="ico"><use href="#i-play"/></svg><span>Playable now</span></button>
+          <button type="button" data-seg="upcoming" aria-pressed="false"><svg class="ico"><use href="#i-sparkle"/></svg><span>Coming next</span></button>
         </div>
         <div class="hero-cta">
-          <a class="btn btn-primary" href="play/sushi-rush/"><svg class="ico"><use href="#i-pad"/></svg><span data-l="en">Play Sushi Rush</span><span data-l="pl">Zagraj w Sushi Rush</span> <svg class="ico arrow"><use href="#i-arrow"/></svg></a>
-          <a class="btn btn-secondary" href="#games"><span data-l="en">Explore products</span><span data-l="pl">Zobacz produkty</span> <svg class="ico arrow"><use href="#i-arrow"/></svg></a>
+          <a class="btn btn-primary" href="play/sushi-rush/"><svg class="ico"><use href="#i-pad"/></svg><span>Play Sushi Rush</span> <svg class="ico arrow"><use href="#i-arrow"/></svg></a>
+          <a class="btn btn-secondary" href="#games"><span>Explore products</span> <svg class="ico arrow"><use href="#i-arrow"/></svg></a>
         </div>
         <div class="hero-facts" aria-label="Facts">
-          <span><svg class="ico"><use href="#i-leaf"/></svg><span data-l="en">No ads</span><span data-l="pl">Bez reklam</span></span>
-          <span><svg class="ico teal"><use href="#i-lock"/></svg><span data-l="en">No tracking</span><span data-l="pl">Bez śledzenia</span></span>
-          <span><svg class="ico cream"><use href="#i-phone"/></svg><span data-l="en">iPhone · Android · Browser</span><span data-l="pl">iPhone · Android · Przeglądarka</span></span>
+          <span><svg class="ico"><use href="#i-leaf"/></svg><span>No ads</span></span>
+          <span><svg class="ico teal"><use href="#i-lock"/></svg><span>No tracking</span></span>
+          <span><svg class="ico cream"><use href="#i-phone"/></svg><span>iPhone · Android · Browser</span></span>
         </div>
       </div>
 
@@ -105,25 +111,25 @@
         <div class="carousel" id="carousel" role="region" aria-roledescription="carousel" aria-label="Featured products" tabindex="0">
           <figure class="ccard" data-i="0" data-pos="0" data-href="play/sushi-rush/">
             <img src="assets/card-sushi.webp" width="720" height="960" alt="" fetchpriority="high" decoding="async">
-            <span class="tag featured"><span data-l="en">Featured</span><span data-l="pl">Wyróżnione</span></span>
+            <span class="tag featured"><span>Featured</span></span>
             <figcaption class="cap">
-              <div><h3>Sushi Rush</h3><p data-l="en">Merge Kitchen · playable in your browser</p><p data-l="pl">Merge Kitchen · do grania w przeglądarce</p></div>
+              <div><h3>Sushi Rush</h3><p>Merge Kitchen · playable in your browser</p></div>
               <a class="go" href="play/sushi-rush/" aria-label="Play Sushi Rush"><svg><use href="#i-arrow"/></svg></a>
             </figcaption>
           </figure>
           <figure class="ccard" data-i="1" data-pos="1" data-href="play/bog-night/">
             <img src="assets/card-bog.webp" width="720" height="960" alt="" decoding="async">
-            <span class="tag"><span data-l="en">Game</span><span data-l="pl">Gra</span></span>
+            <span class="tag"><span>Game</span></span>
             <figcaption class="cap">
-              <div><h3>Bog Night</h3><p data-l="en">Lane defense in Polish folklore</p><p data-l="pl">Obrona chaty w polskim folklorze</p></div>
+              <div><h3>Bog Night</h3><p>Lane defense in Polish folklore</p></div>
               <a class="go" href="play/bog-night/" aria-label="Play Bog Night"><svg><use href="#i-arrow"/></svg></a>
             </figcaption>
           </figure>
           <figure class="ccard" data-i="2" data-pos="-1" data-href="https://apps.apple.com/app/id6805807230">
             <img src="assets/card-kropla.webp" width="720" height="960" alt="" decoding="async">
-            <span class="tag"><span data-l="en">App</span><span data-l="pl">Apka</span></span>
+            <span class="tag"><span>App</span></span>
             <figcaption class="cap">
-              <div><h3>Kropla</h3><p data-l="en">A simple water tracker for iPhone</p><p data-l="pl">Prosty licznik wody na iPhone'a</p></div>
+              <div><h3>Kropla</h3><p>A simple water tracker for iPhone</p></div>
               <a class="go" href="https://apps.apple.com/app/id6805807230" aria-label="Kropla on the App Store"><svg><use href="#i-arrow"/></svg></a>
             </figcaption>
           </figure>
@@ -145,16 +151,16 @@
   <section class="section container" id="games">
     <div class="section-head reveal">
       <div class="title">
-        <h2 data-l="en">Playable now</h2><h2 data-l="pl">Do grania teraz</h2>
-        <span class="meta" data-l="en">Games &amp; apps you can try today</span><span class="meta" data-l="pl">Gry i aplikacje do wypróbowania dziś</span>
+        <h2>Playable now</h2>
+        <span class="meta">Games &amp; apps you can try today</span>
       </div>
       <div class="tools">
         <div class="chips" role="group" aria-label="Filter products">
-          <button class="chip" type="button" data-filter="all" aria-pressed="true"><span data-l="en">All</span><span data-l="pl">Wszystko</span></button>
-          <button class="chip" type="button" data-filter="game" aria-pressed="false"><span data-l="en">Games</span><span data-l="pl">Gry</span></button>
-          <button class="chip" type="button" data-filter="app" aria-pressed="false"><span data-l="en">Apps</span><span data-l="pl">Aplikacje</span></button>
-          <button class="chip" type="button" data-filter="browser" aria-pressed="false"><span data-l="en">Browser</span><span data-l="pl">Przeglądarka</span></button>
-          <button class="chip" type="button" data-filter="mobile" aria-pressed="false"><span data-l="en">Mobile</span><span data-l="pl">Telefon</span></button>
+          <button class="chip" type="button" data-filter="all" aria-pressed="true"><span>All</span></button>
+          <button class="chip" type="button" data-filter="game" aria-pressed="false"><span>Games</span></button>
+          <button class="chip" type="button" data-filter="app" aria-pressed="false"><span>Apps</span></button>
+          <button class="chip" type="button" data-filter="browser" aria-pressed="false"><span>Browser</span></button>
+          <button class="chip" type="button" data-filter="mobile" aria-pressed="false"><span>Mobile</span></button>
         </div>
       </div>
     </div>
@@ -164,28 +170,28 @@
           <img src="assets/thumb-sushi-bg.webp" width="1200" height="800" alt="" loading="lazy" decoding="async">
           <img class="logo" src="assets/sushi-logo.webp" width="1200" height="800" alt="" loading="lazy" decoding="async">
           <div class="phone"><video class="loop" muted loop playsinline preload="none" poster="assets/shot-sushi-play.webp" width="720" height="1360" aria-label="Sushi Rush gameplay: merging dishes on the board"><source src="assets/sushi-loop.webm" type="video/webm"><source src="assets/sushi-loop.mp4" type="video/mp4"></video></div>
-          <div class="badges"><span class="tag live"><span data-l="en">Browser</span><span data-l="pl">Przeglądarka</span></span></div>
+          <div class="badges"><span class="tag live"><span>Browser</span></span></div>
         </div>
         <div class="body">
-          <h3>Sushi Rush: Merge Kitchen</h3>
-          <p class="desc" data-l="en">Merge matching dishes, serve customers before they lose patience and open sushi bars from Tokyo to Osaka. 76 levels, no energy timers.</p>
-          <p class="desc" data-l="pl">Łącz takie same dania, obsługuj klientów, zanim stracą cierpliwość, i otwieraj bary sushi od Tokio po Osakę. 76 poziomów, bez liczników energii.</p>
-          <div class="dots"><span data-l="en">Casual</span><span data-l="pl">Casual</span><span>Merge</span><span data-l="en">Relaxing</span><span data-l="pl">Relaks</span></div>
-          <div class="cta"><a class="btn btn-primary btn-sm" href="play/sushi-rush/"><span data-l="en">Play now</span><span data-l="pl">Graj teraz</span> <svg class="ico arrow"><use href="#i-arrow"/></svg></a><a class="link" href="#beta"><span data-l="en">Want it on your phone? Join the beta</span><span data-l="pl">Chcesz na telefon? Zapisz się na betę</span></a></div>
+          <h3><a href="sushi-rush/">Sushi Rush: Merge Kitchen</a></h3>
+          <p class="desc">Merge matching dishes, serve customers before they lose patience and open sushi bars from Tokyo to Osaka. 76 levels, no energy timers.</p>
+          
+          <div class="dots"><span>Casual</span><span>Merge</span><span>Relaxing</span></div>
+          <div class="cta"><a class="btn btn-primary btn-sm" href="play/sushi-rush/"><span>Play now</span> <svg class="ico arrow"><use href="#i-arrow"/></svg></a><a class="link" href="#beta"><span>Want it on your phone? Join the beta</span></a></div>
         </div>
       </article>
 
       <article class="pcard reveal" data-cat="game browser" data-delay="1" style="--c: var(--c-bog)">
         <div class="thumb">
           <video class="loop" muted loop playsinline preload="none" poster="assets/shot-bog-night.webp" width="1280" height="720" aria-label="Bog Night gameplay: creatures crossing the boardwalk toward the hut at night"><source src="assets/bog-loop.webm" type="video/webm"><source src="assets/bog-loop.mp4" type="video/mp4"></video>
-          <div class="badges"><span class="tag live"><span data-l="en">Browser</span><span data-l="pl">Przeglądarka</span></span></div>
+          <div class="badges"><span class="tag live"><span>Browser</span></span></div>
         </div>
         <div class="body">
-          <h3>Bog Night</h3>
-          <p class="desc" data-l="en">Creatures from Polish folklore walk the boardwalks toward your hut every night. Hold them off with torches, salt and a rowan bow. Three worlds, 36 nights.</p>
-          <p class="desc" data-l="pl">Co noc po kładkach idą w stronę chaty stwory z polskich bagien. Odganiasz je pochodnią, solą i jarzębinowym łukiem. Trzy światy, 36 nocy.</p>
-          <div class="dots"><span data-l="en">Lane defense</span><span data-l="pl">Obrona torów</span><span data-l="en">Folklore</span><span data-l="pl">Folklor</span><span data-l="en">Landscape</span><span data-l="pl">Poziomo</span></div>
-          <div class="cta"><a class="btn btn-primary btn-sm" href="play/bog-night/"><span data-l="en">Play now</span><span data-l="pl">Graj teraz</span> <svg class="ico arrow"><use href="#i-arrow"/></svg></a><a class="link" href="#beta"><span data-l="en">iPhone version: join the beta</span><span data-l="pl">Wersja na iPhone'a: zapisz się na betę</span></a></div>
+          <h3><a href="bog-night/">Bog Night</a></h3>
+          <p class="desc">Creatures from Polish folklore walk the boardwalks toward your hut every night. Hold them off with torches, salt and a rowan bow. Three worlds, 36 nights.</p>
+          
+          <div class="dots"><span>Lane defense</span><span>Folklore</span><span>Landscape</span></div>
+          <div class="cta"><a class="btn btn-primary btn-sm" href="play/bog-night/"><span>Play now</span> <svg class="ico arrow"><use href="#i-arrow"/></svg></a><a class="link" href="#beta"><span>iPhone version: join the beta</span></a></div>
         </div>
       </article>
 
@@ -195,11 +201,11 @@
           <div class="badges"><span class="tag store"><svg class="ico"><use href="#i-apple"/></svg> App Store</span></div>
         </div>
         <div class="body">
-          <h3>Kropla</h3>
-          <p class="desc" data-l="en">One tap logs a glass. Kropla works out your daily goal, shows progress on a widget and nudges you when you forget. Nothing leaves your phone.</p>
-          <p class="desc" data-l="pl">Jedno dotknięcie to jedna szklanka. Kropla liczy cel dzienny, pokazuje postęp na widżecie i przypomina, gdy zapomnisz. Nic nie wychodzi poza telefon.</p>
-          <div class="dots"><span data-l="en">Health</span><span data-l="pl">Zdrowie</span><span data-l="en">Minimal</span><span data-l="pl">Minimalna</span><span data-l="en">Daily habit</span><span data-l="pl">Nawyk</span></div>
-          <div class="cta"><a class="btn btn-primary btn-sm" href="https://apps.apple.com/app/id6805807230"><span data-l="en">View on App Store</span><span data-l="pl">Zobacz w App Store</span> <svg class="ico arrow"><use href="#i-arrow"/></svg></a><span class="meta-note"><span data-l="en">Android: closed testing</span><span data-l="pl">Android: test zamknięty</span></span></div>
+          <h3><a href="kropla/">Kropla</a></h3>
+          <p class="desc">One tap logs a glass. Kropla works out your daily goal, shows progress on a widget and nudges you when you forget. Nothing leaves your phone.</p>
+          
+          <div class="dots"><span>Health</span><span>Minimal</span><span>Daily habit</span></div>
+          <div class="cta"><a class="btn btn-primary btn-sm" href="https://apps.apple.com/app/id6805807230"><span>View on App Store</span> <svg class="ico arrow"><use href="#i-arrow"/></svg></a><span class="meta-note"><span>Android: closed testing</span></span></div>
         </div>
       </article>
     </div>
@@ -209,43 +215,43 @@
   <section class="section container" id="upcoming">
     <div class="section-head reveal">
       <div class="title">
-        <h2 data-l="en">What's next</h2><h2 data-l="pl">Co dalej</h2>
-        <span class="meta" data-l="en">Projects in the works</span><span class="meta" data-l="pl">Projekty w przygotowaniu</span>
+        <h2>What's next</h2>
+        <span class="meta">Projects in the works</span>
       </div>
-      <a class="view-all" href="#beta"><span data-l="en">Get early builds</span><span data-l="pl">Wczesne wersje przez betę</span> <svg class="ico"><use href="#i-arrow"/></svg></a>
+      <a class="view-all" href="#beta"><span>Get early builds</span> <svg class="ico"><use href="#i-arrow"/></svg></a>
     </div>
     <div class="grid-3 next">
       <article class="ncard reveal" style="--c: var(--c-pendulum)">
         <div class="thumb"><img src="assets/thumb-pendulum.webp" width="800" height="800" alt="" loading="lazy" decoding="async"></div>
         <div class="body">
-          <div class="status"><span class="tag review"><span data-l="en">App Store review</span><span data-l="pl">Recenzja App Store</span></span><span class="tag"><span data-l="en">iPhone</span><span data-l="pl">iPhone</span></span><span class="tag soon"><span data-l="en">Web prototype</span><span data-l="pl">Prototyp web</span></span></div>
-          <h3>Pendulum: Rope Swing</h3>
-          <p class="desc" data-l="en">Hold to grab the rope, let go to fly. A hundred levels in ten painted worlds and one daily run everyone plays the same day.</p>
-          <p class="desc" data-l="pl">Przytrzymujesz, żeby złapać linę, puszczasz, żeby polecieć. Sto poziomów w dziesięciu światach i jeden dzienny poziom, ten sam dla wszystkich.</p>
-          <div class="dots"><span data-l="en">Timing</span><span data-l="pl">Timing</span><span data-l="en">One tap</span><span data-l="pl">Jeden palec</span><span>iPhone</span></div>
-          <div class="cta"><a class="btn btn-sm" href="play/pendulum/"><span data-l="en">Try the web prototype</span><span data-l="pl">Wypróbuj prototyp web</span> <svg class="ico arrow"><use href="#i-arrow"/></svg></a><a class="link" href="#beta"><span data-l="en">Get the iPhone version early via the beta</span><span data-l="pl">Wersja na iPhone'a wcześniej przez betę</span></a></div>
+          <div class="status"><span class="tag review"><span>App Store review</span></span><span class="tag"><span>iPhone</span></span><span class="tag soon"><span>Web prototype</span></span></div>
+          <h3><a href="pendulum/">Pendulum: Rope Swing</a></h3>
+          <p class="desc">Hold to grab the rope, let go to fly. A hundred levels in ten painted worlds and one daily run everyone plays the same day.</p>
+          
+          <div class="dots"><span>Timing</span><span>One tap</span><span>iPhone</span></div>
+          <div class="cta"><a class="btn btn-sm" href="play/pendulum/"><span>Try the web prototype</span> <svg class="ico arrow"><use href="#i-arrow"/></svg></a><a class="link" href="#beta"><span>Get the iPhone version early via the beta</span></a></div>
         </div>
       </article>
       <article class="ncard reveal" data-delay="1" style="--c: var(--c-whirlpick)">
         <div class="thumb"><img src="assets/thumb-whirlpick.webp" width="800" height="800" alt="" loading="lazy" decoding="async"></div>
         <div class="body">
-          <div class="status"><span class="tag live"><span data-l="en">Browser</span><span data-l="pl">Przeglądarka</span></span><span class="tag review"><span data-l="en">App Store review</span><span data-l="pl">Recenzja App Store</span></span></div>
-          <h3>Whirlpick</h3>
-          <p class="desc" data-l="en">Can't decide? Add your options, spin the wheel and let chance choose for you. Paste a whole list at once, knock out options one by one.</p>
-          <p class="desc" data-l="pl">Nie możesz się zdecydować? Wpisz opcje, zakręć kołem i niech los wybierze. Wklejasz całą listę naraz, odpadają kolejne opcje.</p>
-          <div class="dots"><span data-l="en">Decisions</span><span data-l="pl">Decyzje</span><span data-l="en">No account</span><span data-l="pl">Bez konta</span><span data-l="en">Browser</span><span data-l="pl">Przeglądarka</span></div>
-          <div class="cta"><a class="btn btn-sm" href="play/whirlpick/"><span data-l="en">Try in browser</span><span data-l="pl">Wypróbuj w przeglądarce</span> <svg class="ico arrow"><use href="#i-arrow"/></svg></a></div>
+          <div class="status"><span class="tag live"><span>Browser</span></span><span class="tag review"><span>App Store review</span></span></div>
+          <h3><a href="whirlpick/">Whirlpick</a></h3>
+          <p class="desc">Can't decide? Add your options, spin the wheel and let chance choose for you. Paste a whole list at once, knock out options one by one.</p>
+          
+          <div class="dots"><span>Decisions</span><span>No account</span><span>Browser</span></div>
+          <div class="cta"><a class="btn btn-sm" href="play/whirlpick/"><span>Try in browser</span> <svg class="ico arrow"><use href="#i-arrow"/></svg></a></div>
         </div>
       </article>
       <article class="ncard reveal" data-delay="2" style="--c: var(--c-iskra)">
         <div class="thumb"><img src="assets/thumb-firewisp.webp" width="800" height="800" alt="" loading="lazy" decoding="async"></div>
         <div class="body">
-          <div class="status"><span class="tag review"><span data-l="en">Beta coming soon</span><span data-l="pl">Beta wkrótce</span></span><span class="tag"><span data-l="en">iPhone · Android</span><span data-l="pl">iPhone · Android</span></span></div>
-          <h3>Firewisp</h3>
-          <p class="desc" data-l="en">Tell Iskra, your companion in the app, what you want to achieve. She asks a few questions, lays the goal out as a route of weeks and milestones, then keeps your streak alive. No forms, just talk.</p>
-          <p class="desc" data-l="pl">Mówisz Iskrze, swojej towarzyszce w apce, co chcesz osiągnąć. Dopytuje, układa cel w trasę z tygodni i kamieni milowych, a potem pilnuje, żeby seria nie zgasła. Bez formularzy, po prostu piszesz.</p>
-          <div class="dots"><span data-l="en">Goals</span><span data-l="pl">Cele</span><span data-l="en">Streaks</span><span data-l="pl">Serie dni</span><span data-l="en">AI companion</span><span data-l="pl">Towarzyszka AI</span></div>
-          <div class="cta"><a class="btn btn-primary btn-sm" href="#beta"><span data-l="en">Get the beta first</span><span data-l="pl">Chcę betę jako pierwszy</span> <svg class="ico arrow"><use href="#i-arrow"/></svg></a><span class="meta-note" data-l="en">TestFlight and Google Play links go to the list first</span><span class="meta-note" data-l="pl">Linki TestFlight i Google Play najpierw trafiają na listę</span></div>
+          <div class="status"><span class="tag review"><span>Beta coming soon</span></span><span class="tag"><span>iPhone · Android</span></span></div>
+          <h3><a href="firewisp/">Firewisp</a></h3>
+          <p class="desc">Tell Iskra, your companion in the app, what you want to achieve. She asks a few questions, lays the goal out as a route of weeks and milestones, then keeps your streak alive. No forms, just talk.</p>
+          
+          <div class="dots"><span>Goals</span><span>Streaks</span><span>AI companion</span></div>
+          <div class="cta"><a class="btn btn-primary btn-sm" href="#beta"><span>Get the beta first</span> <svg class="ico arrow"><use href="#i-arrow"/></svg></a><span class="meta-note">TestFlight and Google Play links go to the list first</span></div>
         </div>
       </article>
     </div>
@@ -255,19 +261,19 @@
   <section class="section container" id="about">
     <div class="about reveal">
       <div class="intro">
-        <h2 data-l="en">Independent <em>by design.</em></h2>
-        <h2 data-l="pl">Niezależne <em>z wyboru.</em></h2>
+        <h2>Independent <em>by design.</em></h2>
+        
         <div class="prose">
-          <p data-l="en">Firewisp is one person in Poland making the games and apps I wanted on my own phone. Being small is the point: every screen, sound and price is my own call, and when players tell me something is off, I can fix it the same week.</p>
-          <p data-l="pl">Firewisp to jedna osoba. Robię gry i aplikacje, których sam chciałem używać na telefonie. Mała skala to nie przypadek: każdy ekran, dźwięk i cena to moja decyzja, a kiedy gracze piszą, że coś nie gra, poprawiam to w tym samym tygodniu.</p>
-          <p data-l="en">I'd rather release a few things that feel finished than a lot of things that feel like a sales funnel.</p>
-          <p data-l="pl">Wolę wydać kilka rzeczy porządnie skończonych niż dużo takich, które tylko wyciągają pieniądze.</p>
+          <p>Firewisp is one person in Poland making the games and apps I wanted on my own phone. Being small is the point: every screen, sound and price is my own call, and when players tell me something is off, I can fix it the same week.</p>
+          
+          <p>I'd rather release a few things that feel finished than a lot of things that feel like a sales funnel.</p>
+          
         </div>
       </div>
       <ul class="values">
-        <li style="--c: var(--sage)"><span class="orb"><svg><use href="#i-leaf"/></svg></span><strong data-l="en">No ads, ever</strong><strong data-l="pl">Bez reklam, nigdy</strong><span data-l="en">Everything is playable without paying. Purchases are optional and say exactly what you get.</span><span data-l="pl">We wszystko da się grać bez płacenia. Zakupy są opcjonalne i dokładnie opisane.</span></li>
-        <li style="--c: var(--teal)"><span class="orb"><svg><use href="#i-lock"/></svg></span><strong data-l="en">Your data stays yours</strong><strong data-l="pl">Twoje dane zostają Twoje</strong><span data-l="en">No ad networks, no selling data. Each app's privacy policy says plainly what it stores and where.</span><span data-l="pl">Żadnych sieci reklamowych, żadnego handlu danymi. Polityka każdej aplikacji mówi wprost, co zapisuje i gdzie.</span></li>
-        <li style="--c: var(--accent)"><span class="orb"><svg><use href="#i-heart"/></svg></span><strong data-l="en">No tricks</strong><strong data-l="pl">Bez sztuczek</strong><span data-l="en">No energy timers, fake countdowns or "last chance" offers. A game should be fun on its own.</span><span data-l="pl">Bez liczników energii, sztucznego odliczania i ofert „ostatnia szansa". Gra ma być dobra sama z siebie.</span></li>
+        <li style="--c: var(--sage)"><span class="orb"><svg><use href="#i-leaf"/></svg></span><strong>No ads, ever</strong><span>Everything is playable without paying. Purchases are optional and say exactly what you get.</span></li>
+        <li style="--c: var(--teal)"><span class="orb"><svg><use href="#i-lock"/></svg></span><strong>Your data stays yours</strong><span>No ad networks, no selling data. Each app's privacy policy says plainly what it stores and where.</span></li>
+        <li style="--c: var(--accent)"><span class="orb"><svg><use href="#i-heart"/></svg></span><strong>No tricks</strong><span>No energy timers, fake countdowns or "last chance" offers. A game should be fun on its own.</span></li>
       </ul>
     </div>
   </section>
@@ -276,24 +282,24 @@
   <section class="section container" id="beta">
     <div class="beta reveal">
       <div>
-        <span class="meta" data-l="en">Join our beta</span><span class="meta" data-l="pl">Dołącz do bety</span>
-        <h2 data-l="en">Try new builds before anyone else.</h2><h2 data-l="pl">Testuj nowe wersje przed innymi.</h2>
-        <p class="muted" data-l="en">Leave your e-mail and I'll send you a TestFlight or Google Play link whenever there's something new to test. A few e-mails a year, no newsletter. To leave the list, just reply.</p>
-        <p class="muted" data-l="pl">Zostaw adres, a wyślę Ci link do TestFlight albo Google Play, gdy będzie coś nowego do przetestowania. Kilka maili w roku, bez newslettera. Żeby się wypisać, wystarczy odpisać.</p>
+        <span class="meta">Join our beta</span>
+        <h2>Try new builds before anyone else.</h2>
+        <p class="muted">Leave your e-mail and I'll send you a TestFlight or Google Play link whenever there's something new to test. A few e-mails a year, no newsletter. To leave the list, just reply.</p>
+        
         <form id="beta-form" novalidate>
           <label class="hp" for="website">Website</label><input class="hp" id="website" name="website" tabindex="-1" autocomplete="off">
           <label class="sr-only" for="beta-email">E-mail</label>
           <div class="field"><svg class="ico"><use href="#i-mail"/></svg><input type="email" id="beta-email" name="email" required autocomplete="email" placeholder="you@example.com"></div>
-          <button class="btn btn-primary" type="submit"><span data-l="en">Join the beta</span><span data-l="pl">Dołącz do bety</span> <svg class="ico arrow"><use href="#i-arrow"/></svg></button>
+          <button class="btn btn-primary" type="submit"><span>Join the beta</span> <svg class="ico arrow"><use href="#i-arrow"/></svg></button>
         </form>
-        <p class="note" id="beta-note" aria-live="polite"><span data-l="en">By joining you agree to the <a href="privacy.html">privacy notice</a>.</span><span data-l="pl">Dołączając, akceptujesz <a href="privacy.html">informację o prywatności</a>.</span></p>
+        <p class="note" id="beta-note" aria-live="polite"><span>By joining you agree to the <a href="privacy/">privacy notice</a>.</span></p>
       </div>
       <ul class="benefits">
-        <li><svg class="ico"><use href="#i-check"/></svg><span data-l="en"><b>Next up: Firewisp</b> (goals with Iskra), test builds for iPhone and Android are ready and go out to the list first</span><span data-l="pl"><b>Najbliższa beta: Firewisp</b> (cele z Iskrą), wersje testowe na iPhone'a i Androida są gotowe i trafią najpierw na listę</span></li>
-        <li><svg class="ico"><use href="#i-check"/></svg><span data-l="en">Sushi Rush, Bog Night, Whirlpick and Turniej: browser now, phone test builds next</span><span data-l="pl">Sushi Rush, Bog Night, Whirlpick i Turniej: dziś przeglądarka, potem testy na telefon</span></li>
-        <li><svg class="ico"><use href="#i-check"/></svg><span data-l="en">Kropla for Android and Weight Tracker: closed Google Play tests</span><span data-l="pl">Kropla na Androida i Weight Tracker: zamknięte testy w Google Play</span></li>
-        <li><svg class="ico"><use href="#i-check"/></svg><span data-l="en">Your feedback lands in the next build, usually within a week</span><span data-l="pl">Twoje uwagi trafiają do następnej wersji, zwykle w ciągu tygodnia</span></li>
-        <li><svg class="ico"><use href="#i-check"/></svg><span data-l="en">No spam, no newsletter, reply to leave</span><span data-l="pl">Bez spamu i newslettera, wypisujesz się odpowiedzią</span></li>
+        <li><svg class="ico"><use href="#i-check"/></svg><span><b>Next up: Firewisp</b> (goals with Iskra), test builds for iPhone and Android are ready and go out to the list first</span></li>
+        <li><svg class="ico"><use href="#i-check"/></svg><span>Sushi Rush, Bog Night, Whirlpick and Turniej: browser now, phone test builds next</span></li>
+        <li><svg class="ico"><use href="#i-check"/></svg><span>Kropla for Android and Weight Tracker: closed Google Play tests</span></li>
+        <li><svg class="ico"><use href="#i-check"/></svg><span>Your feedback lands in the next build, usually within a week</span></li>
+        <li><svg class="ico"><use href="#i-check"/></svg><span>No spam, no newsletter, reply to leave</span></li>
       </ul>
     </div>
   </section>
@@ -304,23 +310,21 @@
     <div class="footer-row">
       <div style="display:flex;align-items:center;gap:20px;flex-wrap:wrap">
         <a class="brand" href="#top"><img src="assets/icon-firewisp.webp" alt="" width="30" height="30"><span>Firewisp <i>Studio</i></span></a>
-        <span class="tagline" data-l="en">Indie games &amp; apps from Poland.</span><span class="tagline" data-l="pl">Niezależne gry i aplikacje z Polski.</span>
+        <span class="tagline">Indie games &amp; apps from Poland.</span>
       </div>
       <nav class="footer-links" aria-label="Footer">
-        <a href="#games"><span data-l="en">Games</span><span data-l="pl">Gry</span></a>
-        <a href="#apps"><span data-l="en">Apps</span><span data-l="pl">Aplikacje</span></a>
-        <a href="#about"><span data-l="en">About</span><span data-l="pl">O studiu</span></a>
+        <a href="#games"><span>Games</span></a>
+        <a href="#apps"><span>Apps</span></a>
+        <a href="#about"><span>About</span></a>
         <a href="#beta">Beta</a>
-        <a href="privacy.html"><span data-l="en">Privacy</span><span data-l="pl">Prywatność</span></a>
+        <a href="privacy/"><span>Privacy</span></a>
         <a href="mailto:tomasz.matusiak@post.pl">tomasz.matusiak@post.pl</a>
       </nav>
     </div>
-    <div class="footer-products">
-      <a href="play/sushi-rush/">Sushi Rush</a><a href="play/bog-night/">Bog Night</a><a href="play/whirlpick/">Whirlpick</a><a href="play/turniej/">Turniej</a><a href="https://apps.apple.com/app/id6805807230">Kropla · App Store</a><a href="play/pendulum/">Pendulum</a><a href="#upcoming">Firewisp</a><a href="https://github.com/tomaszmatusiak-stack/firewisp-studio">GitHub</a>
-    </div>
+    <div class="footer-products"><a href="sushi-rush/">Sushi Rush</a><a href="bog-night/">Bog Night</a><a href="kropla/">Kropla</a><a href="whirlpick/">Whirlpick</a><a href="pendulum/">Pendulum</a><a href="turniej/">Turniej</a><a href="firewisp/">Firewisp</a><a href="https://github.com/tomaszmatusiak-stack/firewisp-studio">GitHub</a></div>
     <div class="footer-bottom">
       <span>© 2026 Firewisp Studio · Tomasz Matusiak</span>
-      <span data-l="en">Made in Poland. No cookies, no trackers.</span><span data-l="pl">Zrobione w Polsce. Bez ciasteczek i śledzenia.</span>
+      <span>Made in Poland. No cookies, no trackers.</span>
     </div>
   </div>
 </footer>
@@ -433,7 +437,7 @@
   const form = document.getElementById('beta-form'), note = document.getElementById('beta-note');
   const say = (en, pl, cls) => {
     note.className = 'note ' + (cls || '');
-    note.innerHTML = `<span data-l="en">${en}</span><span data-l="pl">${pl}</span>`;
+    note.innerHTML = `<span>${en}</span><span>${pl}</span>`;
     note.querySelectorAll('[data-l]').forEach(el => el.toggleAttribute('data-l-active', el.dataset.l === document.documentElement.lang));
   };
   form.addEventListener('submit', async (e) => {
@@ -450,6 +454,12 @@
     } catch (err) { say('No connection. Try again in a moment.', 'Brak połączenia. Spróbuj za chwilę.', 'err'); }
     btn.disabled = false;
   });
+</script>
+<script>
+  // język strony = adres (/ = EN, /pl/ = PL); wybór zapisany dla gier; na "/" pierwsza wizyta z polską przeglądarką idzie do /pl/
+  (function(){ var L=document.documentElement.lang; try{ localStorage.setItem('fw-lang', L); }catch(e){}
+    document.querySelectorAll('[data-set-lang]').forEach(function(a){ a.addEventListener('click', function(){ try{ localStorage.setItem('fw-lang', a.dataset.setLang); sessionStorage.setItem('fw-lang-chosen','1'); }catch(e){} }); });
+  })();
 </script>
 </body>
 </html>

@@ -1,0 +1,1170 @@
+[
+  {
+    "slug": "sushi-rush",
+    "name": "Sushi Rush: Merge Kitchen",
+    "color": "#FF6B4A",
+    "icon": "assets/icon-sushi-rush.webp",
+    "hero": "assets/card-sushi.webp",
+    "hero_w": 720,
+    "hero_h": 960,
+    "og_art": "assets/card-sushi.webp",
+    "kind": {
+      "en": "Merge game · browser",
+      "pl": "Gra merge · przeglądarka"
+    },
+    "status": [
+      [
+        "live",
+        {
+          "en": "Playable in the browser",
+          "pl": "Grywalna w przeglądarce"
+        }
+      ],
+      [
+        "soon",
+        {
+          "en": "App Store & Google Play soon",
+          "pl": "App Store i Google Play wkrótce"
+        }
+      ]
+    ],
+    "tagline": {
+      "en": "Merge dishes, keep hungry customers happy and open sushi bars across Japan.",
+      "pl": "Łącz dania, karm głodnych klientów i otwieraj kolejne bary sushi w Japonii."
+    },
+    "intro": {
+      "en": "Drag two matching dishes together to make a better one, serve customers before they lose patience, and spend what you earn on new restaurants from Tokyo to Osaka. 76 levels in three worlds, combos and boosters. No ads, no energy timers. In the browser your progress is saved on your device.",
+      "pl": "Przeciągasz dwa takie same dania, żeby zrobić lepsze, podajesz je, zanim klientom skończy się cierpliwość, a za zarobione monety otwierasz kolejne lokale od Tokio po Osakę. 76 poziomów w trzech światach, combo i boostery. Bez reklam, bez liczników energii. W przeglądarce postęp zapisuje się na Twoim urządzeniu."
+    },
+    "cta": [
+      {
+        "label": {
+          "en": "Play now in the browser",
+          "pl": "Graj teraz w przeglądarce"
+        },
+        "href": "play/sushi-rush/",
+        "primary": true
+      },
+      {
+        "label": {
+          "en": "Join the beta for phone builds",
+          "pl": "Beta na telefon"
+        },
+        "href": "#beta"
+      }
+    ],
+    "beta_note": {
+      "en": "Android and iPhone test builds go to the beta list first.",
+      "pl": "Wersje testowe na Androida i iPhone'a trafiają najpierw na listę beta."
+    },
+    "shots": [
+      {
+        "src": "assets/shot-sushi-menu.webp",
+        "w": 720,
+        "h": 1564,
+        "alt": {
+          "en": "Main menu with the sushi bar and daily special",
+          "pl": "Menu główne z barem sushi i specjalnością dnia"
+        }
+      },
+      {
+        "src": "assets/shot-sushi-play.webp",
+        "w": 720,
+        "h": 1360,
+        "alt": {
+          "en": "The board: merging dishes during a level",
+          "pl": "Plansza: łączenie dań w trakcie poziomu"
+        }
+      }
+    ],
+    "features": [
+      {
+        "t": {
+          "en": "Merge on a free board",
+          "pl": "Merge na wolnej planszy"
+        },
+        "d": {
+          "en": "Dishes sit anywhere on the counter; two of a kind become one better dish. No grid, no rows to clear.",
+          "pl": "Dania leżą gdziekolwiek na ladzie; dwa takie same dają jedno lepsze. Bez siatki i bez czyszczenia rzędów."
+        }
+      },
+      {
+        "t": {
+          "en": "Customers with patience",
+          "pl": "Klienci z cierpliwością"
+        },
+        "d": {
+          "en": "Each order has a timer and a mood. Serve in time for tips and combos; let it run out and the customer leaves.",
+          "pl": "Każde zamówienie ma czas i humor. Podaj na czas, a dostaniesz napiwek i combo; przeciągnij, a klient wyjdzie."
+        }
+      },
+      {
+        "t": {
+          "en": "Three worlds, 76 levels",
+          "pl": "Trzy światy, 76 poziomów"
+        },
+        "d": {
+          "en": "Tokyo, Kyoto and Osaka, each with its own decor, dishes and generators. Coins open new restaurants on the map.",
+          "pl": "Tokio, Kioto i Osaka, każde z własnym wystrojem, daniami i generatorami. Za monety otwierasz kolejne lokale na mapie."
+        }
+      },
+      {
+        "t": {
+          "en": "Fair by design",
+          "pl": "Uczciwa z założenia"
+        },
+        "d": {
+          "en": "No ads and no energy. Optional gem packs exist, but every level can be finished without them.",
+          "pl": "Bez reklam i bez energii. Są opcjonalne pakiety klejnotów, ale każdy poziom da się przejść bez nich."
+        }
+      }
+    ],
+    "facts": [
+      {
+        "k": {
+          "en": "Platforms",
+          "pl": "Platformy"
+        },
+        "v": {
+          "en": "Browser now · iPhone and Android in preparation",
+          "pl": "Przeglądarka teraz · iPhone i Android w przygotowaniu"
+        }
+      },
+      {
+        "k": {
+          "en": "Price",
+          "pl": "Cena"
+        },
+        "v": {
+          "en": "Free; optional gem packs",
+          "pl": "Darmowa; opcjonalne pakiety klejnotów"
+        }
+      },
+      {
+        "k": {
+          "en": "Languages",
+          "pl": "Języki"
+        },
+        "v": {
+          "en": "English, Polish",
+          "pl": "polski, angielski"
+        }
+      },
+      {
+        "k": {
+          "en": "Made with",
+          "pl": "Technologia"
+        },
+        "v": {
+          "en": "Flutter, all art and sounds made in-house",
+          "pl": "Flutter, cała grafika i dźwięki własne"
+        }
+      }
+    ]
+  },
+  {
+    "slug": "bog-night",
+    "name": "Bog Night",
+    "color": "#40B5AA",
+    "icon": "assets/icon-firewisp.webp",
+    "hero": "assets/card-bog.webp",
+    "hero_w": 720,
+    "hero_h": 960,
+    "og_art": "assets/card-bog.webp",
+    "landscape": true,
+    "kind": {
+      "en": "Lane defense · browser",
+      "pl": "Obrona torów · przeglądarka"
+    },
+    "status": [
+      [
+        "live",
+        {
+          "en": "Playable in the browser",
+          "pl": "Grywalna w przeglądarce"
+        }
+      ],
+      [
+        "soon",
+        {
+          "en": "iPhone version in the works",
+          "pl": "Wersja na iPhone'a w drodze"
+        }
+      ]
+    ],
+    "tagline": {
+      "en": "Keep the hut standing until sunrise.",
+      "pl": "Dotrwaj z chatą do świtu."
+    },
+    "intro": {
+      "en": "Creatures from Polish folklore — strzyga, utopiec, will-o'-the-wisps, a werewolf — walk the boardwalks toward your hut every night. You hold them off with torches, salt, a rowan bow and, when it gets bad, a powder keg. Three worlds, 36 nights, bosses that change form halfway through. A landscape game: best on a laptop or with the phone turned sideways.",
+      "pl": "Co noc po kładkach idą w stronę chaty stwory z polskich bagien: strzygi, utopce, ogniki, wilkołak. Odganiasz je pochodnią, solą, jarzębinowym łukiem, a jak jest źle, beczułką prochu. Trzy światy, 36 nocy, bossowie, którzy w połowie walki zmieniają postać. Gra pozioma: najlepiej na laptopie albo z telefonem obróconym bokiem."
+    },
+    "cta": [
+      {
+        "label": {
+          "en": "Play now in the browser",
+          "pl": "Graj teraz w przeglądarce"
+        },
+        "href": "play/bog-night/",
+        "primary": true
+      },
+      {
+        "label": {
+          "en": "iPhone beta: join the list",
+          "pl": "Beta na iPhone'a: zapisz się"
+        },
+        "href": "#beta"
+      }
+    ],
+    "shots": [
+      {
+        "src": "assets/shot-bog-menu.webp",
+        "w": 1280,
+        "h": 720,
+        "alt": {
+          "en": "Main menu: the hut on the bog at night",
+          "pl": "Menu główne: chata na bagnie nocą"
+        }
+      },
+      {
+        "src": "assets/shot-bog-night.webp",
+        "w": 1280,
+        "h": 720,
+        "alt": {
+          "en": "A wave of creatures crossing the boardwalk",
+          "pl": "Fala stworów na kładce"
+        }
+      }
+    ],
+    "features": [
+      {
+        "t": {
+          "en": "Tap the weapon, tap the lane",
+          "pl": "Stuknij broń, stuknij kładkę"
+        },
+        "d": {
+          "en": "One hand, no joystick. Each weapon has a type the creatures are weak to; switching at the right moment is the whole skill.",
+          "pl": "Jedna ręka, bez joysticka. Każda broń ma typ, na który stwory są słabe; przełączenie w porę to cała sztuka."
+        }
+      },
+      {
+        "t": {
+          "en": "Slavic bestiary",
+          "pl": "Słowiański bestiariusz"
+        },
+        "d": {
+          "en": "Fifteen creatures with their own habits, and bosses with three phases that change what works against them.",
+          "pl": "Piętnaście stworów z własnymi nawykami i bossowie z trzema fazami, w których działa coś innego."
+        }
+      },
+      {
+        "t": {
+          "en": "Day and night",
+          "pl": "Dzień i noc"
+        },
+        "d": {
+          "en": "By day you repair, upgrade the homestead and pick herbs; by night you hold the door. Three regions, twelve nights each.",
+          "pl": "W dzień naprawiasz, ulepszasz zagrodę i zbierasz zioła; nocą trzymasz drzwi. Trzy krainy po dwanaście nocy."
+        }
+      },
+      {
+        "t": {
+          "en": "Hand-painted",
+          "pl": "Ręcznie malowane"
+        },
+        "d": {
+          "en": "Backgrounds, creatures and the hut are painted art, with music and sounds synthesized for the game.",
+          "pl": "Tła, stwory i chata to malowana grafika, a muzyka i dźwięki są syntetyzowane dla gry."
+        }
+      }
+    ],
+    "facts": [
+      {
+        "k": {
+          "en": "Platforms",
+          "pl": "Platformy"
+        },
+        "v": {
+          "en": "Browser now · iPhone build exists, beta next",
+          "pl": "Przeglądarka teraz · build na iPhone'a gotowy, beta następna"
+        }
+      },
+      {
+        "k": {
+          "en": "Price",
+          "pl": "Cena"
+        },
+        "v": {
+          "en": "Free in the browser",
+          "pl": "Darmowa w przeglądarce"
+        }
+      },
+      {
+        "k": {
+          "en": "Languages",
+          "pl": "Języki"
+        },
+        "v": {
+          "en": "English, Polish (as „Noc na Błotach”)",
+          "pl": "polski („Noc na Błotach”), angielski"
+        }
+      },
+      {
+        "k": {
+          "en": "Made with",
+          "pl": "Technologia"
+        },
+        "v": {
+          "en": "TypeScript, Phaser 3, Capacitor",
+          "pl": "TypeScript, Phaser 3, Capacitor"
+        }
+      }
+    ]
+  },
+  {
+    "slug": "kropla",
+    "name": "Kropla",
+    "color": "#5AB3FF",
+    "icon": "assets/icon-kropla.webp",
+    "hero": "assets/card-kropla.webp",
+    "hero_w": 720,
+    "hero_h": 960,
+    "og_art": "assets/card-kropla.webp",
+    "kind": {
+      "en": "Water tracker · App Store",
+      "pl": "Licznik wody · App Store"
+    },
+    "status": [
+      [
+        "store",
+        {
+          "en": "On the App Store",
+          "pl": "W App Store"
+        }
+      ],
+      [
+        "soon",
+        {
+          "en": "Android in closed testing",
+          "pl": "Android w teście zamkniętym"
+        }
+      ]
+    ],
+    "tagline": {
+      "en": "Drink more water without thinking about it.",
+      "pl": "Pij więcej wody, nie myśląc o tym."
+    },
+    "intro": {
+      "en": "One tap logs a glass. Kropla works out your daily goal from your weight and height, shows progress on a home-screen widget and nudges you when you forget. Nothing leaves your phone: no account, no cloud, no analytics.",
+      "pl": "Jedno dotknięcie to jedna szklanka. Kropla liczy cel dzienny z Twojej wagi i wzrostu, pokazuje postęp na widżecie i przypomina, gdy zapomnisz. Nic nie wychodzi poza telefon: bez konta, bez chmury, bez analityki."
+    },
+    "cta": [
+      {
+        "label": {
+          "en": "Download on the App Store",
+          "pl": "Pobierz w App Store"
+        },
+        "href": "https://apps.apple.com/app/id6805807230",
+        "primary": true
+      },
+      {
+        "label": {
+          "en": "Android test: join the beta",
+          "pl": "Test na Androida: zapisz się"
+        },
+        "href": "#beta"
+      }
+    ],
+    "privacy": "https://tomaszmatusiak-stack.github.io/legal/kropla/polityka-prywatnosci.html",
+    "shots": [
+      {
+        "src": "assets/shot-kropla-onboarding.webp",
+        "w": 720,
+        "h": 1564,
+        "alt": {
+          "en": "Onboarding: weight and height set the daily goal",
+          "pl": "Start: waga i wzrost ustawiają cel dzienny"
+        }
+      },
+      {
+        "src": "assets/shot-kropla-today.webp",
+        "w": 720,
+        "h": 1564,
+        "alt": {
+          "en": "Today: the ring, quick-add buttons and the last 7 days",
+          "pl": "Dziś: pierścień, szybkie dodawanie i ostatnie 7 dni"
+        }
+      },
+      {
+        "src": "assets/shot-kropla-goal.webp",
+        "w": 720,
+        "h": 1564,
+        "alt": {
+          "en": "Goal reached for the day",
+          "pl": "Cel dnia osiągnięty"
+        }
+      },
+      {
+        "src": "assets/shot-kropla-dark.webp",
+        "w": 720,
+        "h": 1564,
+        "alt": {
+          "en": "Dark mode",
+          "pl": "Tryb ciemny"
+        }
+      }
+    ],
+    "features": [
+      {
+        "t": {
+          "en": "Goal from your body, not a guess",
+          "pl": "Cel z Twojego ciała, nie z sufitu"
+        },
+        "d": {
+          "en": "Weight and height set the daily amount; you can override it any time.",
+          "pl": "Waga i wzrost ustawiają dzienną ilość; w każdej chwili możesz ją zmienić."
+        }
+      },
+      {
+        "t": {
+          "en": "Widget and reminders",
+          "pl": "Widżet i przypomnienia"
+        },
+        "d": {
+          "en": "Progress on the home screen and gentle reminders only when you're behind.",
+          "pl": "Postęp na ekranie głównym i delikatne przypomnienia tylko wtedy, gdy jesteś w tyle."
+        }
+      },
+      {
+        "t": {
+          "en": "Seven-day history and streaks",
+          "pl": "Siedem dni historii i serie"
+        },
+        "d": {
+          "en": "See the week at a glance and keep the streak going.",
+          "pl": "Widzisz tydzień na jednym ekranie i trzymasz serię."
+        }
+      },
+      {
+        "t": {
+          "en": "Private by default",
+          "pl": "Prywatna z założenia"
+        },
+        "d": {
+          "en": "Data stays on the device. Kropla PRO is a one-time purchase for extras, nothing is locked behind a subscription.",
+          "pl": "Dane zostają na urządzeniu. Kropla PRO to jednorazowy zakup dodatków, nic nie jest zamknięte za subskrypcją."
+        }
+      }
+    ],
+    "facts": [
+      {
+        "k": {
+          "en": "Platforms",
+          "pl": "Platformy"
+        },
+        "v": {
+          "en": "iPhone (App Store) · Android in closed testing",
+          "pl": "iPhone (App Store) · Android w teście zamkniętym"
+        }
+      },
+      {
+        "k": {
+          "en": "Price",
+          "pl": "Cena"
+        },
+        "v": {
+          "en": "Free; Kropla PRO one-time",
+          "pl": "Darmowa; Kropla PRO jednorazowo"
+        }
+      },
+      {
+        "k": {
+          "en": "Languages",
+          "pl": "Języki"
+        },
+        "v": {
+          "en": "Polish, English",
+          "pl": "polski, angielski"
+        }
+      },
+      {
+        "k": {
+          "en": "Made with",
+          "pl": "Technologia"
+        },
+        "v": {
+          "en": "SwiftUI (iPhone), Kotlin + Compose (Android)",
+          "pl": "SwiftUI (iPhone), Kotlin + Compose (Android)"
+        }
+      }
+    ]
+  },
+  {
+    "slug": "whirlpick",
+    "name": "Whirlpick",
+    "color": "#9B8CFF",
+    "icon": "assets/icon-whirlpick.webp",
+    "hero": "assets/thumb-whirlpick.webp",
+    "hero_w": 800,
+    "hero_h": 800,
+    "og_art": "assets/thumb-whirlpick.webp",
+    "kind": {
+      "en": "Decision wheel · browser",
+      "pl": "Koło decyzji · przeglądarka"
+    },
+    "status": [
+      [
+        "live",
+        {
+          "en": "Playable in the browser",
+          "pl": "Dostępna w przeglądarce"
+        }
+      ],
+      [
+        "review",
+        {
+          "en": "iPhone: App Store review",
+          "pl": "iPhone: recenzja App Store"
+        }
+      ]
+    ],
+    "tagline": {
+      "en": "Can't decide? Add your options, spin the wheel and let chance choose for you.",
+      "pl": "Nie możesz się zdecydować? Wpisz opcje, zakręć kołem i niech los wybierze."
+    },
+    "intro": {
+      "en": "Who does the dishes, what's for dinner, who goes first. Type options or paste a whole list, spin by button or by flick, and watch the wheel stop. Elimination mode removes the winner so you can draw an order without repeats. No account, no ads, no internet needed.",
+      "pl": "Kto zmywa, co na obiad, kto zaczyna. Wpisujesz opcje albo wklejasz całą listę, kręcisz przyciskiem lub gestem i patrzysz, gdzie stanie koło. Tryb eliminacji usuwa wylosowane pole, więc losujesz kolejność bez powtórek. Bez konta, bez reklam, bez internetu."
+    },
+    "cta": [
+      {
+        "label": {
+          "en": "Try it in the browser",
+          "pl": "Wypróbuj w przeglądarce"
+        },
+        "href": "play/whirlpick/",
+        "primary": true
+      },
+      {
+        "label": {
+          "en": "Android test: join the beta",
+          "pl": "Test na Androida: zapisz się"
+        },
+        "href": "#beta"
+      }
+    ],
+    "privacy": "https://tomaszmatusiak-stack.github.io/legal/fortunka/polityka-prywatnosci.html",
+    "shots": [
+      {
+        "src": "assets/shot-whirlpick-1.webp",
+        "w": 720,
+        "h": 1564,
+        "alt": {
+          "en": "Result screen after a spin",
+          "pl": "Ekran wyniku po losowaniu"
+        }
+      },
+      {
+        "src": "assets/shot-whirlpick-2.webp",
+        "w": 720,
+        "h": 1564,
+        "alt": {
+          "en": "The wheel with custom segments",
+          "pl": "Koło z własnymi polami"
+        }
+      },
+      {
+        "src": "assets/shot-whirlpick-3.webp",
+        "w": 720,
+        "h": 1564,
+        "alt": {
+          "en": "Segment editor with bulk add",
+          "pl": "Edytor pól z dodawaniem masowym"
+        }
+      }
+    ],
+    "features": [
+      {
+        "t": {
+          "en": "Elimination mode",
+          "pl": "Tryb eliminacji"
+        },
+        "d": {
+          "en": "The drawn segment disappears, so four players get a full order in four spins.",
+          "pl": "Wylosowane pole znika, więc czterech graczy dostaje pełną kolejność w cztery losowania."
+        }
+      },
+      {
+        "t": {
+          "en": "Paste a list",
+          "pl": "Wklej listę"
+        },
+        "d": {
+          "en": "One option per line, up to 20 segments, emoji included.",
+          "pl": "Jedna opcja w linii, do 20 pól, z emoji."
+        }
+      },
+      {
+        "t": {
+          "en": "Presets and themes",
+          "pl": "Presety i motywy"
+        },
+        "d": {
+          "en": "Yes/no, numbers, dinner ideas, player order; three hand-designed looks.",
+          "pl": "Tak/nie, liczby, pomysły na obiad, kolejność graczy; trzy własne motywy."
+        }
+      },
+      {
+        "t": {
+          "en": "Spin by flick",
+          "pl": "Kręcenie gestem"
+        },
+        "d": {
+          "en": "A harder flick spins longer, with sound on every segment and a fanfare at the end.",
+          "pl": "Mocniejszy ruch to dłuższy obrót, z dźwiękiem na każdym polu i fanfarą na koniec."
+        }
+      }
+    ],
+    "facts": [
+      {
+        "k": {
+          "en": "Platforms",
+          "pl": "Platformy"
+        },
+        "v": {
+          "en": "Browser now · iPhone in review · Android test next",
+          "pl": "Przeglądarka teraz · iPhone w recenzji · Android w teście następny"
+        }
+      },
+      {
+        "k": {
+          "en": "Price",
+          "pl": "Cena"
+        },
+        "v": {
+          "en": "Free; optional PRO (saved wheels, history)",
+          "pl": "Darmowa; opcjonalne PRO (zapisane koła, historia)"
+        }
+      },
+      {
+        "k": {
+          "en": "Languages",
+          "pl": "Języki"
+        },
+        "v": {
+          "en": "English, Polish (as „Fortunka”)",
+          "pl": "polski („Fortunka”), angielski"
+        }
+      },
+      {
+        "k": {
+          "en": "Made with",
+          "pl": "Technologia"
+        },
+        "v": {
+          "en": "Flutter; wheel drawn in code",
+          "pl": "Flutter; koło rysowane w kodzie"
+        }
+      }
+    ]
+  },
+  {
+    "slug": "pendulum",
+    "name": "Pendulum: Rope Swing",
+    "color": "#F0C35C",
+    "icon": "assets/icon-pendulum.webp",
+    "hero": "assets/shot-pendulum-swing.webp",
+    "hero_w": 720,
+    "hero_h": 1564,
+    "og_art": "assets/shot-pendulum-swing.webp",
+    "kind": {
+      "en": "Timing game · iPhone",
+      "pl": "Gra na timing · iPhone"
+    },
+    "status": [
+      [
+        "review",
+        {
+          "en": "iPhone: App Store review",
+          "pl": "iPhone: recenzja App Store"
+        }
+      ],
+      [
+        "soon",
+        {
+          "en": "Web prototype playable",
+          "pl": "Prototyp web do zagrania"
+        }
+      ]
+    ],
+    "tagline": {
+      "en": "Hold to grab the rope, let go to fly. Timing is everything.",
+      "pl": "Przytrzymaj, żeby złapać linę, puść, żeby polecieć. Liczy się moment."
+    },
+    "intro": {
+      "en": "A one-thumb momentum game: your release timing is graded EARLY, PERFECT or LATE, and momentum carries between swings. A hundred hand-made levels in ten painted worlds, hidden crystals on riskier routes, and one daily run that everyone plays the same day. Free to start, one purchase for the rest, no ads.",
+      "pl": "Gra na jeden kciuk: moment puszczenia liny jest oceniany jako EARLY, PERFECT albo LATE, a rozpęd przechodzi między hustawkami. Sto ręcznie zrobionych poziomów w dziesięciu malowanych światach, ukryte kryształy na trudniejszych trasach i jeden dzienny poziom, ten sam dla wszystkich. Start za darmo, jeden zakup za resztę, bez reklam."
+    },
+    "cta": [
+      {
+        "label": {
+          "en": "Try the web prototype",
+          "pl": "Wypróbuj prototyp web"
+        },
+        "href": "play/pendulum/",
+        "primary": true
+      },
+      {
+        "label": {
+          "en": "Get the iPhone version early",
+          "pl": "Wersja na iPhone'a wcześniej"
+        },
+        "href": "#beta"
+      }
+    ],
+    "beta_note": {
+      "en": "The browser prototype is an early version; the iPhone game has 100 levels, ten worlds and the daily run.",
+      "pl": "Prototyp w przeglądarce to wczesna wersja; gra na iPhone'a ma 100 poziomów, dziesięć światów i poziom dnia."
+    },
+    "privacy": "https://tomaszmatusiak-stack.github.io/legal/pendulum/privacy-policy.html",
+    "shots": [
+      {
+        "src": "assets/shot-pendulum.webp",
+        "w": 720,
+        "h": 1564,
+        "alt": {
+          "en": "Home screen with the world selector",
+          "pl": "Ekran główny z wyborem świata"
+        }
+      },
+      {
+        "src": "assets/shot-pendulum-swing.webp",
+        "w": 720,
+        "h": 1564,
+        "alt": {
+          "en": "Mid-swing in the canyon world",
+          "pl": "W locie w świecie kanionu"
+        }
+      },
+      {
+        "src": "assets/shot-pendulum-journey.webp",
+        "w": 720,
+        "h": 1564,
+        "alt": {
+          "en": "Journey map with stars per level",
+          "pl": "Mapa podróży z gwiazdkami poziomów"
+        }
+      },
+      {
+        "src": "assets/shot-pendulum-daily.webp",
+        "w": 720,
+        "h": 1564,
+        "alt": {
+          "en": "Daily challenge",
+          "pl": "Wyzwanie dnia"
+        }
+      }
+    ],
+    "features": [
+      {
+        "t": {
+          "en": "Every level is beatable",
+          "pl": "Każdy poziom da się przejść"
+        },
+        "d": {
+          "en": "A simulator plays each level thousands of times before it ships; unwinnable or trivial levels never make it in.",
+          "pl": "Symulator gra każdy poziom tysiące razy przed wydaniem; poziomy niemożliwe albo banalne nie wchodzą."
+        }
+      },
+      {
+        "t": {
+          "en": "Ten painted worlds",
+          "pl": "Dziesięć malowanych światów"
+        },
+        "d": {
+          "en": "Canyon, mountains, caverns, forest, desert, ocean, volcano, glacier, storm, cosmos, each with its own music.",
+          "pl": "Kanion, góry, jaskinie, las, pustynia, ocean, wulkan, lodowiec, burza, kosmos, każdy z własną muzyką."
+        }
+      },
+      {
+        "t": {
+          "en": "Daily run",
+          "pl": "Poziom dnia"
+        },
+        "d": {
+          "en": "One level seeded from the date, identical for every player, with a Game Center leaderboard.",
+          "pl": "Jeden poziom z daty, identyczny dla wszystkich, z tablicą wyników Game Center."
+        }
+      },
+      {
+        "t": {
+          "en": "Six skins",
+          "pl": "Sześć skinów"
+        },
+        "d": {
+          "en": "Three free, three with the one-time unlock that also opens worlds 4–10.",
+          "pl": "Trzy darmowe, trzy z jednorazowym odblokowaniem, które otwiera też światy 4–10."
+        }
+      }
+    ],
+    "facts": [
+      {
+        "k": {
+          "en": "Platforms",
+          "pl": "Platformy"
+        },
+        "v": {
+          "en": "iPhone (in review) · browser prototype",
+          "pl": "iPhone (w recenzji) · prototyp w przeglądarce"
+        }
+      },
+      {
+        "k": {
+          "en": "Price",
+          "pl": "Cena"
+        },
+        "v": {
+          "en": "Free to start; one purchase for worlds 4–10",
+          "pl": "Start za darmo; jeden zakup za światy 4–10"
+        }
+      },
+      {
+        "k": {
+          "en": "Languages",
+          "pl": "Języki"
+        },
+        "v": {
+          "en": "English, Polish",
+          "pl": "polski, angielski"
+        }
+      },
+      {
+        "k": {
+          "en": "Made with",
+          "pl": "Technologia"
+        },
+        "v": {
+          "en": "Native SwiftUI, no third-party SDKs",
+          "pl": "Natywny SwiftUI, bez zewnętrznych SDK"
+        }
+      }
+    ]
+  },
+  {
+    "slug": "turniej",
+    "name": "Turniej",
+    "color": "#3ECF8E",
+    "icon": "assets/icon-firewisp.webp",
+    "hero": "assets/shot-turniej-1.webp",
+    "hero_w": 720,
+    "hero_h": 1560,
+    "og_art": "assets/shot-turniej-1.webp",
+    "kind": {
+      "en": "1v1 tournaments · browser",
+      "pl": "Turnieje 1v1 · przeglądarka"
+    },
+    "status": [
+      [
+        "live",
+        {
+          "en": "Available in the browser",
+          "pl": "Dostępna w przeglądarce"
+        }
+      ],
+      [
+        "soon",
+        {
+          "en": "Android test next",
+          "pl": "Android w teście następny"
+        }
+      ]
+    ],
+    "tagline": {
+      "en": "Type the players, pick round-robin or knockout, draw the pairs. The table keeps itself.",
+      "pl": "Wpisz graczy, wybierz tryb, wylosuj pary. Tabela liczy się sama."
+    },
+    "intro": {
+      "en": "Made for football evenings on the console or the table-football league at work: every player against every player, or a knockout bracket with byes. Enter results, the standings and the next matches update themselves, and a stopwatch is built in. Everything stays on the device.",
+      "pl": "Dla wieczorów z piłką na konsoli albo ligi piłkarzyków w pracy: każdy z każdym albo puchar z drabinką i wolnymi losami. Wpisujesz wyniki, tabela i kolejne mecze liczą się same, stoper jest wbudowany. Wszystko zostaje na urządzeniu."
+    },
+    "cta": [
+      {
+        "label": {
+          "en": "Try it in the browser",
+          "pl": "Wypróbuj w przeglądarce"
+        },
+        "href": "play/turniej/",
+        "primary": true
+      },
+      {
+        "label": {
+          "en": "Android test: join the beta",
+          "pl": "Test na Androida: zapisz się"
+        },
+        "href": "#beta"
+      }
+    ],
+    "shots": [
+      {
+        "src": "assets/shot-turniej-1.webp",
+        "w": 720,
+        "h": 1560,
+        "alt": {
+          "en": "New tournament: players and mode",
+          "pl": "Nowy turniej: gracze i tryb"
+        }
+      }
+    ],
+    "features": [
+      {
+        "t": {
+          "en": "Two formats",
+          "pl": "Dwa formaty"
+        },
+        "d": {
+          "en": "Round-robin with a full table, or a knockout bracket that handles odd player counts with byes.",
+          "pl": "Każdy z każdym z pełną tabelą albo puchar z drabinką, która radzi sobie z nieparzystą liczbą graczy."
+        }
+      },
+      {
+        "t": {
+          "en": "Results in, table out",
+          "pl": "Wpisujesz wynik, reszta sama"
+        },
+        "d": {
+          "en": "Points, goal difference and head-to-head are sorted the football way.",
+          "pl": "Punkty, bilans bramek i bezpośrednie mecze liczone po piłkarsku."
+        }
+      },
+      {
+        "t": {
+          "en": "Built-in stopwatch",
+          "pl": "Wbudowany stoper"
+        },
+        "d": {
+          "en": "Match halves of any length, right next to the score.",
+          "pl": "Połowy dowolnej długości, tuż obok wyniku."
+        }
+      },
+      {
+        "t": {
+          "en": "No backend",
+          "pl": "Bez serwera"
+        },
+        "d": {
+          "en": "Nothing is sent anywhere; tournaments live on the device and can be exported.",
+          "pl": "Nic nie jest nigdzie wysyłane; turnieje zostają na urządzeniu i można je wyeksportować."
+        }
+      }
+    ],
+    "facts": [
+      {
+        "k": {
+          "en": "Platforms",
+          "pl": "Platformy"
+        },
+        "v": {
+          "en": "Browser now · Android test next · iPhone later",
+          "pl": "Przeglądarka teraz · Android w teście następny · iPhone później"
+        }
+      },
+      {
+        "k": {
+          "en": "Price",
+          "pl": "Cena"
+        },
+        "v": {
+          "en": "Free",
+          "pl": "Darmowa"
+        }
+      },
+      {
+        "k": {
+          "en": "Languages",
+          "pl": "Języki"
+        },
+        "v": {
+          "en": "Polish, English",
+          "pl": "polski, angielski"
+        }
+      },
+      {
+        "k": {
+          "en": "Made with",
+          "pl": "Technologia"
+        },
+        "v": {
+          "en": "Flutter",
+          "pl": "Flutter"
+        }
+      }
+    ]
+  },
+  {
+    "slug": "firewisp",
+    "name": "Firewisp",
+    "color": "#FF8A43",
+    "icon": "assets/icon-firewisp.webp",
+    "hero": "assets/thumb-firewisp.webp",
+    "hero_w": 800,
+    "hero_h": 800,
+    "og_art": "assets/thumb-firewisp.webp",
+    "kind": {
+      "en": "Goals with Iskra · beta soon",
+      "pl": "Cele z Iskrą · beta wkrótce"
+    },
+    "status": [
+      [
+        "review",
+        {
+          "en": "Beta coming soon",
+          "pl": "Beta wkrótce"
+        }
+      ],
+      [
+        "soon",
+        {
+          "en": "iPhone · Android",
+          "pl": "iPhone · Android"
+        }
+      ]
+    ],
+    "tagline": {
+      "en": "Tell Iskra what you want to achieve. She turns it into a route and keeps your streak alive.",
+      "pl": "Powiedz Iskrze, co chcesz osiągnąć. Rozpisze to na trasę i przypilnuje serii."
+    },
+    "intro": {
+      "en": "Iskra is a small flame and your companion in the app. You describe a goal in your own words, she asks a few questions and lays it out as weeks, milestones and concrete tasks for the next days. Finished steps light up, streaks keep you honest, and when you slip she adjusts instead of nagging. Goals, not forms.",
+      "pl": "Iskra to mały płomyk i Twoja towarzyszka w apce. Opisujesz cel własnymi słowami, ona dopytuje i układa go w tygodnie, kamienie milowe i konkretne zadania na najbliższe dni. Skończone kroki się zapalają, serie trzymają w ryzach, a gdy coś się posypie, Iskra przekłada plan zamiast marudzić. Cele, nie formularze."
+    },
+    "cta": [
+      {
+        "label": {
+          "en": "Get the beta first",
+          "pl": "Chcę betę jako pierwszy"
+        },
+        "href": "#beta",
+        "primary": true
+      }
+    ],
+    "beta_note": {
+      "en": "iPhone and Android test builds are ready and go out to the beta list first.",
+      "pl": "Wersje testowe na iPhone'a i Androida są gotowe i trafią najpierw na listę beta."
+    },
+    "privacy": "https://tomaszmatusiak-stack.github.io/legal/firewisp/index.html",
+    "shots": [
+      {
+        "src": "assets/shot-firewisp-route.webp",
+        "w": 720,
+        "h": 1564,
+        "alt": {
+          "en": "A goal as a route: weeks, steps, progress ring",
+          "pl": "Cel jako trasa: tygodnie, kroki, pierścień postępu"
+        }
+      },
+      {
+        "src": "assets/shot-firewisp-plan.webp",
+        "w": 720,
+        "h": 1564,
+        "alt": {
+          "en": "Editing the plan: reorder steps, set deadlines",
+          "pl": "Edycja planu: kolejność kroków, terminy"
+        }
+      },
+      {
+        "src": "assets/shot-firewisp-done.webp",
+        "w": 720,
+        "h": 1564,
+        "alt": {
+          "en": "Milestone completed",
+          "pl": "Etap ukończony"
+        }
+      }
+    ],
+    "features": [
+      {
+        "t": {
+          "en": "Talk, don't fill forms",
+          "pl": "Mówisz, nie wypełniasz"
+        },
+        "d": {
+          "en": "Describe the goal; Iskra asks what she needs and builds the route.",
+          "pl": "Opisujesz cel; Iskra dopytuje o to, czego jej brakuje, i buduje trasę."
+        }
+      },
+      {
+        "t": {
+          "en": "Weeks and milestones",
+          "pl": "Tygodnie i kamienie milowe"
+        },
+        "d": {
+          "en": "Big goals become small steps with deadlines you can move.",
+          "pl": "Duże cele stają się małymi krokami z terminami, które możesz przesuwać."
+        }
+      },
+      {
+        "t": {
+          "en": "Streaks and celebrations",
+          "pl": "Serie i świętowanie"
+        },
+        "d": {
+          "en": "Finished steps earn XP and a little confetti; missed days get a plan, not guilt.",
+          "pl": "Skończone kroki dają XP i konfetti; zaległe dni dostają plan, nie wyrzuty."
+        }
+      },
+      {
+        "t": {
+          "en": "Your data, your account",
+          "pl": "Twoje dane, Twoje konto"
+        },
+        "d": {
+          "en": "Sync between devices through your account; the AI key never lives on the phone.",
+          "pl": "Synchronizacja między urządzeniami przez Twoje konto; klucz AI nigdy nie jest w telefonie."
+        }
+      }
+    ],
+    "facts": [
+      {
+        "k": {
+          "en": "Platforms",
+          "pl": "Platformy"
+        },
+        "v": {
+          "en": "iPhone and Android, beta first",
+          "pl": "iPhone i Android, najpierw beta"
+        }
+      },
+      {
+        "k": {
+          "en": "Price",
+          "pl": "Cena"
+        },
+        "v": {
+          "en": "Free to start; flame packs for AI planning",
+          "pl": "Start za darmo; pakiety płomyków na planowanie AI"
+        }
+      },
+      {
+        "k": {
+          "en": "Languages",
+          "pl": "Języki"
+        },
+        "v": {
+          "en": "Polish, English",
+          "pl": "polski, angielski"
+        }
+      },
+      {
+        "k": {
+          "en": "Made with",
+          "pl": "Technologia"
+        },
+        "v": {
+          "en": "Flutter, Supabase, Claude",
+          "pl": "Flutter, Supabase, Claude"
+        }
+      }
+    ]
+  }
+]

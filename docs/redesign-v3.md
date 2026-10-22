@@ -43,3 +43,10 @@ Konsola bez błędów; 1440 / 1280 / 1024 / 375 px; brak przewijania poziomego n
 - Pendulum: pełny tytuł, status „App Store review” + „iPhone” w osobnym wierszu. Whirlpick: opis zgodny z aplikacją (koło losowania), statusy „Przeglądarka” + „Recenzja App Store”, miniatura = całe koło z wskaźnikiem (kadr kwadratowy 800×800, kadruje się w pionie i poziomie).
 - Mobile: wysokość karuzeli dopasowana do karty (bez pustki), mniejszy podpis karty, kropki karuzeli z polem dotyku 28 px, logo Sushi nie dotyka ramki telefonu, widoczny focus na chipach/segmentach/strzałkach.
 - Sprawdzone w przeglądarce: 1600, 1440, 1280, 1024, 768, 390, 360 px — brak przewijania poziomego, karty w rzędzie równe (547 px / 451 px na desktopie), plakietki 28 px (boczne karty karuzeli są skalowane ×0,86, stąd 24–26 px), filtry i karuzela działają, konsola czysta. Formularz beta bez zmian w logice.
+
+## v3.2 — podstrony, /pl/, SEO (2026-10-22)
+- Generator `tools/build_site.py` (bez zależności poza PIL): master `src/index.html` i `src/privacy.html` (dwujęzyczne, `data-l`) → `index.html` (EN) i `pl/index.html` (PL) przez usunięcie elementów drugiego języka; `src/products.json` → `<slug>/` i `pl/<slug>/` dla 7 produktów; `privacy/` i `pl/prywatnosc/` (stary `privacy.html` = przekierowanie); `404.html`; `sitemap.xml` (23 adresy); `robots.txt`; `assets/og/<slug>.jpg`; `press/<slug>-press-kit.zip`.
+- Każda strona: `canonical`, `hreflang` en/pl/x-default, OG/Twitter per strona, `lang` w HTML. Przełącznik EN/PL to linki między adresami; wybór zapisany w localStorage dla gier; na `/` pierwsza wizyta z polską przeglądarką idzie do `/pl/` (pomijane przy `?lang=` i po świadomym wyborze).
+- Podstrony: hero z artem, statusy, CTA (graj / sklep / beta), zrzuty, „Co tu robisz”, fakty, link do polityki apki (repo legal) albo prywatności strony, press kit, inne produkty. Styl `assets/product.css`.
+- `SITE_URL` w generatorze: po zakupie domeny zmienić i uruchomić ponownie.
+- Braki: Turniej ma tylko ekran startowy (klik w kanwę Fluttera nie działa w panelu), Sushi Rush bez zrzutu „level complete”; zrzuty z telefonu uzupełnią.
