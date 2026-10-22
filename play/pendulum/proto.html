@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+<title>PENDULUM — prototyp</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{height:100%;overflow:hidden;background:#0a0714;touch-action:none;user-select:none}
+canvas{display:block;width:100vw;height:100dvh}
+#hud{
+  position:fixed;top:env(safe-area-inset-top);left:0;right:0;
+  display:flex;justify-content:space-between;align-items:center;
+  padding:12px 16px;color:#cfc6ee;font-family:"Fraunces",sans-serif;
+  pointer-events:none;z-index:5;
+}
+#hud .att{font-size:12px;letter-spacing:.15em;opacity:.8}
+#prog{position:fixed;top:0;left:0;height:4px;background:linear-gradient(90deg,#7c5cff,#ff4fa3);width:0%;z-index:6;box-shadow:0 0 10px #7c5cff}
+#msg{
+  position:fixed;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  color:#efeaff;font-family:"Fraunces",sans-serif;z-index:10;background:rgba(10,7,20,.55);
+  backdrop-filter:blur(2px);transition:opacity .3s;
+}
+#msg h1{font-size:clamp(30px,9vw,52px);font-weight:800;letter-spacing:.12em;
+  background:linear-gradient(90deg,#7c5cff,#ff4fa3,#ffb648);-webkit-background-clip:text;background-clip:text;color:transparent;
+  filter:drop-shadow(0 0 18px rgba(124,92,255,.6));}
+#msg p{font-family:"Manrope",sans-serif;font-size:15px;color:#b3a8d9;margin-top:12px;text-align:center;line-height:1.5;padding:0 24px}
+#msg .tap{margin-top:26px;font-size:13px;letter-spacing:.25em;animation:pulse 1.4s infinite}
+@keyframes pulse{0%,100%{opacity:.4}50%{opacity:1}}
+#msg.hide{opacity:0;pointer-events:none}
+</style>
+<style>
+@font-face{font-family:"Manrope";src:url("../../assets/fonts/manrope-latin-ext.woff2") format("woff2");font-weight:200 800;font-display:swap;unicode-range:U+0100-02BA,U+1E00-1EFF}
+@font-face{font-family:"Manrope";src:url("../../assets/fonts/manrope-latin.woff2") format("woff2");font-weight:200 800;font-display:swap;unicode-range:U+0000-00FF,U+2000-206F}
+@font-face{font-family:"Fraunces";src:url("../../assets/fonts/fraunces-latin-ext.woff2") format("woff2");font-weight:300 900;font-display:swap;unicode-range:U+0100-02BA,U+1E00-1EFF}
+@font-face{font-family:"Fraunces";src:url("../../assets/fonts/fraunces-latin.woff2") format("woff2");font-weight:300 900;font-display:swap;unicode-range:U+0000-00FF,U+2000-206F}
+</style>
+</head>
+<body>
+<div id="prog"></div>
+<div id="hud">
+  <div class="att">PRÓBA <span id="attempt">1</span></div>
+  <div class="att" id="pct">0%</div>
+</div>
+<div id="msg">
+  <h1>PENDULUM</h1>
+  <p>Trzymaj palec = lina zaczepia się o najbliższy węzeł i huśtasz się.<br>
+     Puść = lot balistyczny. Dotrzyj do mety. Kolce zabijają.</p>
+  <div class="tap">DOTKNIJ, ABY ZACZĄĆ</div>
+</div>
+<canvas id="cv"></canvas>
+<script>
+/*CORE-START*/
+/* Cała logika działa w wirtualnym świecie o stałej wysokości VH,
+   skalowanym do ekranu przy rysowaniu — geometria poziomu jest
+   identyczna na każdym urządzeniu. */
+const VH = 800;
+const G = 1900;            // grawitacja px/s^2 (świat)
+const ROPE_RANGE = 260;    // zasięg zaczepu
+const LEVEL_LEN = 6200;
+const FINISH = LEVEL_LEN - 250;
+const FLOOR = VH - 46;
+const START = {x:120, y:VH*0.35};
+const SIM_DT = 1/60;
+
+function newPlayer(){
+  return {x:START.x, y:START.y, vx:330, vy:0, r:11, rope:null};
+}
+
+function genLevel(){
+  const anchors=[], spikes=[];
+  // pierwszy węzeł zawsze w zasięgu liny już na spawnie
+  anchors.push({x:340, y:205});
+  let x = 340, i = 1;
+  while(x < LEVEL_LEN-400){
+    x += 170 + Math.random()*60 + Math.min(i*3,60);
+    const y = 150 + Math.sin(i*1.7)*60 + (Math.random()*50-25);
+    anchors.push({x, y});
+    if(i>1 && i%3===0){
+      const sx = x + 95 + Math.random()*40;
+      const sh = 90 + Math.random()*100 + Math.min(i*5,90);
+      spikes.push({x:sx, h:sh, w:46});
+    }
+    i++;
+  }
+  return {anchors, spikes};
+}
+
+function findAnchorIn(p, anchors){
+  let bestA=null, bd=ROPE_RANGE;
+  for(const a of anchors){
+    if(a.x < p.x-40) continue;
+    if(a.x > p.x+ROPE_RANGE+80) break;
+    const d = Math.hypot(a.x-p.x, a.y-p.y);
+    if(d<bd){ bd=d; bestA=a; }
+  }
+  return bestA ? {a:bestA, len:bd} : null;
+}
+
+function physStep(p, hold, L, grabFilter, dt){
+  if(hold && !p.rope){
+    const f = findAnchorIn(p, L.anchors);
+    if(f && (!grabFilter || grabFilter(f.a))) p.rope=f;
+  }
+  if(!hold) p.rope=null;
+
+  p.vy += G*dt;
+  p.x += p.vx*dt; p.y += p.vy*dt;
+
+  if(p.rope){
+    const {a,len} = p.rope;
+    const dx=p.x-a.x, dy=p.y-a.y, d=Math.hypot(dx,dy);
+    if(d>len){
+      const nx=dx/d, ny=dy/d;
+      p.x = a.x+nx*len; p.y = a.y+ny*len;
+      const dot = p.vx*nx + p.vy*ny;      // usuń składową radialną
+      p.vx -= dot*nx; p.vy -= dot*ny;
+      p.vx += 26*dt*60;                    // delikatny napęd do przodu w huśtaniu
+    }
+  }
+  const sp = Math.hypot(p.vx,p.vy);
+  if(sp>1100){ p.vx*=1100/sp; p.vy*=1100/sp; }
+  if(p.vx<140 && !p.rope) p.vx=140;
+}
+
+// kolizja z pojedynczą kolumną kolców — po zboczach trójkątów, nie po prostokącie
+function hitSpike(p, s){
+  if(p.x+p.r < s.x || p.x-p.r > s.x+s.w) return false;
+  if(p.y + p.r*0.7 <= FLOOR - s.h) return false;
+  const n=3, w=s.w/n;
+  const lx = Math.min(Math.max(p.x, s.x), s.x+s.w-0.001) - s.x;
+  const k = Math.floor(lx/w);
+  const cx = s.x + k*w + w/2;
+  const surf = FLOOR - s.h*(1 - Math.abs(p.x-cx)/(w/2));
+  return p.y + p.r*0.7 > surf;
+}
+
+function isDead(p, L){
+  if(p.y > FLOOR-p.r || p.y < -60) return true;
+  for(const s of L.spikes) if(hitSpike(p,s)) return true;
+  return false;
+}
+
+/* Walidacja przechodniości: bot z podglądem trajektorii — puszcza linę
+   tylko wtedy, gdy symulowany lot kończy się zaczepem o dalszy węzeł. */
+function botRollout(p0, L){
+  const p = {x:p0.x, y:p0.y, vx:p0.vx, vy:p0.vy, r:p0.r, rope:null};
+  const curAx = p0.rope.a.x;
+  for(let t=0; t<2.5; t+=SIM_DT){
+    const f = findAnchorIn(p, L.anchors);
+    if(f && f.a.x > curAx+1) return true;
+    physStep(p, false, L, null, SIM_DT);
+    if(p.x >= FINISH) return true;
+    if(isDead(p, L)) return false;
+  }
+  return false;
+}
+function levelWinnable(L){
+  const p = newPlayer();
+  let lastAx = -1;
+  for(let t=0; t<60; t+=SIM_DT){
+    let hold = true;
+    if(p.rope){ lastAx = p.rope.a.x; if(botRollout(p, L)) hold=false; }
+    physStep(p, hold, L, a=>a.x>lastAx+1, SIM_DT);
+    if(p.x >= FINISH) return true;
+    if(isDead(p, L)) return false;
+  }
+  return false;
+}
+function buildValidLevel(){
+  let L = null;
+  for(let tries=0; tries<30; tries++){
+    L = genLevel();
+    if(levelWinnable(L)) return L;
+  }
+  return L; // awaryjnie: ostatni wygenerowany (w praktyce nieosiągalne)
+}
+/*CORE-END*/
+
+(()=>{
+const cv = document.getElementById('cv'), ctx = cv.getContext('2d');
+let W,H,DPR,SCALE,VW;
+function resize(){
+  DPR = Math.min(devicePixelRatio||1,2);
+  W = innerWidth; H = innerHeight;
+  cv.width = W*DPR; cv.height = H*DPR;
+  ctx.setTransform(DPR,0,0,DPR,0,0);
+  SCALE = H/VH;            // świat → ekran
+  VW = W/SCALE;            // szerokość widoku w jednostkach świata
+}
+resize(); addEventListener('resize',resize);
+
+/* ---------- Level / Player ---------- */
+let LEVEL = buildValidLevel();
+let p, attempt=1, playing=false, best=0;
+function reset(){
+  p = Object.assign(newPlayer(), {trail:[], dead:false, won:false, t:0});
+}
+reset();
+
+/* ---------- Input (pointer + touch + mouse fallback) ---------- */
+let hold=false;
+function down(e){
+  if(e.cancelable) e.preventDefault();
+  if(!playing){ playing=true; document.getElementById('msg').classList.add('hide'); hold=true; return; }
+  if(p.dead||p.won){ attempt++; document.getElementById('attempt').textContent=attempt;
+    if(p.won){ attempt=1; document.getElementById('attempt').textContent=1; LEVEL=buildValidLevel(); best=0; }
+    reset(); hold=true; return; }
+  hold=true;
+}
+function up(e){ if(e && e.cancelable) e.preventDefault(); hold=false; }
+
+const hasPointer = 'onpointerdown' in window;
+if(hasPointer){
+  document.addEventListener('pointerdown',down,{passive:false});
+  document.addEventListener('pointerup',up,{passive:false});
+  document.addEventListener('pointercancel',up,{passive:false});
+}else{
+  document.addEventListener('touchstart',down,{passive:false});
+  document.addEventListener('touchend',up,{passive:false});
+  document.addEventListener('touchcancel',up,{passive:false});
+  document.addEventListener('mousedown',down);
+  document.addEventListener('mouseup',up);
+}
+// blokada scrolla/gestów podczas gry
+document.addEventListener('touchmove',e=>{ if(e.cancelable) e.preventDefault(); },{passive:false});
+// klawiatura na desktopie: spacja = lina
+addEventListener('keydown',e=>{ if(e.code==='Space'){ e.preventDefault(); down(e); }});
+addEventListener('keyup',e=>{ if(e.code==='Space') up(e); });
+
+/* ---------- Step ---------- */
+function step(dt){
+  if(p.dead||p.won) return;
+  p.t += dt;
+
+  physStep(p, hold, LEVEL, null, dt);
+
+  // trail
+  p.trail.push({x:p.x,y:p.y}); if(p.trail.length>26) p.trail.shift();
+
+  // śmierć: podłoga / sufit / kolce
+  if(isDead(p, LEVEL)) p.dead=true;
+  if(p.x >= FINISH) p.won=true;
+
+  const pct = Math.max(0,(p.x-START.x)/(FINISH-START.x));
+  best = Math.max(best, pct);
+  document.getElementById('prog').style.width = Math.min(100,pct*100)+'%';
+  document.getElementById('pct').textContent = Math.min(100,Math.round(pct*100))+'%';
+}
+
+/* ---------- Render ---------- */
+function draw(){
+  ctx.clearRect(0,0,W,H);
+  const camX = p.x - VW*0.32;
+
+  // tło — pulsujące pasy w rytmie (przestrzeń ekranu)
+  const beat = (Math.sin(p.t*6)+1)/2;
+  ctx.fillStyle = '#0a0714'; ctx.fillRect(0,0,W,H);
+  for(let i=0;i<5;i++){
+    const bx = ((i*520 - camX*0.35) % (W+520)+ (W+520))%(W+520) - 260;
+    const g = ctx.createLinearGradient(bx,0,bx+260,0);
+    g.addColorStop(0,'rgba(124,92,255,0)');
+    g.addColorStop(.5,`rgba(124,92,255,${0.05+beat*0.04})`);
+    g.addColorStop(1,'rgba(124,92,255,0)');
+    ctx.fillStyle=g; ctx.fillRect(bx,0,260,H);
+  }
+
+  ctx.save(); ctx.scale(SCALE,SCALE); ctx.translate(-camX,0);
+
+  // podłoga
+  ctx.fillStyle='#151024'; ctx.fillRect(camX,FLOOR,VW,VH-FLOOR);
+  ctx.strokeStyle='rgba(124,92,255,.6)'; ctx.lineWidth=2;
+  ctx.beginPath(); ctx.moveTo(camX,FLOOR); ctx.lineTo(camX+VW,FLOOR); ctx.stroke();
+
+  // kolce
+  for(const s of LEVEL.spikes){
+    if(s.x<camX-100||s.x>camX+VW+100) continue;
+    ctx.fillStyle='#ff4fa3';
+    ctx.shadowColor='#ff4fa3'; ctx.shadowBlur=12;
+    const n=3, w=s.w/n;
+    for(let k=0;k<n;k++){
+      ctx.beginPath();
+      ctx.moveTo(s.x+k*w, FLOOR);
+      ctx.lineTo(s.x+k*w+w/2, FLOOR-s.h);
+      ctx.lineTo(s.x+(k+1)*w, FLOOR);
+      ctx.closePath(); ctx.fill();
+    }
+    ctx.shadowBlur=0;
+  }
+
+  // węzły
+  for(const a of LEVEL.anchors){
+    if(a.x<camX-60||a.x>camX+VW+60) continue;
+    const near = !p.rope && Math.hypot(a.x-p.x,a.y-p.y)<ROPE_RANGE && a.x>p.x-40;
+    ctx.beginPath(); ctx.arc(a.x,a.y,near?8:5,0,7);
+    ctx.fillStyle = near?'#ffb648':'#7c5cff';
+    ctx.shadowColor = near?'#ffb648':'#7c5cff';
+    ctx.shadowBlur = near?18:8;
+    ctx.fill(); ctx.shadowBlur=0;
+    if(near){ ctx.beginPath(); ctx.arc(a.x,a.y,12+beat*4,0,7); ctx.strokeStyle='rgba(255,182,72,.5)'; ctx.stroke(); }
+  }
+
+  // meta
+  ctx.fillStyle='rgba(125,255,138,.15)'; ctx.fillRect(FINISH,0,60,FLOOR);
+  ctx.strokeStyle='#7dff8a'; ctx.shadowColor='#7dff8a'; ctx.shadowBlur=14;
+  ctx.strokeRect(FINISH,0,60,FLOOR); ctx.shadowBlur=0;
+
+  // lina
+  if(p.rope){
+    ctx.beginPath(); ctx.moveTo(p.rope.a.x,p.rope.a.y); ctx.lineTo(p.x,p.y);
+    ctx.strokeStyle='#ffb648'; ctx.lineWidth=2.5;
+    ctx.shadowColor='#ffb648'; ctx.shadowBlur=10; ctx.stroke(); ctx.shadowBlur=0;
+  }
+
+  // trail
+  for(let i=0;i<p.trail.length;i++){
+    const t=p.trail[i], al=i/p.trail.length;
+    ctx.beginPath(); ctx.arc(t.x,t.y,p.r*al*0.8,0,7);
+    ctx.fillStyle=`rgba(124,92,255,${al*0.25})`; ctx.fill();
+  }
+
+  // gracz
+  ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,7);
+  ctx.fillStyle = p.dead?'#ff4fa3':'#efeaff';
+  ctx.shadowColor = p.dead?'#ff4fa3':'#7c5cff'; ctx.shadowBlur=20;
+  ctx.fill(); ctx.shadowBlur=0;
+
+  ctx.restore();
+
+  // overlays (przestrzeń ekranu)
+  if(p.dead || p.won){
+    ctx.fillStyle='rgba(10,7,20,.55)'; ctx.fillRect(0,0,W,H);
+    ctx.textAlign='center'; ctx.fillStyle='#efeaff';
+    ctx.font="800 34px "Fraunces", sans-serif";
+    ctx.shadowColor=p.won?'#7dff8a':'#ff4fa3'; ctx.shadowBlur=24;
+    ctx.fillText(p.won?'META! 🏁':'CRASH', W/2, H/2-14);
+    ctx.shadowBlur=0;
+    ctx.font="600 14px "Manrope", sans-serif"; ctx.fillStyle='#b3a8d9';
+    ctx.fillText(p.won?'Dotknij — nowy, świeży poziom':'Dotknij, aby spróbować od nowa', W/2, H/2+18);
+    if(!p.won){
+      ctx.fillText('Rekord podejścia: '+Math.round(best*100)+'%', W/2, H/2+42);
+    }
+  }
+}
+
+/* ---------- Loop ---------- */
+let last=performance.now();
+function loop(now){
+  const dt = Math.min((now-last)/1000, 1/30); last=now;
+  if(playing) step(dt);
+  draw();
+  requestAnimationFrame(loop);
+}
+requestAnimationFrame(loop);
+})();
+</script>
+</body>
+</html>
