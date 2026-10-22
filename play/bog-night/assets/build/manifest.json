@@ -1,0 +1,1652 @@
+{
+ "wilkolak_run_0": {
+  "file": "anim/wilkolak_run_0.webp",
+  "w": 584,
+  "h": 329,
+  "cat": "anim"
+ },
+ "wilkolak_run_1": {
+  "file": "anim/wilkolak_run_1.webp",
+  "w": 584,
+  "h": 329,
+  "cat": "anim"
+ },
+ "wilkolak_run_2": {
+  "file": "anim/wilkolak_run_2.webp",
+  "w": 584,
+  "h": 329,
+  "cat": "anim"
+ },
+ "wilkolak_run_3": {
+  "file": "anim/wilkolak_run_3.webp",
+  "w": 584,
+  "h": 329,
+  "cat": "anim"
+ },
+ "wilkolak_run_4": {
+  "file": "anim/wilkolak_run_4.webp",
+  "w": 584,
+  "h": 329,
+  "cat": "anim"
+ },
+ "wilkolak_run_5": {
+  "file": "anim/wilkolak_run_5.webp",
+  "w": 584,
+  "h": 329,
+  "cat": "anim"
+ },
+ "bg_dawn": {
+  "file": "bg/bg_dawn.webp",
+  "w": 1536,
+  "h": 1024,
+  "cat": "bg"
+ },
+ "bg_dawn_alt": {
+  "file": "bg/bg_dawn_alt.webp",
+  "w": 1536,
+  "h": 1024,
+  "cat": "bg"
+ },
+ "bg_homestead": {
+  "file": "bg/bg_homestead.webp",
+  "w": 1536,
+  "h": 1024,
+  "cat": "bg"
+ },
+ "bg_longnight": {
+  "file": "bg/bg_longnight.webp",
+  "w": 1536,
+  "h": 1024,
+  "cat": "bg"
+ },
+ "bg_menu": {
+  "file": "bg/bg_menu.webp",
+  "w": 1536,
+  "h": 1024,
+  "cat": "bg"
+ },
+ "bg_r1_far": {
+  "file": "bg/bg_r1_far.webp",
+  "w": 1536,
+  "h": 1024,
+  "cat": "bg"
+ },
+ "bg_r1_front": {
+  "file": "bg/bg_r1_front.webp",
+  "w": 1536,
+  "h": 1024,
+  "cat": "bg"
+ },
+ "bg_r1_mid": {
+  "file": "bg/bg_r1_mid.webp",
+  "w": 1536,
+  "h": 1024,
+  "cat": "bg"
+ },
+ "bg_r1_sky": {
+  "file": "bg/bg_r1_sky.webp",
+  "w": 1536,
+  "h": 1024,
+  "cat": "bg"
+ },
+ "bg_r1_water": {
+  "file": "bg/bg_r1_water.webp",
+  "w": 1536,
+  "h": 1024,
+  "cat": "bg"
+ },
+ "bg_r2_far": {
+  "file": "bg/bg_r2_far.webp",
+  "w": 1536,
+  "h": 1024,
+  "cat": "bg"
+ },
+ "bg_r2_far_alt": {
+  "file": "bg/bg_r2_far_alt.webp",
+  "w": 1536,
+  "h": 1024,
+  "cat": "bg"
+ },
+ "bg_r2_front": {
+  "file": "bg/bg_r2_front.webp",
+  "w": 1536,
+  "h": 1024,
+  "cat": "bg"
+ },
+ "bg_r2_mid": {
+  "file": "bg/bg_r2_mid.webp",
+  "w": 1536,
+  "h": 1024,
+  "cat": "bg"
+ },
+ "bg_r2_sky": {
+  "file": "bg/bg_r2_sky.webp",
+  "w": 1536,
+  "h": 1024,
+  "cat": "bg"
+ },
+ "bg_r2_water": {
+  "file": "bg/bg_r2_water.webp",
+  "w": 1536,
+  "h": 1024,
+  "cat": "bg"
+ },
+ "bg_r2_water_alt": {
+  "file": "bg/bg_r2_water_alt.webp",
+  "w": 1536,
+  "h": 1024,
+  "cat": "bg"
+ },
+ "bg_r3_far": {
+  "file": "bg/bg_r3_far.webp",
+  "w": 1536,
+  "h": 1024,
+  "cat": "bg"
+ },
+ "bg_r3_far_alt": {
+  "file": "bg/bg_r3_far_alt.webp",
+  "w": 1536,
+  "h": 1024,
+  "cat": "bg"
+ },
+ "bg_r3_front": {
+  "file": "bg/bg_r3_front.webp",
+  "w": 1536,
+  "h": 1024,
+  "cat": "bg"
+ },
+ "bg_r3_mid": {
+  "file": "bg/bg_r3_mid.webp",
+  "w": 1536,
+  "h": 1024,
+  "cat": "bg"
+ },
+ "bg_r3_mid_alt": {
+  "file": "bg/bg_r3_mid_alt.webp",
+  "w": 1536,
+  "h": 1024,
+  "cat": "bg"
+ },
+ "bg_r3_sky": {
+  "file": "bg/bg_r3_sky.webp",
+  "w": 1536,
+  "h": 1024,
+  "cat": "bg"
+ },
+ "bg_r3_water": {
+  "file": "bg/bg_r3_water.webp",
+  "w": 1536,
+  "h": 1024,
+  "cat": "bg"
+ },
+ "bg_regionmap_1": {
+  "file": "bg/bg_regionmap_1.webp",
+  "w": 1536,
+  "h": 1024,
+  "cat": "bg"
+ },
+ "bg_regionmap_2": {
+  "file": "bg/bg_regionmap_2.webp",
+  "w": 1536,
+  "h": 1024,
+  "cat": "bg"
+ },
+ "bg_regionmap_3": {
+  "file": "bg/bg_regionmap_3.webp",
+  "w": 1672,
+  "h": 941,
+  "cat": "bg"
+ },
+ "bg_regionmap_3_alt": {
+  "file": "bg/bg_regionmap_3_alt.webp",
+  "w": 1536,
+  "h": 1024,
+  "cat": "bg"
+ },
+ "booster_bell": {
+  "file": "boosters/booster_bell.webp",
+  "w": 235,
+  "h": 256,
+  "cat": "boosters"
+ },
+ "booster_dogs": {
+  "file": "boosters/booster_dogs.webp",
+  "w": 256,
+  "h": 228,
+  "cat": "boosters"
+ },
+ "booster_mortar": {
+  "file": "boosters/booster_mortar.webp",
+  "w": 239,
+  "h": 256,
+  "cat": "boosters"
+ },
+ "booster_spring": {
+  "file": "boosters/booster_spring.webp",
+  "w": 256,
+  "h": 251,
+  "cat": "boosters"
+ },
+ "jaga_mist": {
+  "file": "bosses/jaga_mist.webp",
+  "w": 960,
+  "h": 953,
+  "cat": "bosses"
+ },
+ "jaga_mortar": {
+  "file": "bosses/jaga_mortar.webp",
+  "w": 960,
+  "h": 901,
+  "cat": "bosses"
+ },
+ "stolem_heart": {
+  "file": "bosses/stolem_heart.webp",
+  "w": 960,
+  "h": 838,
+  "cat": "bosses"
+ },
+ "stolem_moss": {
+  "file": "bosses/stolem_moss.webp",
+  "w": 953,
+  "h": 960,
+  "cat": "bosses"
+ },
+ "zmij_reborn": {
+  "file": "bosses/zmij_reborn.webp",
+  "w": 960,
+  "h": 943,
+  "cat": "bosses"
+ },
+ "zmij_storm": {
+  "file": "bosses/zmij_storm.webp",
+  "w": 960,
+  "h": 955,
+  "cat": "bosses"
+ },
+ "cat": {
+  "file": "characters/cat.webp",
+  "w": 617,
+  "h": 640,
+  "cat": "characters"
+ },
+ "jadwiga_proud": {
+  "file": "characters/jadwiga_proud.webp",
+  "w": 578,
+  "h": 566,
+  "cat": "characters"
+ },
+ "jadwiga_smile": {
+  "file": "characters/jadwiga_smile.webp",
+  "w": 582,
+  "h": 543,
+  "cat": "characters"
+ },
+ "jadwiga_surprised": {
+  "file": "characters/jadwiga_surprised.webp",
+  "w": 593,
+  "h": 566,
+  "cat": "characters"
+ },
+ "jadwiga_worried": {
+  "file": "characters/jadwiga_worried.webp",
+  "w": 576,
+  "h": 544,
+  "cat": "characters"
+ },
+ "kuba": {
+  "file": "characters/kuba.webp",
+  "w": 515,
+  "h": 640,
+  "cat": "characters"
+ },
+ "kuba_beam": {
+  "file": "characters/kuba_beam.webp",
+  "w": 581,
+  "h": 635,
+  "cat": "characters"
+ },
+ "kuba_crossbow": {
+  "file": "characters/kuba_crossbow.webp",
+  "w": 501,
+  "h": 480,
+  "cat": "characters"
+ },
+ "kuba_gun": {
+  "file": "characters/kuba_gun.webp",
+  "w": 506,
+  "h": 489,
+  "cat": "characters"
+ },
+ "kuba_hit": {
+  "file": "characters/kuba_hit.webp",
+  "w": 388,
+  "h": 540,
+  "cat": "characters"
+ },
+ "kuba_idle": {
+  "file": "characters/kuba_idle.webp",
+  "w": 356,
+  "h": 489,
+  "cat": "characters"
+ },
+ "kuba_musket": {
+  "file": "characters/kuba_musket.webp",
+  "w": 609,
+  "h": 485,
+  "cat": "characters"
+ },
+ "kuba_slingshot": {
+  "file": "characters/kuba_slingshot.webp",
+  "w": 459,
+  "h": 482,
+  "cat": "characters"
+ },
+ "kuba_throw_release": {
+  "file": "characters/kuba_throw_release.webp",
+  "w": 502,
+  "h": 467,
+  "cat": "characters"
+ },
+ "kuba_throw_windup": {
+  "file": "characters/kuba_throw_windup.webp",
+  "w": 437,
+  "h": 480,
+  "cat": "characters"
+ },
+ "bebok": {
+  "file": "creatures/bebok.webp",
+  "w": 640,
+  "h": 639,
+  "cat": "creatures"
+ },
+ "bies": {
+  "file": "creatures/bies.webp",
+  "w": 605,
+  "h": 640,
+  "cat": "creatures"
+ },
+ "blotniczek": {
+  "file": "creatures/blotniczek.webp",
+  "w": 523,
+  "h": 516,
+  "cat": "creatures"
+ },
+ "blotnik": {
+  "file": "creatures/blotnik.webp",
+  "w": 640,
+  "h": 609,
+  "cat": "creatures"
+ },
+ "boginka": {
+  "file": "creatures/boginka.webp",
+  "w": 640,
+  "h": 639,
+  "cat": "creatures"
+ },
+ "iskierka": {
+  "file": "creatures/iskierka.webp",
+  "w": 386,
+  "h": 514,
+  "cat": "creatures"
+ },
+ "jaga_hut": {
+  "file": "creatures/jaga_hut.webp",
+  "w": 939,
+  "h": 960,
+  "cat": "creatures"
+ },
+ "klobuk": {
+  "file": "creatures/klobuk.webp",
+  "w": 640,
+  "h": 581,
+  "cat": "creatures"
+ },
+ "latawiec": {
+  "file": "creatures/latawiec.webp",
+  "w": 621,
+  "h": 640,
+  "cat": "creatures"
+ },
+ "leszy": {
+  "file": "creatures/leszy.webp",
+  "w": 623,
+  "h": 640,
+  "cat": "creatures"
+ },
+ "licho": {
+  "file": "creatures/licho.webp",
+  "w": 612,
+  "h": 640,
+  "cat": "creatures"
+ },
+ "ognik": {
+  "file": "creatures/ognik.webp",
+  "w": 616,
+  "h": 640,
+  "cat": "creatures"
+ },
+ "planetnik": {
+  "file": "creatures/planetnik.webp",
+  "w": 640,
+  "h": 599,
+  "cat": "creatures"
+ },
+ "poludnica": {
+  "file": "creatures/poludnica.webp",
+  "w": 635,
+  "h": 640,
+  "cat": "creatures"
+ },
+ "proj_boulder_enemy": {
+  "file": "creatures/proj_boulder_enemy.webp",
+  "w": 200,
+  "h": 193,
+  "cat": "creatures"
+ },
+ "proj_coal": {
+  "file": "creatures/proj_coal.webp",
+  "w": 200,
+  "h": 176,
+  "cat": "creatures"
+ },
+ "proj_hail": {
+  "file": "creatures/proj_hail.webp",
+  "w": 200,
+  "h": 188,
+  "cat": "creatures"
+ },
+ "purtk": {
+  "file": "creatures/purtk.webp",
+  "w": 629,
+  "h": 640,
+  "cat": "creatures"
+ },
+ "stolem": {
+  "file": "creatures/stolem.webp",
+  "w": 937,
+  "h": 960,
+  "cat": "creatures"
+ },
+ "strzyga": {
+  "file": "creatures/strzyga.webp",
+  "w": 640,
+  "h": 607,
+  "cat": "creatures"
+ },
+ "strzyga_alt": {
+  "file": "creatures/strzyga_alt.webp",
+  "w": 640,
+  "h": 587,
+  "cat": "creatures"
+ },
+ "topielec": {
+  "file": "creatures/topielec.webp",
+  "w": 639,
+  "h": 640,
+  "cat": "creatures"
+ },
+ "upior": {
+  "file": "creatures/upior.webp",
+  "w": 640,
+  "h": 637,
+  "cat": "creatures"
+ },
+ "utopiec": {
+  "file": "creatures/utopiec.webp",
+  "w": 518,
+  "h": 482,
+  "cat": "creatures"
+ },
+ "wilkolak": {
+  "file": "creatures/wilkolak.webp",
+  "w": 640,
+  "h": 514,
+  "cat": "creatures"
+ },
+ "wodnik": {
+  "file": "creatures/wodnik.webp",
+  "w": 640,
+  "h": 628,
+  "cat": "creatures"
+ },
+ "zmij": {
+  "file": "creatures/zmij.webp",
+  "w": 960,
+  "h": 943,
+  "cat": "creatures"
+ },
+ "zmora_fly": {
+  "file": "creatures/zmora_fly.webp",
+  "w": 640,
+  "h": 574,
+  "cat": "creatures"
+ },
+ "zmora_sit": {
+  "file": "creatures/zmora_sit.webp",
+  "w": 565,
+  "h": 640,
+  "cat": "creatures"
+ },
+ "def_belfry": {
+  "file": "defenses/def_belfry.webp",
+  "w": 231,
+  "h": 420,
+  "cat": "defenses"
+ },
+ "def_dog": {
+  "file": "defenses/def_dog.webp",
+  "w": 420,
+  "h": 315,
+  "cat": "defenses"
+ },
+ "def_granny": {
+  "file": "defenses/def_granny.webp",
+  "w": 420,
+  "h": 336,
+  "cat": "defenses"
+ },
+ "def_kennel": {
+  "file": "defenses/def_kennel.webp",
+  "w": 420,
+  "h": 364,
+  "cat": "defenses"
+ },
+ "def_roof_bow": {
+  "file": "defenses/def_roof_bow.webp",
+  "w": 420,
+  "h": 394,
+  "cat": "defenses"
+ },
+ "def_scarecrow": {
+  "file": "defenses/def_scarecrow.webp",
+  "w": 390,
+  "h": 420,
+  "cat": "defenses"
+ },
+ "fx_fire": {
+  "file": "fx/fx_fire.webp",
+  "w": 384,
+  "h": 279,
+  "cat": "fx"
+ },
+ "fx_flare": {
+  "file": "fx/fx_flare.webp",
+  "w": 384,
+  "h": 365,
+  "cat": "fx"
+ },
+ "fx_hit": {
+  "file": "fx/fx_hit.webp",
+  "w": 384,
+  "h": 352,
+  "cat": "fx"
+ },
+ "fx_salt_cloud": {
+  "file": "fx/fx_salt_cloud.webp",
+  "w": 384,
+  "h": 292,
+  "cat": "fx"
+ },
+ "fx_scraps": {
+  "file": "fx/fx_scraps.webp",
+  "w": 384,
+  "h": 340,
+  "cat": "fx"
+ },
+ "fx_splash": {
+  "file": "fx/fx_splash.webp",
+  "w": 384,
+  "h": 327,
+  "cat": "fx"
+ },
+ "herb_birch": {
+  "file": "herbs/herb_birch.webp",
+  "w": 321,
+  "h": 360,
+  "cat": "herbs"
+ },
+ "herb_calendula": {
+  "file": "herbs/herb_calendula.webp",
+  "w": 353,
+  "h": 360,
+  "cat": "herbs"
+ },
+ "herb_chamomile": {
+  "file": "herbs/herb_chamomile.webp",
+  "w": 321,
+  "h": 360,
+  "cat": "herbs"
+ },
+ "herb_cornflower": {
+  "file": "herbs/herb_cornflower.webp",
+  "w": 339,
+  "h": 360,
+  "cat": "herbs"
+ },
+ "herb_dill": {
+  "file": "herbs/herb_dill.webp",
+  "w": 317,
+  "h": 360,
+  "cat": "herbs"
+ },
+ "herb_elderflower": {
+  "file": "herbs/herb_elderflower.webp",
+  "w": 326,
+  "h": 360,
+  "cat": "herbs"
+ },
+ "herb_garlic": {
+  "file": "herbs/herb_garlic.webp",
+  "w": 319,
+  "h": 360,
+  "cat": "herbs"
+ },
+ "herb_horsetail": {
+  "file": "herbs/herb_horsetail.webp",
+  "w": 259,
+  "h": 360,
+  "cat": "herbs"
+ },
+ "herb_juniper": {
+  "file": "herbs/herb_juniper.webp",
+  "w": 333,
+  "h": 360,
+  "cat": "herbs"
+ },
+ "herb_lavender": {
+  "file": "herbs/herb_lavender.webp",
+  "w": 309,
+  "h": 360,
+  "cat": "herbs"
+ },
+ "herb_linden": {
+  "file": "herbs/herb_linden.webp",
+  "w": 299,
+  "h": 360,
+  "cat": "herbs"
+ },
+ "herb_lovage": {
+  "file": "herbs/herb_lovage.webp",
+  "w": 342,
+  "h": 360,
+  "cat": "herbs"
+ },
+ "herb_mint": {
+  "file": "herbs/herb_mint.webp",
+  "w": 317,
+  "h": 360,
+  "cat": "herbs"
+ },
+ "herb_mugwort": {
+  "file": "herbs/herb_mugwort.webp",
+  "w": 360,
+  "h": 359,
+  "cat": "herbs"
+ },
+ "herb_nettle": {
+  "file": "herbs/herb_nettle.webp",
+  "w": 312,
+  "h": 360,
+  "cat": "herbs"
+ },
+ "herb_plantain": {
+  "file": "herbs/herb_plantain.webp",
+  "w": 255,
+  "h": 360,
+  "cat": "herbs"
+ },
+ "herb_poppy": {
+  "file": "herbs/herb_poppy.webp",
+  "w": 332,
+  "h": 360,
+  "cat": "herbs"
+ },
+ "herb_rosemary": {
+  "file": "herbs/herb_rosemary.webp",
+  "w": 287,
+  "h": 360,
+  "cat": "herbs"
+ },
+ "herb_sage": {
+  "file": "herbs/herb_sage.webp",
+  "w": 344,
+  "h": 360,
+  "cat": "herbs"
+ },
+ "herb_stjohnswort": {
+  "file": "herbs/herb_stjohnswort.webp",
+  "w": 275,
+  "h": 360,
+  "cat": "herbs"
+ },
+ "herb_thyme": {
+  "file": "herbs/herb_thyme.webp",
+  "w": 290,
+  "h": 360,
+  "cat": "herbs"
+ },
+ "herb_valerian": {
+  "file": "herbs/herb_valerian.webp",
+  "w": 338,
+  "h": 360,
+  "cat": "herbs"
+ },
+ "herb_wormwood": {
+  "file": "herbs/herb_wormwood.webp",
+  "w": 350,
+  "h": 360,
+  "cat": "herbs"
+ },
+ "herb_yarrow": {
+  "file": "herbs/herb_yarrow.webp",
+  "w": 352,
+  "h": 360,
+  "cat": "herbs"
+ },
+ "home_dryingrack_1": {
+  "file": "homestead/home_dryingrack_1.webp",
+  "w": 484,
+  "h": 325,
+  "cat": "homestead"
+ },
+ "home_dryingrack_3": {
+  "file": "homestead/home_dryingrack_3.webp",
+  "w": 474,
+  "h": 381,
+  "cat": "homestead"
+ },
+ "home_dryingrack_5": {
+  "file": "homestead/home_dryingrack_5.webp",
+  "w": 488,
+  "h": 387,
+  "cat": "homestead"
+ },
+ "home_garden_1": {
+  "file": "homestead/home_garden_1.webp",
+  "w": 494,
+  "h": 280,
+  "cat": "homestead"
+ },
+ "home_garden_3": {
+  "file": "homestead/home_garden_3.webp",
+  "w": 509,
+  "h": 363,
+  "cat": "homestead"
+ },
+ "home_garden_5": {
+  "file": "homestead/home_garden_5.webp",
+  "w": 504,
+  "h": 402,
+  "cat": "homestead"
+ },
+ "home_hut_1": {
+  "file": "homestead/home_hut_1.webp",
+  "w": 486,
+  "h": 388,
+  "cat": "homestead"
+ },
+ "home_hut_3": {
+  "file": "homestead/home_hut_3.webp",
+  "w": 467,
+  "h": 430,
+  "cat": "homestead"
+ },
+ "home_hut_5": {
+  "file": "homestead/home_hut_5.webp",
+  "w": 499,
+  "h": 443,
+  "cat": "homestead"
+ },
+ "home_shrine_1": {
+  "file": "homestead/home_shrine_1.webp",
+  "w": 383,
+  "h": 471,
+  "cat": "homestead"
+ },
+ "home_shrine_3": {
+  "file": "homestead/home_shrine_3.webp",
+  "w": 409,
+  "h": 495,
+  "cat": "homestead"
+ },
+ "home_shrine_5": {
+  "file": "homestead/home_shrine_5.webp",
+  "w": 423,
+  "h": 493,
+  "cat": "homestead"
+ },
+ "home_smithy_1": {
+  "file": "homestead/home_smithy_1.webp",
+  "w": 486,
+  "h": 363,
+  "cat": "homestead"
+ },
+ "home_smithy_3": {
+  "file": "homestead/home_smithy_3.webp",
+  "w": 501,
+  "h": 485,
+  "cat": "homestead"
+ },
+ "home_smithy_5": {
+  "file": "homestead/home_smithy_5.webp",
+  "w": 487,
+  "h": 516,
+  "cat": "homestead"
+ },
+ "home_well_1": {
+  "file": "homestead/home_well_1.webp",
+  "w": 447,
+  "h": 475,
+  "cat": "homestead"
+ },
+ "home_well_3": {
+  "file": "homestead/home_well_3.webp",
+  "w": 462,
+  "h": 486,
+  "cat": "homestead"
+ },
+ "home_well_5": {
+  "file": "homestead/home_well_5.webp",
+  "w": 475,
+  "h": 479,
+  "cat": "homestead"
+ },
+ "dmg_fire": {
+  "file": "icons/dmg_fire.webp",
+  "w": 179,
+  "h": 192,
+  "cat": "icons"
+ },
+ "dmg_iron": {
+  "file": "icons/dmg_iron.webp",
+  "w": 179,
+  "h": 192,
+  "cat": "icons"
+ },
+ "dmg_light": {
+  "file": "icons/dmg_light.webp",
+  "w": 181,
+  "h": 192,
+  "cat": "icons"
+ },
+ "dmg_physical": {
+  "file": "icons/dmg_physical.webp",
+  "w": 179,
+  "h": 192,
+  "cat": "icons"
+ },
+ "dmg_salt": {
+  "file": "icons/dmg_salt.webp",
+  "w": 179,
+  "h": 192,
+  "cat": "icons"
+ },
+ "dmg_silver": {
+  "file": "icons/dmg_silver.webp",
+  "w": 180,
+  "h": 192,
+  "cat": "icons"
+ },
+ "dmg_water": {
+  "file": "icons/dmg_water.webp",
+  "w": 181,
+  "h": 192,
+  "cat": "icons"
+ },
+ "ic_ad": {
+  "file": "icons/ic_ad.webp",
+  "w": 192,
+  "h": 165,
+  "cat": "icons"
+ },
+ "ic_amber": {
+  "file": "icons/ic_amber.webp",
+  "w": 154,
+  "h": 192,
+  "cat": "icons"
+ },
+ "ic_armory": {
+  "file": "icons/ic_armory.webp",
+  "w": 192,
+  "h": 155,
+  "cat": "icons"
+ },
+ "ic_back": {
+  "file": "icons/ic_back.webp",
+  "w": 180,
+  "h": 192,
+  "cat": "icons"
+ },
+ "ic_bestiary": {
+  "file": "icons/ic_bestiary.webp",
+  "w": 192,
+  "h": 140,
+  "cat": "icons"
+ },
+ "ic_candle": {
+  "file": "icons/ic_candle.webp",
+  "w": 142,
+  "h": 192,
+  "cat": "icons"
+ },
+ "ic_check": {
+  "file": "icons/ic_check.webp",
+  "w": 178,
+  "h": 192,
+  "cat": "icons"
+ },
+ "ic_close": {
+  "file": "icons/ic_close.webp",
+  "w": 180,
+  "h": 192,
+  "cat": "icons"
+ },
+ "ic_coin": {
+  "file": "icons/ic_coin.webp",
+  "w": 188,
+  "h": 192,
+  "cat": "icons"
+ },
+ "ic_crown": {
+  "file": "icons/ic_crown.webp",
+  "w": 192,
+  "h": 128,
+  "cat": "icons"
+ },
+ "ic_door": {
+  "file": "icons/ic_door.webp",
+  "w": 192,
+  "h": 169,
+  "cat": "icons"
+ },
+ "ic_gear": {
+  "file": "icons/ic_gear.webp",
+  "w": 192,
+  "h": 191,
+  "cat": "icons"
+ },
+ "ic_heart": {
+  "file": "icons/ic_heart.webp",
+  "w": 192,
+  "h": 171,
+  "cat": "icons"
+ },
+ "ic_homestead": {
+  "file": "icons/ic_homestead.webp",
+  "w": 192,
+  "h": 156,
+  "cat": "icons"
+ },
+ "ic_info": {
+  "file": "icons/ic_info.webp",
+  "w": 177,
+  "h": 192,
+  "cat": "icons"
+ },
+ "ic_lock": {
+  "file": "icons/ic_lock.webp",
+  "w": 152,
+  "h": 192,
+  "cat": "icons"
+ },
+ "ic_longnight": {
+  "file": "icons/ic_longnight.webp",
+  "w": 188,
+  "h": 192,
+  "cat": "icons"
+ },
+ "ic_pause": {
+  "file": "icons/ic_pause.webp",
+  "w": 179,
+  "h": 192,
+  "cat": "icons"
+ },
+ "ic_play": {
+  "file": "icons/ic_play.webp",
+  "w": 188,
+  "h": 192,
+  "cat": "icons"
+ },
+ "ic_quest": {
+  "file": "icons/ic_quest.webp",
+  "w": 192,
+  "h": 129,
+  "cat": "icons"
+ },
+ "ic_reroll": {
+  "file": "icons/ic_reroll.webp",
+  "w": 181,
+  "h": 192,
+  "cat": "icons"
+ },
+ "ic_shop": {
+  "file": "icons/ic_shop.webp",
+  "w": 188,
+  "h": 192,
+  "cat": "icons"
+ },
+ "ic_trophy": {
+  "file": "icons/ic_trophy.webp",
+  "w": 192,
+  "h": 160,
+  "cat": "icons"
+ },
+ "ic_weakness": {
+  "file": "icons/ic_weakness.webp",
+  "w": 178,
+  "h": 192,
+  "cat": "icons"
+ },
+ "logo_en": {
+  "file": "logo/logo_en.webp",
+  "w": 1200,
+  "h": 942,
+  "cat": "logo"
+ },
+ "logo_en_v2": {
+  "file": "logo/logo_en_v2.webp",
+  "w": 1200,
+  "h": 836,
+  "cat": "logo"
+ },
+ "logo_pl": {
+  "file": "logo/logo_pl.webp",
+  "w": 1200,
+  "h": 1116,
+  "cat": "logo"
+ },
+ "logo_pl_v2": {
+  "file": "logo/logo_pl_v2.webp",
+  "w": 1194,
+  "h": 1112,
+  "cat": "logo"
+ },
+ "cart": {
+  "file": "props/cart.webp",
+  "w": 900,
+  "h": 450,
+  "cat": "props"
+ },
+ "hut": {
+  "file": "props/hut.webp",
+  "w": 960,
+  "h": 947,
+  "cat": "props"
+ },
+ "hut_door_damage_1": {
+  "file": "props/hut_door_damage_1.webp",
+  "w": 483,
+  "h": 681,
+  "cat": "props"
+ },
+ "hut_door_damage_2": {
+  "file": "props/hut_door_damage_2.webp",
+  "w": 488,
+  "h": 685,
+  "cat": "props"
+ },
+ "hut_door_damage_3": {
+  "file": "props/hut_door_damage_3.webp",
+  "w": 492,
+  "h": 687,
+  "cat": "props"
+ },
+ "hut_r2": {
+  "file": "props/hut_r2.webp",
+  "w": 900,
+  "h": 856,
+  "cat": "props"
+ },
+ "hut_r3": {
+  "file": "props/hut_r3.webp",
+  "w": 900,
+  "h": 825,
+  "cat": "props"
+ },
+ "amber_pack_1": {
+  "file": "shop/amber_pack_1.webp",
+  "w": 380,
+  "h": 340,
+  "cat": "shop"
+ },
+ "amber_pack_2": {
+  "file": "shop/amber_pack_2.webp",
+  "w": 425,
+  "h": 345,
+  "cat": "shop"
+ },
+ "amber_pack_3": {
+  "file": "shop/amber_pack_3.webp",
+  "w": 520,
+  "h": 416,
+  "cat": "shop"
+ },
+ "offer_noads": {
+  "file": "shop/offer_noads.webp",
+  "w": 402,
+  "h": 399,
+  "cat": "shop"
+ },
+ "offer_starter": {
+  "file": "shop/offer_starter.webp",
+  "w": 520,
+  "h": 435,
+  "cat": "shop"
+ },
+ "offer_wards": {
+  "file": "shop/offer_wards.webp",
+  "w": 482,
+  "h": 476,
+  "cat": "shop"
+ },
+ "app_icon": {
+  "file": "store/app_icon.webp",
+  "w": 1024,
+  "h": 1024,
+  "cat": "store"
+ },
+ "splash_bg": {
+  "file": "store/splash_bg.webp",
+  "w": 1024,
+  "h": 683,
+  "cat": "store"
+ },
+ "ui_bar_fill": {
+  "file": "ui/ui_bar_fill.webp",
+  "w": 407,
+  "h": 89,
+  "cat": "ui"
+ },
+ "ui_bar_frame": {
+  "file": "ui/ui_bar_frame.webp",
+  "w": 495,
+  "h": 136,
+  "cat": "ui"
+ },
+ "ui_btn_back": {
+  "file": "ui/ui_btn_back.webp",
+  "w": 200,
+  "h": 200,
+  "cat": "ui"
+ },
+ "ui_btn_disabled": {
+  "file": "ui/ui_btn_disabled.webp",
+  "w": 519,
+  "h": 145,
+  "cat": "ui"
+ },
+ "ui_btn_primary": {
+  "file": "ui/ui_btn_primary.webp",
+  "w": 484,
+  "h": 142,
+  "cat": "ui"
+ },
+ "ui_btn_primary_pressed": {
+  "file": "ui/ui_btn_primary_pressed.webp",
+  "w": 482,
+  "h": 142,
+  "cat": "ui"
+ },
+ "ui_btn_round": {
+  "file": "ui/ui_btn_round.webp",
+  "w": 302,
+  "h": 322,
+  "cat": "ui"
+ },
+ "ui_btn_secondary": {
+  "file": "ui/ui_btn_secondary.webp",
+  "w": 483,
+  "h": 142,
+  "cat": "ui"
+ },
+ "ui_btn_tile": {
+  "file": "ui/ui_btn_tile.webp",
+  "w": 285,
+  "h": 290,
+  "cat": "ui"
+ },
+ "ui_bubble": {
+  "file": "ui/ui_bubble.webp",
+  "w": 495,
+  "h": 319,
+  "cat": "ui"
+ },
+ "ui_herbcard_common": {
+  "file": "ui/ui_herbcard_common.webp",
+  "w": 280,
+  "h": 322,
+  "cat": "ui"
+ },
+ "ui_herbcard_legendary": {
+  "file": "ui/ui_herbcard_legendary.webp",
+  "w": 356,
+  "h": 341,
+  "cat": "ui"
+ },
+ "ui_herbcard_rare": {
+  "file": "ui/ui_herbcard_rare.webp",
+  "w": 286,
+  "h": 325,
+  "cat": "ui"
+ },
+ "ui_node_boss": {
+  "file": "ui/ui_node_boss.webp",
+  "w": 412,
+  "h": 317,
+  "cat": "ui"
+ },
+ "ui_node_current": {
+  "file": "ui/ui_node_current.webp",
+  "w": 429,
+  "h": 322,
+  "cat": "ui"
+ },
+ "ui_node_done": {
+  "file": "ui/ui_node_done.webp",
+  "w": 344,
+  "h": 296,
+  "cat": "ui"
+ },
+ "ui_node_locked": {
+  "file": "ui/ui_node_locked.webp",
+  "w": 355,
+  "h": 245,
+  "cat": "ui"
+ },
+ "ui_panel_large": {
+  "file": "ui/ui_panel_large.webp",
+  "w": 583,
+  "h": 348,
+  "cat": "ui"
+ },
+ "ui_panel_small": {
+  "file": "ui/ui_panel_small.webp",
+  "w": 283,
+  "h": 298,
+  "cat": "ui"
+ },
+ "ui_plaque": {
+  "file": "ui/ui_plaque.webp",
+  "w": 555,
+  "h": 158,
+  "cat": "ui"
+ },
+ "ui_portrait_frame": {
+  "file": "ui/ui_portrait_frame.webp",
+  "w": 340,
+  "h": 366,
+  "cat": "ui"
+ },
+ "ui_seg_empty": {
+  "file": "ui/ui_seg_empty.webp",
+  "w": 417,
+  "h": 90,
+  "cat": "ui"
+ },
+ "ui_seg_full": {
+  "file": "ui/ui_seg_full.webp",
+  "w": 433,
+  "h": 89,
+  "cat": "ui"
+ },
+ "ui_slider": {
+  "file": "ui/ui_slider.webp",
+  "w": 473,
+  "h": 92,
+  "cat": "ui"
+ },
+ "ui_slot": {
+  "file": "ui/ui_slot.webp",
+  "w": 271,
+  "h": 247,
+  "cat": "ui"
+ },
+ "ui_slot_active": {
+  "file": "ui/ui_slot_active.webp",
+  "w": 321,
+  "h": 296,
+  "cat": "ui"
+ },
+ "ui_star_empty": {
+  "file": "ui/ui_star_empty.webp",
+  "w": 285,
+  "h": 259,
+  "cat": "ui"
+ },
+ "ui_star_full": {
+  "file": "ui/ui_star_full.webp",
+  "w": 347,
+  "h": 321,
+  "cat": "ui"
+ },
+ "ui_tab_active": {
+  "file": "ui/ui_tab_active.webp",
+  "w": 474,
+  "h": 231,
+  "cat": "ui"
+ },
+ "ui_tab_inactive": {
+  "file": "ui/ui_tab_inactive.webp",
+  "w": 455,
+  "h": 231,
+  "cat": "ui"
+ },
+ "ui_toggle_off": {
+  "file": "ui/ui_toggle_off.webp",
+  "w": 278,
+  "h": 150,
+  "cat": "ui"
+ },
+ "ui_toggle_on": {
+  "file": "ui/ui_toggle_on.webp",
+  "w": 274,
+  "h": 150,
+  "cat": "ui"
+ },
+ "ui_tooltip": {
+  "file": "ui/ui_tooltip.webp",
+  "w": 354,
+  "h": 237,
+  "cat": "ui"
+ },
+ "fx_explosion": {
+  "file": "wards/fx_explosion.webp",
+  "w": 320,
+  "h": 301,
+  "cat": "wards"
+ },
+ "ward_garlic": {
+  "file": "wards/ward_garlic.webp",
+  "w": 189,
+  "h": 320,
+  "cat": "wards"
+ },
+ "ward_keg": {
+  "file": "wards/ward_keg.webp",
+  "w": 320,
+  "h": 214,
+  "cat": "wards"
+ },
+ "ward_lantern": {
+  "file": "wards/ward_lantern.webp",
+  "w": 178,
+  "h": 320,
+  "cat": "wards"
+ },
+ "ward_nails": {
+  "file": "wards/ward_nails.webp",
+  "w": 255,
+  "h": 320,
+  "cat": "wards"
+ },
+ "ward_net": {
+  "file": "wards/ward_net.webp",
+  "w": 320,
+  "h": 309,
+  "cat": "wards"
+ },
+ "ward_poppy": {
+  "file": "wards/ward_poppy.webp",
+  "w": 320,
+  "h": 251,
+  "cat": "wards"
+ },
+ "ward_rowan": {
+  "file": "wards/ward_rowan.webp",
+  "w": 241,
+  "h": 320,
+  "cat": "wards"
+ },
+ "ward_salt": {
+  "file": "wards/ward_salt.webp",
+  "w": 320,
+  "h": 235,
+  "cat": "wards"
+ },
+ "ward_socket": {
+  "file": "wards/ward_socket.webp",
+  "w": 320,
+  "h": 218,
+  "cat": "wards"
+ },
+ "proj_bagpipes": {
+  "file": "weapons/proj_bagpipes.webp",
+  "w": 200,
+  "h": 199,
+  "cat": "weapons"
+ },
+ "proj_beam": {
+  "file": "weapons/proj_beam.webp",
+  "w": 200,
+  "h": 119,
+  "cat": "weapons"
+ },
+ "proj_bolt": {
+  "file": "weapons/proj_bolt.webp",
+  "w": 200,
+  "h": 78,
+  "cat": "weapons"
+ },
+ "proj_boulder": {
+  "file": "weapons/proj_boulder.webp",
+  "w": 200,
+  "h": 147,
+  "cat": "weapons"
+ },
+ "proj_ciupaga": {
+  "file": "weapons/proj_ciupaga.webp",
+  "w": 200,
+  "h": 142,
+  "cat": "weapons"
+ },
+ "proj_ember_pot": {
+  "file": "weapons/proj_ember_pot.webp",
+  "w": 200,
+  "h": 191,
+  "cat": "weapons"
+ },
+ "proj_fire": {
+  "file": "weapons/proj_fire.webp",
+  "w": 200,
+  "h": 128,
+  "cat": "weapons"
+ },
+ "proj_flare": {
+  "file": "weapons/proj_flare.webp",
+  "w": 200,
+  "h": 141,
+  "cat": "weapons"
+ },
+ "proj_flask": {
+  "file": "weapons/proj_flask.webp",
+  "w": 200,
+  "h": 125,
+  "cat": "weapons"
+ },
+ "proj_iron": {
+  "file": "weapons/proj_iron.webp",
+  "w": 200,
+  "h": 87,
+  "cat": "weapons"
+ },
+ "proj_piorun": {
+  "file": "weapons/proj_piorun.webp",
+  "w": 200,
+  "h": 150,
+  "cat": "weapons"
+ },
+ "proj_pitchfork": {
+  "file": "weapons/proj_pitchfork.webp",
+  "w": 200,
+  "h": 136,
+  "cat": "weapons"
+ },
+ "proj_powder_bomb": {
+  "file": "weapons/proj_powder_bomb.webp",
+  "w": 187,
+  "h": 200,
+  "cat": "weapons"
+ },
+ "proj_rowan_bow": {
+  "file": "weapons/proj_rowan_bow.webp",
+  "w": 200,
+  "h": 120,
+  "cat": "weapons"
+ },
+ "proj_salt": {
+  "file": "weapons/proj_salt.webp",
+  "w": 200,
+  "h": 101,
+  "cat": "weapons"
+ },
+ "proj_sickle": {
+  "file": "weapons/proj_sickle.webp",
+  "w": 200,
+  "h": 198,
+  "cat": "weapons"
+ },
+ "proj_silver": {
+  "file": "weapons/proj_silver.webp",
+  "w": 200,
+  "h": 90,
+  "cat": "weapons"
+ },
+ "proj_stone": {
+  "file": "weapons/proj_stone.webp",
+  "w": 200,
+  "h": 101,
+  "cat": "weapons"
+ },
+ "proj_torch": {
+  "file": "weapons/proj_torch.webp",
+  "w": 200,
+  "h": 158,
+  "cat": "weapons"
+ },
+ "proj_trombita": {
+  "file": "weapons/proj_trombita.webp",
+  "w": 200,
+  "h": 116,
+  "cat": "weapons"
+ },
+ "proj_water": {
+  "file": "weapons/proj_water.webp",
+  "w": 200,
+  "h": 127,
+  "cat": "weapons"
+ },
+ "wpn_bagpipes": {
+  "file": "weapons/wpn_bagpipes.webp",
+  "w": 207,
+  "h": 384,
+  "cat": "weapons"
+ },
+ "wpn_ciupaga": {
+  "file": "weapons/wpn_ciupaga.webp",
+  "w": 215,
+  "h": 384,
+  "cat": "weapons"
+ },
+ "wpn_crossbow": {
+  "file": "weapons/wpn_crossbow.webp",
+  "w": 384,
+  "h": 263,
+  "cat": "weapons"
+ },
+ "wpn_ember_pot": {
+  "file": "weapons/wpn_ember_pot.webp",
+  "w": 275,
+  "h": 384,
+  "cat": "weapons"
+ },
+ "wpn_flare": {
+  "file": "weapons/wpn_flare.webp",
+  "w": 311,
+  "h": 299,
+  "cat": "weapons"
+ },
+ "wpn_flask": {
+  "file": "weapons/wpn_flask.webp",
+  "w": 209,
+  "h": 325,
+  "cat": "weapons"
+ },
+ "wpn_jaga_eyes": {
+  "file": "weapons/wpn_jaga_eyes.webp",
+  "w": 238,
+  "h": 362,
+  "cat": "weapons"
+ },
+ "wpn_musket": {
+  "file": "weapons/wpn_musket.webp",
+  "w": 380,
+  "h": 294,
+  "cat": "weapons"
+ },
+ "wpn_piorun": {
+  "file": "weapons/wpn_piorun.webp",
+  "w": 187,
+  "h": 384,
+  "cat": "weapons"
+ },
+ "wpn_pitchfork": {
+  "file": "weapons/wpn_pitchfork.webp",
+  "w": 212,
+  "h": 384,
+  "cat": "weapons"
+ },
+ "wpn_powder_bomb": {
+  "file": "weapons/wpn_powder_bomb.webp",
+  "w": 339,
+  "h": 384,
+  "cat": "weapons"
+ },
+ "wpn_rowan_bow": {
+  "file": "weapons/wpn_rowan_bow.webp",
+  "w": 255,
+  "h": 384,
+  "cat": "weapons"
+ },
+ "wpn_salt_shotgun": {
+  "file": "weapons/wpn_salt_shotgun.webp",
+  "w": 369,
+  "h": 260,
+  "cat": "weapons"
+ },
+ "wpn_sickle": {
+  "file": "weapons/wpn_sickle.webp",
+  "w": 292,
+  "h": 384,
+  "cat": "weapons"
+ },
+ "wpn_slingshot": {
+  "file": "weapons/wpn_slingshot.webp",
+  "w": 261,
+  "h": 297,
+  "cat": "weapons"
+ },
+ "wpn_stolem_boulder": {
+  "file": "weapons/wpn_stolem_boulder.webp",
+  "w": 306,
+  "h": 307,
+  "cat": "weapons"
+ },
+ "wpn_torch": {
+  "file": "weapons/wpn_torch.webp",
+  "w": 208,
+  "h": 384,
+  "cat": "weapons"
+ },
+ "wpn_trombita": {
+  "file": "weapons/wpn_trombita.webp",
+  "w": 384,
+  "h": 206,
+  "cat": "weapons"
+ },
+ "wpn_zmij_maws": {
+  "file": "weapons/wpn_zmij_maws.webp",
+  "w": 317,
+  "h": 311,
+  "cat": "weapons"
+ }
+}
