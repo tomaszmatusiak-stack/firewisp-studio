@@ -36,8 +36,9 @@ if (!window._flutter) {
 _flutter.buildConfig = {"engineRevision":"69c8c61792f04cc809dfef0c910414fb9afc06cd","builds":[{"compileTarget":"dart2js","renderer":"canvaskit","mainJsPath":"main.dart.js"},{}]};
 
 
-// Rozgrzewamy cache realnym pobieraniem (pasek postępu), potem standardowy loader Fluttera
-// bierze te same pliki z cache. CanvasKit z własnego hostingu — bez CDN Google.
+// Rozgrzewamy cache realnym pobieraniem (pasek postępu), potem standardowy loader Fluttera bierze te same pliki.
+// CanvasKit z własnego hostingu; wariant „chromium” tam, gdzie Flutter sam go wybierze (ten sam test co w loaderze),
+// żeby nie pobierać wasm dwa razy. Gra renderuje się w #game (pod paskiem studia).
 (async function () {
   const S = window.__fwSplash;
   async function fetchProgress(url, from, to) {
@@ -49,13 +50,15 @@ _flutter.buildConfig = {"engineRevision":"69c8c61792f04cc809dfef0c910414fb9afc06
       while (true) { const { done, value } = await reader.read(); if (done) break; got += value.length; S.set(from + (to - from) * (got / total), 'Downloading', 'Pobieranie'); }
     } catch (e) { S.set(to, 'Downloading', 'Pobieranie'); }
   }
+  const chromium = typeof ImageDecoder !== 'undefined' && typeof Intl.v8BreakIterator !== 'undefined' && typeof Intl.Segmenter !== 'undefined'
+    && (navigator.vendor === 'Google Inc.' || navigator.userAgent.includes('Edg/'));
   await fetchProgress('main.dart.js', 0.02, 0.45);
-  await fetchProgress('canvaskit/canvaskit.wasm', 0.45, 0.9);
+  await fetchProgress(chromium ? 'canvaskit/chromium/canvaskit.wasm' : 'canvaskit/canvaskit.wasm', 0.45, 0.9);
   S.set(0.92, 'Starting', 'Uruchamianie');
   _flutter.loader.load({
     config: { canvasKitBaseUrl: 'canvaskit/' },
     onEntrypointLoaded: async function (engineInitializer) {
-      const appRunner = await engineInitializer.initializeEngine();
+      const appRunner = await engineInitializer.initializeEngine({ hostElement: document.getElementById('game') });
       S.set(1, 'Ready', 'Gotowe');
       await appRunner.runApp();
       setTimeout(function () { S.hide(); }, 250);
