@@ -30,7 +30,7 @@ body.bar-hidden #fw-bar { height: 0; opacity: 0; pointer-events: none; }
 #fw-tab { position: fixed; left: 8px; bottom: 8px; z-index: 9; width: 36px; height: 36px; border-radius: 50%; border: 1px solid rgba(255,255,255,.18); background: rgba(7,19,27,.6); color: var(--cream); display: none; align-items: center; justify-content: center; cursor: pointer; opacity: .55; }
 #fw-tab:hover { opacity: 1; } #fw-tab svg { width: 18px; height: 18px; } body.bar-hidden #fw-tab { display: inline-flex; }
 @media (max-width: 520px) { #fw-bar .title span.t { display: none; } }
-[data-l]:not([data-l-active]) { display: none; }
+[data-l]:not([data-l-active]), #fw-bar [data-l]:not([data-l-active]) { display: none !important; }
 </style>
 </head>
 <body>
