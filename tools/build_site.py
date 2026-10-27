@@ -113,6 +113,9 @@ LANG_JS = '''<script>
 REDIRECT_JS = '''<script>
   (function(){ try{ if (location.search.indexOf('lang=')>=0 || sessionStorage.getItem('fw-lang-chosen')) return; var s=localStorage.getItem('fw-lang'); var pl = s ? s==='pl' : (navigator.language||'').toLowerCase().indexOf('pl')===0; if (pl) location.replace('pl/' + location.hash); }catch(e){} })();
 </script>'''
+# Analityka bez cookies: GoatCounter (konto Tomasza, nazwa 'firewisp'); count.js pomija localhost. Zmiana nazwy = tylko tutaj.
+GOATCOUNTER = 'https://firewisp.goatcounter.com/count'
+ANALYTICS_JS = f'<script data-goatcounter="{GOATCOUNTER}" async src="https://gc.zgo.at/count.js"></script>'
 HEAD_LANG_JS = '''<script>try{{localStorage.setItem('fw-lang','{lang}');}}catch(e){{}}</script>'''
 
 # ───────────────────────── strona główna ─────────────────────────
@@ -135,6 +138,7 @@ def build_index(master: str):
         doc = re.sub(r'<div class="lang" role="group"[^>]*>.*?</div>', lang_switch(lang, '../' if lang == 'pl' else 'pl/'), doc, count=1, flags=re.S)
         # stary skrypt języka (setLang/DESC) zostaje nieszkodliwy; dokładamy nasz
         doc = doc.replace('<head>', '<head>\n' + ((REDIRECT_JS + '\n') if lang == 'en' else '') + HEAD_LANG_JS.format(lang=lang), 1)
+        doc = doc.replace('</head>', ANALYTICS_JS + '\n</head>', 1)
         doc = doc.replace('</body>', LANG_JS + '\n</body>')
         # nawigacja: Prywatność → nowe adresy
         doc = doc.replace(f'href="{prefix}privacy.html"', f'href="{prefix}privacy/"' if lang == 'en' else 'href="prywatnosc/"')
@@ -161,6 +165,7 @@ def build_privacy(master: str):
         home = prefix if lang == 'en' else '../'
         doc = doc.replace(f'href="{prefix}./"', f'href="{home}"').replace(f'href="{prefix}./#', f'href="{home}#')
         doc = doc.replace('<head>', '<head>\n' + HEAD_LANG_JS.format(lang=lang), 1)
+        doc = doc.replace('</head>', ANALYTICS_JS + '\n</head>', 1)
         doc = doc.replace('</body>', LANG_JS + '\n</body>')
         out = ROOT / (path_en if lang == 'en' else path_pl) / 'index.html'
         out.parent.mkdir(parents=True, exist_ok=True); out.write_text(doc, encoding='utf-8')
@@ -220,6 +225,7 @@ def product_html(p: dict, lang: str, products: list[dict]) -> str:
 <link rel="preload" href="{pre}assets/fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="{pre}assets/site.css">
 <link rel="stylesheet" href="{pre}assets/product.css">
+{ANALYTICS_JS}
 </head>
 <body class="product" style="--c: {p["color"]}">
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="i-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10h12M11 5l5 5-5 5"/></symbol><symbol id="i-down" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3v11M5 9l5 5 5-5M4 17h12"/></symbol></svg>
@@ -366,7 +372,7 @@ def build_404():
     doc = f'''<!doctype html>
 <html lang="en">
 <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Not found — Firewisp Studio</title><meta name="robots" content="noindex">
-<link rel="stylesheet" href="/firewisp-studio/assets/site.css"><link rel="stylesheet" href="/firewisp-studio/assets/product.css"></head>
+<link rel="stylesheet" href="/firewisp-studio/assets/site.css"><link rel="stylesheet" href="/firewisp-studio/assets/product.css">{ANALYTICS_JS}</head>
 <body class="product">
 <main id="main" class="container nf">
   <p class="meta" data-l="en">404</p><p class="meta" data-l="pl">404</p>

@@ -56,3 +56,8 @@ Konsola bez błędów; 1440 / 1280 / 1024 / 375 px; brak przewijania poziomego n
 - Baza `beta_signups` (projekt iskra): nowe kolumny `ios`, `android`, `apps text[]`, `consent`; migracja w `mobile/firewisp/supabase/migrations/20261027120000_beta_signups_v2.sql`. Anon dalej ma tylko INSERT, 409 (duplikat) = sukces.
 - Treści maili (powitalny, zaproszenie Play, zaproszenie TestFlight, PL/EN) w `docs/beta-maile.md`; do czasu domeny wysyłka ręczna z UDW, potem Resend + funkcja brzegowa.
 - Sprawdzone: 1280 i 375 px bez przewijania poziomego, wysyłka testowa trafiła do bazy z `android=true, apps={sushi-rush,turniej}`, walidacja braku platformy, wiersze testowe usunięte (lista pusta, 0 realnych zapisów).
+
+## v3.4 — analityka bez cookies (2026-10-27)
+- GoatCounter (`https://firewisp.goatcounter.com/count`, skrypt z gc.zgo.at) na wszystkich stronach generowanych, w muszlach gier `play/*` i w szablonach (`tools/flutter_splash.py`, `mobile/bog-night/index.html`). Nazwa w jednym miejscu: `GOATCOUNTER` w `tools/build_site.py`. count.js nie liczy localhost.
+- Polityka prywatności (EN/PL) opisuje licznik: brak cookie, brak IP, strona + źródło + ekran + przeglądarka + kraj. Stopka: „Bez ciasteczek i reklam" zamiast „i śledzenia".
+- Konto GoatCounter zakłada Tomasz (kod `firewisp`); do tego czasu żądania do licznika wracają błędem i nic się nie zapisuje.
