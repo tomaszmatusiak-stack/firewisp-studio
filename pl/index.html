@@ -287,6 +287,25 @@
           <label class="hp" for="website">Website</label><input class="hp" id="website" name="website" tabindex="-1" autocomplete="off">
           <label class="sr-only" for="beta-email">E-mail</label>
           <div class="field"><svg class="ico"><use href="#i-mail"/></svg><input type="email" id="beta-email" name="email" required autocomplete="email" placeholder="you@example.com"></div>
+          <fieldset class="opts">
+            <legend>Twój telefon</legend>
+            <label class="opt"><input type="checkbox" name="platform" value="ios"><span><svg class="ico"><use href="#i-apple"/></svg> iPhone</span></label>
+            <label class="opt"><input type="checkbox" name="platform" value="android"><span><svg class="ico"><use href="#i-phone"/></svg> Android</span></label>
+          </fieldset>
+          
+          <p class="hint-android">Testy na Androida idą przez Google Play, więc podaj adres przypisany do Twojego konta Google.</p>
+          <details class="apps">
+            <summary><span>Które apki? Wszystkie, chyba że wybierzesz.</span></summary>
+            <div class="opts">
+              <label class="opt"><input type="checkbox" name="app" value="sushi-rush"><span>Sushi Rush</span></label>
+              <label class="opt"><input type="checkbox" name="app" value="bog-night"><span>Bog Night</span></label>
+              <label class="opt"><input type="checkbox" name="app" value="whirlpick"><span>Whirlpick</span></label>
+              <label class="opt"><input type="checkbox" name="app" value="turniej"><span>Turniej</span></label>
+              <label class="opt"><input type="checkbox" name="app" value="weight-tracker"><span>Weight Tracker</span></label>
+              <label class="opt"><input type="checkbox" name="app" value="firewisp"><span>Firewisp</span></label>
+              <label class="opt"><input type="checkbox" name="app" value="kropla"><span>Kropla (Android)</span></label>
+            </div>
+          </details>
           <button class="btn btn-primary" type="submit"><span>Dołącz do bety</span> <svg class="ico arrow"><use href="#i-arrow"/></svg></button>
         </form>
         <p class="note" id="beta-note" aria-live="polite"><span>Dołączając, akceptujesz <a href="prywatnosc/">informację o prywatności</a>.</span></p>
@@ -437,16 +456,21 @@
     note.innerHTML = `<span>${en}</span><span>${pl}</span>`;
     note.querySelectorAll('[data-l]').forEach(el => el.toggleAttribute('data-l-active', el.dataset.l === document.documentElement.lang));
   };
+  const hintA = () => { const on = !!form.querySelector('input[value=android]:checked'); form.querySelectorAll('.hint-android').forEach(h => h.classList.toggle('show', on)); };
+  form.querySelectorAll('input[name=platform]').forEach(i => i.addEventListener('change', hintA));
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
     if (form.website.value) return;                              // pole-pułapka dla botów
     const email = form.email.value.trim();
     if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) { say('That e-mail doesn\'t look right.', 'Ten adres nie wygląda poprawnie.', 'err'); form.email.focus(); return; }
+    const platforms = [...form.querySelectorAll('input[name=platform]:checked')].map(i => i.value);
+    if (!platforms.length) { say('Tell us which phone you have: iPhone, Android or both.', 'Zaznacz, jaki masz telefon: iPhone, Android albo oba.', 'err'); return; }
+    const apps = [...form.querySelectorAll('input[name=app]:checked')].map(i => i.value);
     const btn = form.querySelector('button'); btn.disabled = true;
     say('Signing you up…', 'Zapisuję…', 'busy');
     try {
-      const r = await fetch(SB_URL + '/rest/v1/beta_signups', { method: 'POST', headers: { apikey: SB_KEY, Authorization: 'Bearer ' + SB_KEY, 'Content-Type': 'application/json', Prefer: 'return=minimal' }, body: JSON.stringify({ email, source: 'site', lang: document.documentElement.lang }) });
-      if (r.status === 201 || r.status === 409) { say('You\'re on the list. We\'ll write when there is something to test.', 'Jesteś na liście. Napiszemy, gdy będzie co testować.', 'ok'); form.reset(); }
+      const r = await fetch(SB_URL + '/rest/v1/beta_signups', { method: 'POST', headers: { apikey: SB_KEY, Authorization: 'Bearer ' + SB_KEY, 'Content-Type': 'application/json', Prefer: 'return=minimal' }, body: JSON.stringify({ email, source: 'site', lang: document.documentElement.lang, ios: platforms.includes('ios'), android: platforms.includes('android'), apps, consent: true }) });
+      if (r.status === 201 || r.status === 409) { say('You\'re on the list. The link comes by e-mail when a test opens for your phone. To leave, reply to any of our mails.', 'Jesteś na liście. Link przyjdzie mailem, gdy ruszy test na Twój telefon. Żeby się wypisać, odpisz na dowolny nasz mail.', 'ok'); form.reset(); hintA(); }
       else say('Something went wrong (' + r.status + '). Write to tomasz.matusiak@post.pl instead.', 'Coś poszło nie tak (' + r.status + '). Napisz na tomasz.matusiak@post.pl.', 'err');
     } catch (err) { say('No connection. Try again in a moment.', 'Brak połączenia. Spróbuj za chwilę.', 'err'); }
     btn.disabled = false;

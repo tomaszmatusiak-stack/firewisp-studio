@@ -50,3 +50,9 @@ Konsola bez błędów; 1440 / 1280 / 1024 / 375 px; brak przewijania poziomego n
 - Podstrony: hero z artem, statusy, CTA (graj / sklep / beta), zrzuty, „Co tu robisz”, fakty, link do polityki apki (repo legal) albo prywatności strony, press kit, inne produkty. Styl `assets/product.css`.
 - `SITE_URL` w generatorze: po zakupie domeny zmienić i uruchomić ponownie.
 - Braki: Turniej ma tylko ekran startowy (klik w kanwę Fluttera nie działa w panelu), Sushi Rush bez zrzutu „level complete”; zrzuty z telefonu uzupełnią.
+
+## v3.3 — formularz beta v2 (2026-10-27)
+- Formularz: e-mail + obowiązkowy wybór telefonu (iPhone / Android, oba dozwolone) + opcjonalna lista apek (zwinięta, puste = wszystkie). Po zaznaczeniu Androida pojawia się podpowiedź o adresie konta Google (Play wpuszcza testera tylko po tym adresie). Komunikat sukcesu mówi, że link przyjdzie mailem, gdy ruszy test na daną platformę.
+- Baza `beta_signups` (projekt iskra): nowe kolumny `ios`, `android`, `apps text[]`, `consent`; migracja w `mobile/firewisp/supabase/migrations/20261027120000_beta_signups_v2.sql`. Anon dalej ma tylko INSERT, 409 (duplikat) = sukces.
+- Treści maili (powitalny, zaproszenie Play, zaproszenie TestFlight, PL/EN) w `docs/beta-maile.md`; do czasu domeny wysyłka ręczna z UDW, potem Resend + funkcja brzegowa.
+- Sprawdzone: 1280 i 375 px bez przewijania poziomego, wysyłka testowa trafiła do bazy z `android=true, apps={sushi-rush,turniej}`, walidacja braku platformy, wiersze testowe usunięte (lista pusta, 0 realnych zapisów).
