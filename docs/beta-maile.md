@@ -16,7 +16,6 @@ dzięki za zapis. Jestem Tomasz, robię gry i apki jako Firewisp Studio, sam, w 
 Już dziś możesz zagrać w przeglądarce:
 – Sushi Rush: https://tomaszmatusiak-stack.github.io/firewisp-studio/play/sushi-rush/
 – Bog Night: https://tomaszmatusiak-stack.github.io/firewisp-studio/play/bog-night/
-– Whirlpick: https://tomaszmatusiak-stack.github.io/firewisp-studio/play/whirlpick/
 – Turniej: https://tomaszmatusiak-stack.github.io/firewisp-studio/play/turniej/
 
 Testy na telefon: Android przez Google Play (dostaniesz link do dołączenia, zadziała tylko z adresem Twojego konta Google), iPhone przez TestFlight (publiczny link). Napiszę, gdy ruszy test na Twoją platformę, kilka maili w roku, bez newslettera.
@@ -35,7 +34,6 @@ thanks for signing up. I'm Tomasz, I make games and apps as Firewisp Studio, on 
 You can already play in the browser:
 – Sushi Rush: https://tomaszmatusiak-stack.github.io/firewisp-studio/play/sushi-rush/
 – Bog Night: https://tomaszmatusiak-stack.github.io/firewisp-studio/play/bog-night/
-– Whirlpick: https://tomaszmatusiak-stack.github.io/firewisp-studio/play/whirlpick/
 – Turniej: https://tomaszmatusiak-stack.github.io/firewisp-studio/play/turniej/
 
 Phone tests: Android through Google Play (you'll get a join link; it only works with the e-mail of your Google account), iPhone through TestFlight (a public link). I'll write when a test opens for your platform, a few e-mails a year, no newsletter.

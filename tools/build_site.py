@@ -361,7 +361,7 @@ def build_press(products: list[dict]):
     print('press kits', len(products))
 
 def build_sitemap(products: list[dict]):
-    urls = ['', 'pl/', 'privacy/', 'pl/prywatnosc/'] + [f'{p["slug"]}/' for p in products] + [f'pl/{p["slug"]}/' for p in products] + ['play/sushi-rush/', 'play/bog-night/', 'play/whirlpick/', 'play/turniej/', 'play/pendulum/']
+    urls = ['', 'pl/', 'privacy/', 'pl/prywatnosc/'] + [f'{p["slug"]}/' for p in products] + [f'pl/{p["slug"]}/' for p in products] + ['play/sushi-rush/', 'play/bog-night/', 'play/turniej/', 'play/pendulum/']
     today = __import__('datetime').date.today().isoformat()
     body = '\n'.join(f'  <url><loc>{SITE_URL}/{u}</loc><lastmod>{today}</lastmod></url>' for u in urls)
     (ROOT / 'sitemap.xml').write_text(f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n{body}\n</urlset>\n', encoding='utf-8')
