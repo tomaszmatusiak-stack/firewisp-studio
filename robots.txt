@@ -2,4 +2,5 @@ User-agent: *
 Allow: /
 Disallow: /src/
 Disallow: /tools/
+Disallow: /lab/
 Sitemap: https://tomaszmatusiak-stack.github.io/firewisp-studio/sitemap.xml

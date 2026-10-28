@@ -365,7 +365,7 @@ def build_sitemap(products: list[dict]):
     today = __import__('datetime').date.today().isoformat()
     body = '\n'.join(f'  <url><loc>{SITE_URL}/{u}</loc><lastmod>{today}</lastmod></url>' for u in urls)
     (ROOT / 'sitemap.xml').write_text(f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n{body}\n</urlset>\n', encoding='utf-8')
-    (ROOT / 'robots.txt').write_text(f'User-agent: *\nAllow: /\nDisallow: /src/\nDisallow: /tools/\nSitemap: {SITE_URL}/sitemap.xml\n', encoding='utf-8')
+    (ROOT / 'robots.txt').write_text(f'User-agent: *\nAllow: /\nDisallow: /src/\nDisallow: /tools/\nDisallow: /lab/\nSitemap: {SITE_URL}/sitemap.xml\n', encoding='utf-8')
     print('sitemap', len(urls), 'urls')
 
 def build_404():
