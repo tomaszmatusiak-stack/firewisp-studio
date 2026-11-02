@@ -202,6 +202,7 @@ h3 { font-size: var(--fs-h3); line-height: 1.3; font-weight: 700; letter-spacing
 .ccard[data-pos="0"] { --x: 0; --sc: 1; --rot: 0deg; --op: 1; --z: 3; border-color: rgba(255,173,101,.55); box-shadow: var(--shadow-2), var(--glow-accent); cursor: default; }
 .ccard[data-pos="-1"] { --x: -66%; --sc: .86; --rot: -3deg; --op: .72; --z: 2; }
 .ccard[data-pos="1"] { --x: 66%; --sc: .86; --rot: 3deg; --op: .72; --z: 2; }
+.ccard[data-pos="2"], .ccard[data-pos="-2"] { --x: 0; --sc: .7; --rot: 0deg; --op: 0; --z: 1; pointer-events: none; }
 .ccard[data-pos="-1"]:hover, .ccard[data-pos="1"]:hover { --op: .92; }
 .ccard[data-pos="-1"] .go, .ccard[data-pos="1"] .go { pointer-events: none; opacity: 0; }
 .cnav { display: flex; align-items: center; justify-content: center; gap: var(--s-3); }

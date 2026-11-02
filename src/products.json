@@ -23,8 +23,8 @@
       [
         "soon",
         {
-          "en": "App Store & Google Play soon",
-          "pl": "App Store i Google Play wkrótce"
+          "en": "Phone beta: sign-up open",
+          "pl": "Beta na telefon: zapisy otwarte"
         }
       ]
     ],
@@ -47,15 +47,15 @@
       },
       {
         "label": {
-          "en": "Join the beta for phone builds",
-          "pl": "Beta na telefon"
+          "en": "Join the phone beta",
+          "pl": "Zapisz się na betę na telefon"
         },
         "href": "#beta"
       }
     ],
     "beta_note": {
-      "en": "Android and iPhone test builds go to the beta list first.",
-      "pl": "Wersje testowe na Androida i iPhone'a trafiają najpierw na listę beta."
+      "en": "Next phone tests: Sushi Rush on iPhone (TestFlight) and Android (closed Google Play test). Invitations go to the beta list first.",
+      "pl": "Najbliższe testy na telefon: Sushi Rush na iPhone'a (TestFlight) i Androida (test zamknięty w Google Play). Zaproszenia trafiają najpierw na listę beta."
     },
     "shots": [
       {
@@ -515,10 +515,10 @@
     },
     "status": [
       [
-        "review",
+        "store",
         {
-          "en": "iPhone: App Store review",
-          "pl": "iPhone: recenzja App Store"
+          "en": "iPhone: on the App Store",
+          "pl": "iPhone: w App Store"
         }
       ],
       [
@@ -540,18 +540,18 @@
     "cta": [
       {
         "label": {
-          "en": "Try the web prototype",
-          "pl": "Wypróbuj prototyp web"
+          "en": "Download on the App Store",
+          "pl": "Pobierz z App Store"
         },
-        "href": "play/pendulum/",
+        "href": "https://apps.apple.com/app/id6805826905",
         "primary": true
       },
       {
         "label": {
-          "en": "Get the iPhone version early",
-          "pl": "Wersja na iPhone'a wcześniej"
+          "en": "Try the web prototype",
+          "pl": "Wypróbuj prototyp web"
         },
-        "href": "#beta"
+        "href": "play/pendulum/"
       }
     ],
     "beta_note": {
@@ -646,8 +646,8 @@
           "pl": "Platformy"
         },
         "v": {
-          "en": "iPhone (in review) · browser prototype",
-          "pl": "iPhone (w recenzji) · prototyp w przeglądarce"
+          "en": "iPhone (App Store) · browser prototype",
+          "pl": "iPhone (App Store) · prototyp w przeglądarce"
         }
       },
       {
