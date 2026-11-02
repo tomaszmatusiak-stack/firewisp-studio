@@ -109,3 +109,40 @@ Tomasz
 
 ## 4. Automat (po domenie)
 Funkcja brzegowa Supabase `beta-welcome` odpalana webhookiem bazy po INSERT do `beta_signups`, wysyłka przez Resend z `beta@firewispstudio.com`, treść = mail 1 w języku z `lang`. Do zrobienia w godzinę po podpięciu domeny i weryfikacji nadawcy w Resend.
+
+## 5. Mail „Pendulum jest w App Store” (wysyłka do całej listy, bez względu na platformę; Android dostaje go jako informację)
+
+**Temat PL:** Pendulum: Rope Swing jest już w App Store
+**Temat EN:** Pendulum: Rope Swing is out on the App Store
+
+PL:
+```
+Cześć,
+
+pierwsza gra Firewisp Studio jest w App Store: Pendulum: Rope Swing. Jeden palec, lina, sto poziomów w dziesięciu światach i jeden poziom dnia, ten sam dla wszystkich.
+https://apps.apple.com/pl/app/pendulum-rope-swing/id6805826905
+
+Start za darmo (światy 1–3 i poziom dnia), jeden zakup odblokowuje resztę. Bez reklam.
+
+Jeśli zagrasz, jedna prośba: napisz mi, na którym poziomie było najtrudniej i czy coś Cię zirytowało. To trafia prosto do następnej wersji. Ocena w App Store też bardzo pomaga.
+
+Następna w kolejce jest beta Sushi Rush na telefon. Napiszę, gdy ruszy.
+
+Tomasz
+```
+
+EN:
+```
+Hi,
+
+the first Firewisp Studio game is on the App Store: Pendulum: Rope Swing. One thumb, a rope, a hundred levels across ten worlds and one daily run that everyone plays the same day.
+https://apps.apple.com/app/id6805826905
+
+Free to start (worlds 1–3 and the daily run), one purchase unlocks the rest. No ads.
+
+If you play it, one favour: tell me which level was the hardest and whether anything annoyed you. That goes straight into the next version. A rating on the App Store helps a lot too.
+
+Next up is the Sushi Rush phone beta. I'll write when it opens.
+
+Tomasz
+```

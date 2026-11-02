@@ -60,7 +60,7 @@
     <a class="brand" href="./" aria-label="Firewisp Studio"><img src="assets/icon-firewisp.webp" alt="" width="30" height="30"><span>Firewisp <i>Studio</i></span></a>
     <nav class="nav" id="nav" aria-label="Main">
       <a href="#games" data-spy="games"><span>Games</span></a>
-      <a href="#games" data-spy="apps" data-filter-jump="app"><span>Apps</span></a>
+      <a href="#store" data-spy="store"><span>App Store</span></a>
       <a href="#about" data-spy="about"><span>About</span></a>
       <a href="#beta" data-spy="beta">Beta</a>
     </nav>
@@ -95,6 +95,7 @@
         <div class="seg" role="group" aria-label="Jump to">
           <button type="button" data-seg="featured" aria-pressed="true"><svg class="ico"><use href="#i-flame"/></svg><span>Featured</span></button>
           <button type="button" data-seg="games" aria-pressed="false"><svg class="ico"><use href="#i-play"/></svg><span>Playable now</span></button>
+          <button type="button" data-seg="store" aria-pressed="false"><svg class="ico"><use href="#i-apple"/></svg><span>App Store</span></button>
           <button type="button" data-seg="upcoming" aria-pressed="false"><svg class="ico"><use href="#i-sparkle"/></svg><span>Coming next</span></button>
         </div>
         <div class="hero-cta">
@@ -104,7 +105,7 @@
         <div class="hero-facts" aria-label="Facts">
           <span><svg class="ico"><use href="#i-leaf"/></svg><span>No ads</span></span>
           <span><svg class="ico teal"><use href="#i-lock"/></svg><span>No tracking</span></span>
-          <span><svg class="ico cream"><use href="#i-phone"/></svg><span>iPhone · Android · Browser</span></span>
+          <span><svg class="ico cream"><use href="#i-phone"/></svg><span>iPhone · Browser · Android in testing</span></span>
         </div>
       </div>
 
@@ -205,7 +206,32 @@
         </div>
       </article>
 
-      <article class="pcard reveal" data-cat="app mobile" data-delay="2" id="apps" style="--c: var(--c-kropla)">
+      <article class="pcard reveal" data-cat="app browser" data-delay="2" style="--c: var(--c-turniej, #58D68D)">
+        <div class="thumb">
+          <img src="assets/thumb-turniej.webp" width="960" height="600" alt="" loading="lazy" decoding="async">
+          <div class="badges"><span class="tag live"><span>Browser</span></span></div>
+        </div>
+        <div class="body">
+          <h3><a href="turniej/">Turniej</a></h3>
+          <p class="desc">Run a 1v1 football tournament in minutes: players, round robin or knockout, random pairs, match timer with a whistle. Works offline, no account.</p>
+          
+          <div class="dots"><span>Tool</span><span>Football</span><span>Offline</span></div>
+          <div class="cta"><a class="btn btn-primary btn-sm" href="play/turniej/"><span>Open in the browser</span> <svg class="ico arrow"><use href="#i-arrow"/></svg></a><a class="link" href="#beta"><span>Android test: join the beta</span></a></div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- w App Store -->
+  <section class="section container" id="store">
+    <div class="section-head reveal">
+      <div class="title">
+        <h2>On the App Store</h2>
+        <span class="meta">Published for iPhone</span>
+      </div>
+    </div>
+    <div class="grid-3 playable store">
+      <article class="pcard reveal" data-cat="app mobile" style="--c: var(--c-kropla)">
         <div class="thumb">
           <img src="assets/thumb-kropla.webp" width="960" height="600" alt="" loading="lazy" decoding="async">
           <div class="badges"><span class="tag store"><svg class="ico"><use href="#i-apple"/></svg> App Store</span></div>
@@ -216,6 +242,19 @@
           
           <div class="dots"><span>Health</span><span>Minimal</span><span>Daily habit</span></div>
           <div class="cta"><a class="btn btn-primary btn-sm" href="https://apps.apple.com/app/id6805807230"><span>View on App Store</span> <svg class="ico arrow"><use href="#i-arrow"/></svg></a><span class="meta-note"><span>Android: closed testing</span></span></div>
+        </div>
+      </article>
+      <article class="pcard reveal" data-delay="1" style="--c: var(--c-pendulum)">
+        <div class="thumb">
+          <img src="assets/thumb-pendulum.webp" width="800" height="800" alt="" loading="lazy" decoding="async">
+          <div class="badges"><span class="tag store"><svg class="ico"><use href="#i-apple"/></svg> App Store</span><span class="tag"><span>New</span></span></div>
+        </div>
+        <div class="body">
+          <h3><a href="pendulum/">Pendulum: Rope Swing</a></h3>
+          <p class="desc">Hold to grab the rope, let go to fly. A hundred levels in ten painted worlds and one daily run everyone plays the same day. Free to start, one purchase for the rest, no ads.</p>
+          
+          <div class="dots"><span>Timing</span><span>One tap</span><span>iPhone</span></div>
+          <div class="cta"><a class="btn btn-primary btn-sm" href="https://apps.apple.com/app/id6805826905"><span>Download on the App Store</span> <svg class="ico arrow"><use href="#i-arrow"/></svg></a><a class="link" href="play/pendulum/"><span>Or try the web prototype</span></a></div>
         </div>
       </article>
     </div>
@@ -231,15 +270,15 @@
       <a class="view-all" href="#beta"><span>Get early builds</span> <svg class="ico"><use href="#i-arrow"/></svg></a>
     </div>
     <div class="grid-3 next">
-      <article class="ncard reveal" style="--c: var(--c-pendulum)">
-        <div class="thumb"><img src="assets/thumb-pendulum.webp" width="800" height="800" alt="" loading="lazy" decoding="async"></div>
+      <article class="ncard reveal" style="--c: #16A05D">
+        <div class="thumb"><img src="assets/thumb-tare.webp" width="800" height="800" alt="" loading="lazy" decoding="async"></div>
         <div class="body">
-          <div class="status"><span class="tag store"><svg class="ico"><use href="#i-apple"/></svg> App Store</span><span class="tag"><span>iPhone</span></span><span class="tag soon"><span>Web prototype</span></span></div>
-          <h3><a href="pendulum/">Pendulum: Rope Swing</a></h3>
-          <p class="desc">Hold to grab the rope, let go to fly. A hundred levels in ten painted worlds and one daily run everyone plays the same day.</p>
+          <div class="status"><span class="tag review"><span>App Store review</span></span><span class="tag"><span>iPhone</span></span></div>
+          <h3>Tare – Weight Tracker</h3>
+          <p class="desc">A private weight log: one entry a day, a 7-day trend instead of bathroom-scale noise, body measurements and BMI with its WHO source. Fully offline, no account, no ads, nothing collected.</p>
           
-          <div class="dots"><span>Timing</span><span>One tap</span><span>iPhone</span></div>
-          <div class="cta"><a class="btn btn-primary btn-sm" href="https://apps.apple.com/app/id6805826905"><span>Download on the App Store</span> <svg class="ico arrow"><use href="#i-arrow"/></svg></a><a class="link" href="play/pendulum/"><span>Or try the web prototype</span></a></div>
+          <div class="dots"><span>Health</span><span>Offline</span><span>Free</span></div>
+          <div class="cta"><a class="btn btn-sm" href="#beta"><span>Tell me when it's out</span> <svg class="ico arrow"><use href="#i-arrow"/></svg></a><span class="meta-note">Submitted to Apple on 2 November</span></div>
         </div>
       </article>
       <article class="ncard reveal" data-delay="2" style="--c: var(--c-iskra)">
@@ -314,7 +353,7 @@
       <ul class="benefits">
         <li><svg class="ico"><use href="#i-check"/></svg><span><b>Next up: Sushi Rush</b> on iPhone (TestFlight) and Android (closed Google Play test), invitations go to the list first</span></li>
         <li><svg class="ico"><use href="#i-check"/></svg><span>Then Bog Night for iPhone; Turniej stays playable in the browser</span></li>
-        <li><svg class="ico"><use href="#i-check"/></svg><span>Kropla for Android and Weight Tracker: closed Google Play tests</span></li>
+        <li><svg class="ico"><use href="#i-check"/></svg><span>Kropla for Android: closed Google Play test · Tare (weight log) for iPhone: in App Store review</span></li>
         <li><svg class="ico"><use href="#i-check"/></svg><span>Your feedback lands in the next build, usually within a week</span></li>
         <li><svg class="ico"><use href="#i-check"/></svg><span>No spam, no newsletter, reply to leave</span></li>
       </ul>
@@ -392,12 +431,12 @@
 
   // ── segmenty w hero: skok do sekcji; stan synchronizowany z przewijaniem ──
   const segs = document.querySelectorAll('.seg [data-seg]');
-  const SEG_TARGET = { featured: 'top', games: 'games', upcoming: 'upcoming' };
+  const SEG_TARGET = { featured: 'top', games: 'games', store: 'store', upcoming: 'upcoming' };
   segs.forEach(b => b.addEventListener('click', () => { segs.forEach(x => x.setAttribute('aria-pressed', String(x === b))); scrollToId(SEG_TARGET[b.dataset.seg]); }));
 
   // ── scroll-spy: aktywny link w nawigacji i aktywny segment ──
   const spyLinks = document.querySelectorAll('.nav a[data-spy]');
-  const sections = ['featured', 'games', 'upcoming', 'about', 'beta'].map(id => document.getElementById(id));
+  const sections = ['featured', 'games', 'store', 'upcoming', 'about', 'beta'].map(id => document.getElementById(id));
   let current = 'featured';
   const updateSpy = () => {
     const key = current === 'games' && filter === 'app' ? 'apps' : (current === 'upcoming' ? 'games' : current);
