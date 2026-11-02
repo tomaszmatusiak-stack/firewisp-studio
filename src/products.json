@@ -842,15 +842,15 @@
     "hero_h": 800,
     "og_art": "assets/thumb-firewisp.webp",
     "kind": {
-      "en": "Goals with Iskra · beta soon",
-      "pl": "Cele z Iskrą · beta wkrótce"
+      "en": "Goals with Iskra · in development",
+      "pl": "Cele z Iskrą · w przygotowaniu"
     },
     "status": [
       [
-        "review",
+        "soon",
         {
-          "en": "Beta coming soon",
-          "pl": "Beta wkrótce"
+          "en": "In development",
+          "pl": "W przygotowaniu"
         }
       ],
       [
@@ -872,16 +872,16 @@
     "cta": [
       {
         "label": {
-          "en": "Get the beta first",
-          "pl": "Chcę betę jako pierwszy"
+          "en": "Tell me when it opens",
+          "pl": "Daj znać, gdy ruszy"
         },
         "href": "#beta",
         "primary": true
       }
     ],
     "beta_note": {
-      "en": "iPhone and Android test builds are ready and go out to the beta list first.",
-      "pl": "Wersje testowe na iPhone'a i Androida są gotowe i trafią najpierw na listę beta."
+      "en": "Firewisp is in development; a test build will go to the beta list once the studio's first games are out. No date yet.",
+      "pl": "Firewisp jest w przygotowaniu; wersja testowa trafi na listę beta po premierach pierwszych gier studia. Na razie bez daty."
     },
     "privacy": "https://tomaszmatusiak-stack.github.io/legal/firewisp/index.html",
     "shots": [
@@ -962,8 +962,8 @@
           "pl": "Platformy"
         },
         "v": {
-          "en": "iPhone and Android, beta first",
-          "pl": "iPhone i Android, najpierw beta"
+          "en": "iPhone and Android, in development",
+          "pl": "iPhone i Android, w przygotowaniu"
         }
       },
       {
