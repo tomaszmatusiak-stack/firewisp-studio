@@ -683,6 +683,188 @@
     ]
   },
   {
+    "slug": "tare",
+    "name": "Tare – Weight Tracker",
+    "color": "#16A05D",
+    "icon": "assets/icon-tare.webp",
+    "hero": "assets/shot-tare.webp",
+    "hero_w": 720,
+    "hero_h": 1564,
+    "og_art": "assets/shot-tare.webp",
+    "kind": {
+      "en": "Weight log · iPhone",
+      "pl": "Dziennik wagi · iPhone"
+    },
+    "status": [
+      [
+        "store",
+        {
+          "en": "iPhone: on the App Store",
+          "pl": "iPhone: w App Store"
+        }
+      ],
+      [
+        "soon",
+        {
+          "en": "Android later",
+          "pl": "Android później"
+        }
+      ]
+    ],
+    "tagline": {
+      "en": "One entry a day, a trend you can trust, nothing leaves your phone.",
+      "pl": "Jeden pomiar dziennie, trend, któremu ufasz, nic nie wychodzi poza telefon."
+    },
+    "intro": {
+      "en": "Tare is a private weight log. Enter today's weight in two taps and read the 7-day trend instead of the daily noise of a bathroom scale. Track waist and other measurements, see your BMI with the WHO classification and its source one tap away, set a goal and get a projected date. Fully offline: no account, no ads, no analytics, no in-app purchases. Your backup is a file you own.",
+      "pl": "Tare to prywatny dziennik wagi. Wpisujesz dzisiejszą wagę dwoma dotknięciami i czytasz trend 7-dniowy zamiast dziennego szumu z wagi łazienkowej. Mierzysz talię i inne obwody, widzisz BMI z klasyfikacją WHO i źródłem pod ręką, ustawiasz cel i dostajesz prognozowaną datę. W całości offline: bez konta, reklam, analityki i zakupów. Kopia zapasowa to plik, który należy do Ciebie."
+    },
+    "cta": [
+      {
+        "label": {
+          "en": "Download on the App Store",
+          "pl": "Pobierz z App Store"
+        },
+        "href": "https://apps.apple.com/app/id6829693551",
+        "primary": true
+      },
+      {
+        "label": {
+          "en": "Android: join the list",
+          "pl": "Android: zapisz się na listę"
+        },
+        "href": "#beta"
+      }
+    ],
+    "beta_note": {
+      "en": "The Android version is planned; the beta list gets it first.",
+      "pl": "Wersja na Androida jest w planie; lista beta dostanie ją pierwsza."
+    },
+    "privacy": "https://tomaszmatusiak-stack.github.io/legal/weight-tracker/privacy-policy.html",
+    "shots": [
+      {
+        "src": "assets/shot-tare.webp",
+        "w": 720,
+        "h": 1564,
+        "alt": {
+          "en": "Home screen with the weight chart",
+          "pl": "Ekran główny z wykresem wagi"
+        }
+      },
+      {
+        "src": "assets/shot-tare-stats.webp",
+        "w": 720,
+        "h": 1564,
+        "alt": {
+          "en": "Statistics and weekly trend",
+          "pl": "Statystyki i trend tygodniowy"
+        }
+      },
+      {
+        "src": "assets/shot-tare-measurements.webp",
+        "w": 720,
+        "h": 1564,
+        "alt": {
+          "en": "Body measurements",
+          "pl": "Wymiary ciała"
+        }
+      },
+      {
+        "src": "assets/shot-tare-dark.webp",
+        "w": 720,
+        "h": 1564,
+        "alt": {
+          "en": "Dark mode",
+          "pl": "Tryb ciemny"
+        }
+      }
+    ],
+    "features": [
+      {
+        "t": {
+          "en": "Two taps a day",
+          "pl": "Dwa dotknięcia dziennie"
+        },
+        "d": {
+          "en": "A wheel with quick nudges or a keypad. One entry per day; a correction replaces it, so history stays clean.",
+          "pl": "Kółko z podpowiedziami albo klawiatura. Jeden pomiar dziennie; poprawka go zastępuje, więc historia zostaje czysta."
+        }
+      },
+      {
+        "t": {
+          "en": "Trend, not noise",
+          "pl": "Trend, nie szum"
+        },
+        "d": {
+          "en": "A 7-day average line, weekly pace and a projected date for your goal.",
+          "pl": "Linia średniej 7 dni, tempo tygodniowe i prognozowana data osiągnięcia celu."
+        }
+      },
+      {
+        "t": {
+          "en": "BMI with its source",
+          "pl": "BMI ze źródłem"
+        },
+        "d": {
+          "en": "WHO categories with the full ranges and a link to the source, marked as indicative, not medical advice.",
+          "pl": "Kategorie WHO z pełnymi zakresami i linkiem do źródła, oznaczone jako orientacyjne, nie porada medyczna."
+        }
+      },
+      {
+        "t": {
+          "en": "Yours, offline",
+          "pl": "Twoje, offline"
+        },
+        "d": {
+          "en": "No account, no ads, no analytics. Export and import your own backup file.",
+          "pl": "Bez konta, reklam i analityki. Eksport i import własnej kopii zapasowej."
+        }
+      }
+    ],
+    "facts": [
+      {
+        "k": {
+          "en": "Platforms",
+          "pl": "Platformy"
+        },
+        "v": {
+          "en": "iPhone (App Store) · Android planned",
+          "pl": "iPhone (App Store) · Android w planie"
+        }
+      },
+      {
+        "k": {
+          "en": "Price",
+          "pl": "Cena"
+        },
+        "v": {
+          "en": "Free, no purchases",
+          "pl": "Darmowa, bez zakupów"
+        }
+      },
+      {
+        "k": {
+          "en": "Languages",
+          "pl": "Języki"
+        },
+        "v": {
+          "en": "English, Polish",
+          "pl": "polski, angielski"
+        }
+      },
+      {
+        "k": {
+          "en": "Made with",
+          "pl": "Technologia"
+        },
+        "v": {
+          "en": "Flutter, data stored only on the device",
+          "pl": "Flutter, dane tylko na urządzeniu"
+        }
+      }
+    ]
+  },
+  {
     "slug": "turniej",
     "name": "Turniej",
     "color": "#3ECF8E",

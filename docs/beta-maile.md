@@ -146,3 +146,32 @@ Next up is the Sushi Rush phone beta. I'll write when it opens.
 
 Tomasz
 ```
+
+## 6. Mail „Tare jest w App Store” (3.11.2026; do całej listy, Android jako informacja)
+
+**Temat PL:** Tare – dziennik wagi jest w App Store
+**Temat EN:** Tare – Weight Tracker is out on the App Store
+
+PL:
+```
+Cześć,
+
+druga apka Firewisp Studio jest w App Store: Tare, prywatny dziennik wagi. Jeden pomiar dziennie, trend 7-dniowy zamiast szumu z wagi, wymiary ciała i BMI ze źródłem WHO. Działa w całości offline, bez konta i bez reklam, za darmo.
+https://apps.apple.com/pl/app/id6829693551
+
+Jeśli zapiszesz w niej choć tydzień, napisz mi jedno zdanie: czego Ci zabrakło. Wersja na Androida jest w planie i lista dostanie ją pierwsza.
+
+Tomasz
+```
+
+EN:
+```
+Hi,
+
+the second Firewisp Studio app is on the App Store: Tare, a private weight log. One entry a day, a 7-day trend instead of bathroom-scale noise, body measurements and BMI with its WHO source. Fully offline, no account, no ads, free.
+https://apps.apple.com/app/id6829693551
+
+If you log even one week with it, send me one sentence: what was missing. An Android version is planned and this list gets it first.
+
+Tomasz
+```
