@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Beta feedback — Firewisp Studio</title>
+<meta name="description" content="A short survey for Firewisp Studio beta testers.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#0b0c10">
+<link rel="icon" href="assets/icon-firewisp.webp" type="image/webp">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="preload" href="assets/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/site.css">
+<style>
+  .fb { display: flex; flex-direction: column; gap: var(--s-5); margin-top: var(--s-5); max-width: 560px; }
+  .fb fieldset { margin: 0; padding: 0; border: 0; min-width: 0; }
+  .fb legend, .fb .lbl { display: block; width: 100%; margin: 0 0 10px; padding: 0; font-size: var(--fs-meta); font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: #E8D6C8; }
+  .fb .opts { display: flex; flex-wrap: wrap; gap: 8px; }
+  .fb .opt input[type=radio] { position: absolute; opacity: 0; width: 1px; height: 1px; margin: 0; }
+  .fb .stars .opt span { min-width: 48px; justify-content: center; padding: 0; font-variant-numeric: tabular-nums; }
+  .fb textarea { width: 100%; min-height: 110px; padding: 12px 16px; border-radius: 18px; border: 1px solid rgba(255,255,255,.18); background: rgba(7,19,27,.75); color: var(--text); font: inherit; font-size: var(--fs-small); line-height: 1.5; resize: vertical; }
+  .fb textarea::placeholder { color: var(--text-3); }
+  .fb textarea:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+  .fb .count { margin-top: 6px; font-size: var(--fs-meta); color: var(--text-3); text-align: right; }
+  .fb .actions { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s-3); }
+  .fb .msg { margin: 0; font-size: var(--fs-small); color: #E8D6C8; }
+  .fb .msg.err { color: var(--err); }
+  .fb .msg.ok { color: var(--ok); }
+  .fb-note { margin-top: var(--s-7); font-size: var(--fs-meta); color: var(--text-3); }
+  .fb-note a { color: var(--text-2); border-bottom: 1px solid var(--line-bright); }
+  .fb-state { display: none; }
+  .fb-state[data-on] { display: block; }
+  .fb-thanks { padding: clamp(20px, 3vw, 32px); border-radius: 20px; border: 1px solid rgba(143,211,168,.35); background: rgba(16,35,43,.7); }
+  .fb-thanks p { margin: 0 0 var(--s-3); }
+  .fb-busy { color: var(--text-2); }
+</style>
+</head>
+<body>
+<a class="skip" href="#main" data-l="en">Skip to content</a><a class="skip" href="#main" data-l="pl">Przejdź do treści</a>
+<header class="site-header">
+  <div class="container header-row">
+    <a class="brand" href="./" aria-label="Firewisp Studio"><img src="assets/icon-firewisp.webp" alt="" width="28" height="28"><span><b>Firewisp</b> <i>Studio</i></span></a>
+    <nav class="nav" id="nav" aria-label="Main">
+      <a href="./#games"><span data-l="en">Games</span><span data-l="pl">Gry</span></a>
+      <a href="./#apps"><span data-l="en">Apps</span><span data-l="pl">Aplikacje</span></a>
+      <a href="./#about"><span data-l="en">About</span><span data-l="pl">O studiu</span></a>
+      <a href="./#beta">Beta</a>
+    </nav>
+    <div class="header-actions">
+      <div class="lang" role="group" aria-label="Language / Język">
+        <button type="button" data-set-lang="en" aria-pressed="true" lang="en">EN</button>
+        <button type="button" data-set-lang="pl" aria-pressed="false" lang="pl">PL</button>
+      </div>
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav">
+        <span class="sr-only">Menu</span>
+        <svg class="bars" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M3 6h14M3 10h14M3 14h14"/></svg>
+        <svg class="x" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M5 5l10 10M15 5L5 15"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main" class="doc container">
+  <div class="inner">
+    <span class="meta">Beta</span>
+    <h1><span data-l="en">How did it go?</span><span data-l="pl">Jak poszło?</span></h1>
+    <p class="muted"><span data-l="en">Two minutes, one app at a time. Every answer lands in my inbox and I read all of them.</span><span data-l="pl">Dwie minuty, jedna apka na raz. Każda odpowiedź trafia do mnie i czytam wszystkie.</span></p>
+
+    <div class="fb-state fb-busy" id="st-busy" data-on aria-live="polite"><p><span data-l="en">Loading…</span><span data-l="pl">Wczytywanie…</span></p></div>
+
+    <div class="fb-state" id="st-nolink" role="status"><p><span data-l="en">This link is incomplete. Open it from the e-mail you received.</span><span data-l="pl">Ten link jest niepełny. Otwórz go z maila, który dostałeś.</span></p></div>
+    <div class="fb-state" id="st-unknown" role="status"><p><span data-l="en">I don't recognise this link.</span><span data-l="pl">Nie znam tego linku.</span></p></div>
+    <div class="fb-state" id="st-net" role="status"><p><span data-l="en">Can't reach the server right now. Please try again in a few minutes.</span><span data-l="pl">Nie mogę teraz połączyć się z serwerem. Spróbuj ponownie za kilka minut.</span></p></div>
+    <div class="fb-state" id="st-stopped" role="status"><p><span data-l="en">Unsubscribed. You won't get any more beta e-mails.</span><span data-l="pl">Wypisano. Nie dostaniesz więcej maili z bety.</span></p></div>
+
+    <div class="fb-state" id="st-form">
+      <form class="fb" id="fb" novalidate>
+        <fieldset>
+          <legend><span data-l="en">Which app?</span><span data-l="pl">Która apka?</span></legend>
+          <div class="opts" id="apps"></div>
+        </fieldset>
+
+        <fieldset>
+          <legend><span data-l="en">Did the install work?</span><span data-l="pl">Udało się zainstalować?</span></legend>
+          <div class="opts">
+            <label class="opt"><input type="radio" name="installed" value="yes"><span><span data-l="en">Yes</span><span data-l="pl">Tak</span></span></label>
+            <label class="opt"><input type="radio" name="installed" value="no"><span><span data-l="en">No, something failed</span><span data-l="pl">Nie, coś nie zadziałało</span></span></label>
+            <label class="opt"><input type="radio" name="installed" value="not_yet"><span><span data-l="en">Not yet</span><span data-l="pl">Jeszcze nie</span></span></label>
+          </div>
+        </fieldset>
+
+        <fieldset id="rating-set">
+          <legend><span data-l="en">Rating</span><span data-l="pl">Ocena</span> <span class="sr-only" data-l="en">(1 = poor, 5 = great)</span><span class="sr-only" data-l="pl">(1 = słabo, 5 = świetnie)</span></legend>
+          <div class="opts stars">
+            <label class="opt"><input type="radio" name="rating" value="1"><span>1</span></label>
+            <label class="opt"><input type="radio" name="rating" value="2"><span>2</span></label>
+            <label class="opt"><input type="radio" name="rating" value="3"><span>3</span></label>
+            <label class="opt"><input type="radio" name="rating" value="4"><span>4</span></label>
+            <label class="opt"><input type="radio" name="rating" value="5"><span>5</span></label>
+          </div>
+        </fieldset>
+
+        <div>
+          <label class="lbl" for="liked"><span data-l="en">What did you like?</span><span data-l="pl">Co się podobało?</span></label>
+          <textarea id="liked" name="liked" maxlength="2000"></textarea>
+          <div class="count" id="liked-count" aria-hidden="true"></div>
+        </div>
+
+        <div>
+          <label class="lbl" for="disliked"><span data-l="en">What got in the way or didn't work?</span><span data-l="pl">Co przeszkadzało albo nie działało?</span></label>
+          <textarea id="disliked" name="disliked" maxlength="2000"></textarea>
+          <div class="count" id="disliked-count" aria-hidden="true"></div>
+        </div>
+
+        <fieldset>
+          <legend><span data-l="en">Would you recommend it to a friend?</span><span data-l="pl">Poleciłbyś znajomemu?</span> <span class="sr-only" data-l="en">(optional)</span><span class="sr-only" data-l="pl">(opcjonalnie)</span></legend>
+          <div class="opts">
+            <label class="opt"><input type="radio" name="recommend" value="true"><span><span data-l="en">Yes</span><span data-l="pl">Tak</span></span></label>
+            <label class="opt"><input type="radio" name="recommend" value="false"><span><span data-l="en">No</span><span data-l="pl">Nie</span></span></label>
+          </div>
+        </fieldset>
+
+        <div class="actions">
+          <button class="btn btn-primary" type="submit" id="send"><span data-l="en">Send</span><span data-l="pl">Wyślij</span></button>
+          <p class="msg" id="msg" aria-live="polite"></p>
+        </div>
+      </form>
+    </div>
+
+    <div class="fb-state fb-thanks" id="st-thanks" role="status">
+      <p><span data-l="en">Thanks! I read every answer personally. Tomasz</span><span data-l="pl">Dzięki! Czytam każdą odpowiedź osobiście. Tomasz</span></p>
+      <button class="btn btn-secondary btn-sm" type="button" id="again"><span data-l="en">Rate another app</span><span data-l="pl">Oceń kolejną apkę</span></button>
+    </div>
+
+    <p class="fb-note" id="stop-note" hidden><a id="stop-link" href="#"><span data-l="en">Unsubscribe from the beta</span><span data-l="pl">Wypisz mnie z bety</span></a></p>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-bottom" style="margin-top:0;border-top:0;padding-top:0">
+    <span>© 2026 Firewisp Studio · Tomasz Matusiak</span>
+    <span><a href="./"><span data-l="en">← Back to the studio</span><span data-l="pl">← Wróć do studia</span></a></span>
+  </div>
+</footer>
+
+<script>
+  const TITLES = { en: 'Beta feedback — Firewisp Studio', pl: 'Opinia o becie — Firewisp Studio' };
+  const setLang = (l) => { document.documentElement.lang = l; document.querySelectorAll('[data-l]').forEach(el => el.toggleAttribute('data-l-active', el.dataset.l === l)); document.querySelectorAll('[data-set-lang]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.setLang === l))); document.title = TITLES[l]; try { localStorage.setItem('fw-lang', l); } catch (e) {} };
+  let lang = 'en'; try { lang = localStorage.getItem('fw-lang') || (navigator.language.toLowerCase().startsWith('pl') ? 'pl' : 'en'); } catch (e) {}
+  setLang(lang);
+  document.querySelectorAll('[data-set-lang]').forEach(b => b.addEventListener('click', () => setLang(b.dataset.setLang)));
+  const menuBtn = document.querySelector('.menu-btn'), nav = document.getElementById('nav');
+  menuBtn.addEventListener('click', () => { const open = nav.classList.toggle('open'); menuBtn.setAttribute('aria-expanded', String(open)); });
+  const header = document.querySelector('.site-header'); const onScroll = () => header.classList.toggle('scrolled', scrollY > 8); addEventListener('scroll', onScroll, { passive: true }); onScroll();
+</script>
+<script>
+(() => {
+  const SB_URL = 'https://haixyslyqiwjqdjhffsu.supabase.co';
+  const SB_KEY = 'sb_publishable_D4B8k0LfShWTMxfgq1AMHg_Zu3CjXid';
+  const APPS = [
+    ['sushi-rush', 'Sushi Rush'], ['bog-night', 'Bog Night'], ['turniej', 'Turniej'], ['weight-tracker', 'Tare'],
+    ['kropla', 'Kropla'], ['pendulum', 'Pendulum'], ['firewisp', 'Firewisp']
+  ];
+  const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+  const q = new URLSearchParams(location.search);
+  const token = (q.get('t') || '').trim();
+  const stop = q.get('stop') === '1';
+  const L = () => document.documentElement.lang === 'pl' ? 'pl' : 'en';
+  const T = (en, pl) => L() === 'pl' ? pl : en;
+
+  const states = ['st-busy', 'st-nolink', 'st-unknown', 'st-net', 'st-stopped', 'st-form', 'st-thanks'];
+  const show = (id) => states.forEach(s => document.getElementById(s).toggleAttribute('data-on', s === id));
+  const stopNote = document.getElementById('stop-note');
+  const form = document.getElementById('fb');
+  const msg = document.getElementById('msg');
+  const send = document.getElementById('send');
+
+  async function rpc(name, body) {
+    let r;
+    try {
+      r = await fetch(SB_URL + '/rest/v1/rpc/' + name, {
+        method: 'POST',
+        headers: { apikey: SB_KEY, Authorization: 'Bearer ' + SB_KEY, 'Content-Type': 'application/json' },
+        body: JSON.stringify(body)
+      });
+    } catch (e) { throw { kind: 'net' }; }
+    let data = null;
+    try { data = await r.json(); } catch (e) {}
+    if (!r.ok) throw { kind: r.status >= 500 ? 'net' : 'api', status: r.status, data };
+    return data;
+  }
+
+  function renderApps(list) {
+    const box = document.getElementById('apps');
+    box.innerHTML = '';
+    const known = APPS.filter(([slug]) => !list || !list.length || list.includes(slug));
+    const use = known.length ? known : APPS;
+    use.forEach(([slug, name], i) => {
+      const lab = document.createElement('label'); lab.className = 'opt';
+      const inp = document.createElement('input'); inp.type = 'radio'; inp.name = 'app'; inp.value = slug; if (use.length === 1) inp.checked = true;
+      const sp = document.createElement('span'); sp.textContent = name;
+      lab.append(inp, sp); box.append(lab);
+    });
+  }
+
+  function counter(id) {
+    const ta = document.getElementById(id), out = document.getElementById(id + '-count');
+    const upd = () => { out.textContent = ta.value.length ? ta.value.length + ' / 2000' : ''; };
+    ta.addEventListener('input', upd); upd();
+  }
+  counter('liked'); counter('disliked');
+
+  const val = (name) => { const el = form.querySelector(`input[name="${name}"]:checked`); return el ? el.value : null; };
+  const setMsg = (text, cls) => { msg.textContent = text; msg.className = 'msg' + (cls ? ' ' + cls : ''); };
+
+  function resetForm() {
+    form.reset();
+    document.querySelectorAll('.count').forEach(c => c.textContent = '');
+    setMsg('');
+    const apps = form.querySelectorAll('input[name="app"]');
+    if (apps.length === 1) apps[0].checked = true;
+  }
+
+  form.addEventListener('submit', async (ev) => {
+    ev.preventDefault();
+    const app = val('app'), installed = val('installed'), rating = val('rating'), rec = val('recommend');
+    if (!app) { setMsg(T('Pick an app first.', 'Najpierw wybierz apkę.'), 'err'); form.querySelector('input[name="app"]')?.focus(); return; }
+    if (!installed) { setMsg(T('Tell me whether the install worked.', 'Zaznacz, czy udało się zainstalować.'), 'err'); form.querySelector('input[name="installed"]').focus(); return; }
+    if (installed === 'yes' && !rating) { setMsg(T('Give it a rating from 1 to 5.', 'Daj ocenę od 1 do 5.'), 'err'); form.querySelector('input[name="rating"]').focus(); return; }
+    const body = {
+      p_token: token, p_app: app, p_installed: installed,
+      p_rating: rating ? Number(rating) : null,
+      p_liked: document.getElementById('liked').value.trim().slice(0, 2000),
+      p_disliked: document.getElementById('disliked').value.trim().slice(0, 2000),
+      p_recommend: rec === null ? null : rec === 'true',
+      p_lang: L()
+    };
+    send.disabled = true; setMsg(T('Sending…', 'Wysyłam…'), 'busy');
+    try {
+      await rpc('beta_feedback_submit', body);
+      show('st-thanks'); document.getElementById('again').focus();
+    } catch (e) {
+      if (e.kind === 'net') setMsg(T("Can't reach the server. Please try again in a moment.", 'Nie mogę połączyć się z serwerem. Spróbuj za chwilę.'), 'err');
+      else if (e.data && /unknown_token|unsubscribed/.test(JSON.stringify(e.data))) show('st-unknown');
+      else setMsg(T('Something went wrong on my side. Please try again.', 'Coś poszło nie tak po mojej stronie. Spróbuj ponownie.'), 'err');
+    } finally { send.disabled = false; }
+  });
+
+  document.getElementById('again').addEventListener('click', () => { resetForm(); show('st-form'); form.querySelector('input[name="app"]')?.focus(); });
+
+  async function init() {
+    if (!UUID.test(token)) { show('st-nolink'); return; }
+    const u = new URL(location.href); u.searchParams.set('t', token); u.searchParams.set('stop', '1');
+    document.getElementById('stop-link').href = u.pathname + u.search;
+    if (stop) {
+      try { await rpc('beta_unsubscribe', { p_token: token }); show('st-stopped'); }
+      catch (e) { show(e.kind === 'net' ? 'st-net' : 'st-unknown'); }
+      return;
+    }
+    try {
+      const ctx = await rpc('beta_context', { p_token: token });
+      if (ctx && ctx.unsubscribed) { show('st-stopped'); return; }
+      renderApps(ctx && Array.isArray(ctx.apps) ? ctx.apps : []);
+      show('st-form'); stopNote.hidden = false;
+    } catch (e) {
+      show(e.kind === 'net' ? 'st-net' : 'st-unknown');
+    }
+  }
+  init();
+})();
+</script>
+</body>
+</html>

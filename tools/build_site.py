@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """Generator strony Firewisp Studio (statyczny, bez zależności poza PIL).
 
-Źródła:  src/index.html (dwujęzyczny master z data-l), src/privacy.html, src/products.json, assets/
+Źródła:  src/index.html (dwujęzyczny master z data-l), src/privacy.html, src/feedback.html, src/products.json, assets/
 Wyniki:  index.html (EN) · pl/index.html (PL) · <slug>/index.html · pl/<slug>/index.html
-         privacy/index.html · pl/prywatnosc/index.html · 404.html · sitemap.xml · robots.txt
+         privacy/index.html · pl/prywatnosc/index.html · feedback/index.html · pl/opinia/index.html (noindex) · 404.html · sitemap.xml · robots.txt
          assets/og/<slug>.jpg (obrazki OG) · press/<slug>-press-kit.zip
 
 Jedna stała SITE_URL — po zakupie domeny zmienić tylko ją i uruchomić ponownie.
@@ -171,6 +171,30 @@ def build_privacy(master: str):
         out.parent.mkdir(parents=True, exist_ok=True); out.write_text(doc, encoding='utf-8')
         print('privacy', lang)
     (ROOT / 'privacy.html').write_text('<!doctype html><meta charset="utf-8"><meta http-equiv="refresh" content="0; url=privacy/"><link rel="canonical" href="%s/privacy/"><title>Privacy — Firewisp Studio</title><a href="privacy/">Privacy</a>' % SITE_URL, encoding='utf-8')
+
+# ───────────────────────── ankieta beta ─────────────────────────
+def build_feedback(master: str):
+    """feedback/ (EN) i pl/opinia/ (PL): strona z linku w mailu, noindex, poza sitemap."""
+    for lang in LANGS:
+        doc = strip_lang(master, lang)
+        path_en, path_pl = 'feedback/', 'pl/opinia/'
+        depth = 1 if lang == 'en' else 2
+        prefix = '../' * depth
+        doc = rebase(doc, prefix)
+        doc = doc.replace('<html lang="en">', f'<html lang="{lang}">')
+        title = 'Beta feedback — Firewisp Studio' if lang == 'en' else 'Opinia o becie — Firewisp Studio'
+        desc = 'A short survey for Firewisp Studio beta testers.' if lang == 'en' else 'Krótka ankieta dla testerów bety Firewisp Studio.'
+        doc = re.sub(r'<title>[^<]*</title>', f'<title>{title}</title>', doc)
+        doc = re.sub(r'<meta name="description"[^>]*>', f'<meta name="description" content="{H.escape(desc)}">', doc)
+        doc = re.sub(r'<div class="lang" role="group"[^>]*>.*?</div>', lang_switch(lang, '../pl/opinia/' if lang == 'en' else '../../feedback/'), doc, count=1, flags=re.S)
+        home = prefix if lang == 'en' else '../'
+        doc = doc.replace(f'href="{prefix}./"', f'href="{home}"').replace(f'href="{prefix}./#', f'href="{home}#')
+        doc = doc.replace('<head>', '<head>\n' + HEAD_LANG_JS.format(lang=lang), 1)
+        doc = doc.replace('</head>', ANALYTICS_JS + '\n</head>', 1)
+        doc = doc.replace('</body>', LANG_JS + '\n</body>')
+        out = ROOT / (path_en if lang == 'en' else path_pl) / 'index.html'
+        out.parent.mkdir(parents=True, exist_ok=True); out.write_text(doc, encoding='utf-8')
+        print('feedback', lang)
 
 # ───────────────────────── strony produktów ─────────────────────────
 def t(d: dict, lang: str) -> str:
@@ -365,7 +389,7 @@ def build_sitemap(products: list[dict]):
     today = __import__('datetime').date.today().isoformat()
     body = '\n'.join(f'  <url><loc>{SITE_URL}/{u}</loc><lastmod>{today}</lastmod></url>' for u in urls)
     (ROOT / 'sitemap.xml').write_text(f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n{body}\n</urlset>\n', encoding='utf-8')
-    (ROOT / 'robots.txt').write_text(f'User-agent: *\nAllow: /\nDisallow: /src/\nDisallow: /tools/\nDisallow: /lab/\nSitemap: {SITE_URL}/sitemap.xml\n', encoding='utf-8')
+    (ROOT / 'robots.txt').write_text(f'User-agent: *\nAllow: /\nDisallow: /src/\nDisallow: /tools/\nDisallow: /lab/\nDisallow: /feedback/\nDisallow: /pl/opinia/\nSitemap: {SITE_URL}/sitemap.xml\n', encoding='utf-8')
     print('sitemap', len(urls), 'urls')
 
 def build_404():
@@ -391,6 +415,7 @@ def main():
     products = json.loads((ROOT / 'src/products.json').read_text(encoding='utf-8'))
     build_index((ROOT / 'src/index.html').read_text(encoding='utf-8'))
     build_privacy((ROOT / 'src/privacy.html').read_text(encoding='utf-8'))
+    build_feedback((ROOT / 'src/feedback.html').read_text(encoding='utf-8'))
     build_products(products)
     build_og(products)
     build_press(products)

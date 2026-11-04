@@ -1,4 +1,4 @@
-# Maile do listy beta (do czasu automatu po domenie: wysyła Tomasz z własnej skrzynki)
+# Maile do listy beta (1–3 i ankieta: automat — patrz sekcja 4; 5–6: ręcznie)
 
 Adresy: Supabase → projekt `iskra` → tabela `beta_signups` (kolumny: email, ios, android, apps, lang). Wysyłać w języku z kolumny `lang`; w polu UDW (BCC), nigdy w DW.
 
@@ -107,8 +107,8 @@ What to test: [2–3 sentences]. You can send feedback straight from TestFlight 
 Tomasz
 ```
 
-## 4. Automat (po domenie)
-Funkcja brzegowa Supabase `beta-welcome` odpalana webhookiem bazy po INSERT do `beta_signups`, wysyłka przez Resend z `beta@firewispstudio.com`, treść = mail 1 w języku z `lang`. Do zrobienia w godzinę po podpięciu domeny i weryfikacji nadawcy w Resend.
+## 4. Automat (zbudowany 4.11.2026, wdrożenie po domenie i Resend)
+Maile 1–3 i ankietę wysyła **automat**, nie Tomasz: funkcja brzegowa `beta-mailer` w projekcie `iskra`, cron co 10 min, Resend. Pełny opis: `docs/beta-automat.md`. Szablony w `mobile/firewisp/supabase/functions/beta-mailer/index.ts` (powitanie, „ruszył test”, ankieta) — teksty 1–3 powyżej są ich pierwowzorem. Maile 5–6 (premiery) zostają ręczne, bo to osobne komunikaty, nie część pętli bety.
 
 ## 5. Mail „Pendulum jest w App Store” (wysyłka do całej listy, bez względu na platformę; Android dostaje go jako informację)
 
