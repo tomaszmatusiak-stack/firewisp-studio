@@ -5,4 +5,4 @@ Disallow: /tools/
 Disallow: /lab/
 Disallow: /feedback/
 Disallow: /pl/opinia/
-Sitemap: https://tomaszmatusiak-stack.github.io/firewisp-studio/sitemap.xml
+Sitemap: https://firewispstudio.com/sitemap.xml

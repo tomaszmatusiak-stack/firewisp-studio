@@ -15,7 +15,7 @@ from html.parser import HTMLParser
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-SITE_URL = 'https://tomaszmatusiak-stack.github.io/firewisp-studio'
+SITE_URL = 'https://firewispstudio.com'
 LANGS = ('en', 'pl')
 VOID = {'area', 'base', 'br', 'col', 'embed', 'hr', 'img', 'input', 'link', 'meta', 'param', 'source', 'track', 'wbr', 'use', 'path', 'circle', 'stop', 'rect'}
 
