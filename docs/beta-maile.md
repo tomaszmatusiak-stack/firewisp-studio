@@ -1,6 +1,6 @@
 # Maile do listy beta (1–3 i ankieta: automat — patrz sekcja 4; 5–6: ręcznie)
 
-Adresy: Supabase → projekt `iskra` → tabela `beta_signups` (kolumny: email, ios, android, apps, lang). Wysyłać w języku z kolumny `lang`; w polu UDW (BCC), nigdy w DW.
+Adresy: Supabase → projekt `firewisp-studio` (od 5.11.2026; wcześniej `iskra`) → tabela `beta_signups` (kolumny: email, ios, android, apps, lang). Wysyłać w języku z kolumny `lang`; w polu UDW (BCC), nigdy w DW.
 
 ## 1. Mail powitalny (po zapisie)
 
